@@ -512,12 +512,13 @@ def discogs_pressings(master_id):
     except Exception as e:
         log("  Discogs persingen ophalen mislukt:", e)
         return [], None
-    seen, out, newest = {}, [], None
+    seen, out, newest = {}, [], []
     for v in res.get("versions", []):
         fmt = v.get("format") or ""
         if fmt and "lp" not in fmt.lower() and "vinyl" not in fmt.lower():
             continue
-        newest = newest or v.get("id")
+        if v.get("id") and len(newest) < 3:
+            newest.append(v["id"])
         info = variant_info(fmt)
         if info["key"] in seen:
             continue
@@ -563,13 +564,19 @@ def discogs_from_master(master_id):
     images = m.get("images") or []
     cover = next((i.get("uri") for i in images if i.get("type") == "primary"), None) or (images[0].get("uri") if images else None)
     pressings, newest = discogs_pressings(master_id)
-    extras = discogs_release_extras(newest or m.get("main_release")) if (newest or m.get("main_release")) else {}
+    extras, barcodes = {}, []
+    for rid in (newest or [m.get("main_release")])[:3]:
+        if not rid:
+            continue
+        e = discogs_release_extras(rid)
+        extras = extras or e
+        barcodes += [b for b in e.get("barcodes", []) if b not in barcodes]
     aliases = discogs_artist_aliases(artists[0]["id"]) if artists and artists[0].get("id") else []
     return {
         "artist": clean_artist(artists[0]["name"]) if artists else "",
         "title": (m.get("title") or "").strip(),
         "cover": cover, "pressings": pressings, "aliases": aliases,
-        "label": extras.get("label"), "barcodes": extras.get("barcodes", []),
+        "label": extras.get("label"), "barcodes": barcodes[:3],
         "discogs_url": f"https://www.discogs.com/master/{master_id}",
     }
 
@@ -583,7 +590,7 @@ def discogs_by_id(kind, did):
     if extras.get("master_id"):
         d = discogs_from_master(extras["master_id"])
         if d:
-            d["barcodes"] = list(dict.fromkeys(extras.get("barcodes", []) + d.get("barcodes", [])))[:2]
+            d["barcodes"] = list(dict.fromkeys(extras.get("barcodes", []) + d.get("barcodes", [])))[:3]
             d["label"] = extras.get("label") or d.get("label")
         return d
     try:
@@ -670,16 +677,28 @@ def search_plan(info, entry):
     label = info.get("label")
     plan.append({"q": f"{label} {artist} {title} vinyl webshop" if label else f"{artist} {title} vinyl officiële webshop merch",
                  "exclude": NON_EU_DOMAINS, "depth": "basic", "country": country})
-    for bc in (info.get("barcodes") or [])[:1]:
+    alias = next((a for a in info.get("aliases") or [] if a.lower() != artist.lower()), None)
+    if alias:
+        plan.append({"q": f"{alias} {title} LP vinyl", "exclude": NON_EU_DOMAINS, "depth": "basic", "country": country})
+    for bc in (info.get("barcodes") or [])[:2]:
         plan.append({"q": bc, "exclude": NON_EU_DOMAINS, "depth": "basic", "country": country})
     return plan
+
+
+EURO_PRICE = re.compile(r"(€\s?\d|\d[\d.]*,\d{2}\s?(€|eur)|eur\s?\d)", re.I)
+SEARCH_LOG = []   # per plaat: wat er gevonden is en waarom het wel of niet meetelt
+
+
+def note(url, shop, reason):
+    if not any(x["url"] == url for x in SEARCH_LOG):
+        SEARCH_LOG.append({"url": url, "shop": shop or host(url), "reason": reason})
 
 
 def web_offers(info, entry):
     if not (TAVILY_KEY and (GEMINI_KEY or ANTHROPIC_KEY)):
         return []
     artist, title = info.get("artist", ""), info.get("title", "")
-    seen, blocks = set(), []
+    seen, pages = set(), []
     for step in search_plan(info, entry):
         try:
             results = tavily_search(step["q"], step.get("domains"), step.get("exclude"),
@@ -689,37 +708,56 @@ def web_offers(info, entry):
             continue
         for res in results:
             url = res.get("url", "")
-            if not url or url in seen or is_blocked_domain(url):
+            if not url or url in seen:
                 continue
             seen.add(url)
-            body = price_context(res.get("raw_content") or "") or (res.get("content") or "")[:800]
-            blocks.append(f"### {res.get('title', '')}\nURL: {url}\nSnippet: {(res.get('content') or '')[:400]}\nPage: {body}")
-    if not blocks:
+            if is_blocked_domain(url):
+                continue
+            snippet = (res.get("content") or "")[:900]
+            body = price_context(res.get("raw_content") or "")
+            if not EURO_PRICE.search(snippet + " " + body):
+                note(url, None, "geen europrijs op de pagina")
+                continue
+            pages.append(f"### {res.get('title', '')}\nURL: {url}\nSnippet: {snippet}\nPage: {body}")
+    log(f"  {len(seen)} pagina's gevonden, {len(pages)} met een europrijs")
+    if not pages:
         return []
-    text = ask_ai(EXTRACT_PROMPT.format(
-        artist=artist, title=title, aliases=", ".join(info.get("aliases") or []) or "-",
-        label=info.get("label") or "-", barcodes=", ".join(info.get("barcodes") or []) or "-",
-        results="\n\n".join(blocks)[:60000]), 3000)
-    data = parse_json(text)
-    if not isinstance(data, list):
-        log("  Gemini gaf geen bruikbare lijst terug")
-        return []
-    out = []
-    for o in data:
-        if not isinstance(o, dict):
+
+    out, found_urls = [], set()
+    batch = int(CONFIG.get("paginas_per_keer", 4))
+    for i in range(0, len(pages), batch):
+        chunk = pages[i:i + batch]
+        try:
+            text = ask_ai(EXTRACT_PROMPT.format(
+                artist=artist, title=title, aliases=", ".join(info.get("aliases") or []) or "-",
+                label=info.get("label") or "-", barcodes=", ".join(info.get("barcodes") or []) or "-",
+                results="\n\n".join(chunk)), 1500)
+        except Exception as e:
+            log("  uitlezen mislukt:", e)
             continue
-        price = num(o.get("price"))
-        if not price or not o.get("url"):
+        data = parse_json(text)
+        if not isinstance(data, list):
             continue
-        out.append({
-            "shop": o.get("shop") or host(o["url"]), "url": o["url"], "price": price,
-            "currency": (o.get("currency") or "EUR").upper(), "shipping": num(o.get("shipping")),
-            "ships_from": (o.get("ships_from") or "").upper() or None,
-            "condition": "used" if o.get("condition") == "used" else "new",
-            "in_stock": o.get("in_stock"), "is_sale": bool(o.get("is_sale")),
-            "original_price": num(o.get("original_price")), "edition": o.get("edition"),
-            "variant_text": o.get("variant") or "", "source": "web",
-        })
+        for o in data:
+            if not isinstance(o, dict):
+                continue
+            price = num(o.get("price"))
+            if not price or not o.get("url"):
+                continue
+            found_urls.add(o["url"])
+            out.append({
+                "shop": o.get("shop") or host(o["url"]), "url": o["url"], "price": price,
+                "currency": (o.get("currency") or "EUR").upper(), "shipping": num(o.get("shipping")),
+                "ships_from": (o.get("ships_from") or "").upper() or None,
+                "condition": "used" if o.get("condition") == "used" else "new",
+                "in_stock": o.get("in_stock"), "is_sale": bool(o.get("is_sale")),
+                "original_price": num(o.get("original_price")), "edition": o.get("edition"),
+                "variant_text": o.get("variant") or "", "source": "web",
+            })
+        for page in chunk:
+            url = page.split("URL: ", 1)[1].split("\n", 1)[0]
+            if url not in found_urls:
+                note(url, None, "geen LP van dit album herkend")
     return out
 
 
@@ -748,10 +786,12 @@ def finalize(offers):
     clean, seen = [], set()
     for o in offers:
         if o.get("in_stock") is False:
+            note(o.get("url", ""), o.get("shop"), "uitverkocht")
             continue
         region = o.get("region") or eu_region(o)
         if not region:
             log(f"  overgeslagen (niet uit de EU): {o.get('shop')} {host(o.get('url', ''))}")
+            note(o.get("url", ""), o.get("shop"), "niet uit de EU of herkomst onbekend")
             continue
         o["ship_region"] = region
         price = to_eur(o["price"], o.get("currency"))
@@ -817,7 +857,7 @@ def deal_reasons(album_entry, prev, cheapest):
 
 def web_cost(entry):
     # schatting vooraf: zonder albuminfo gaan we uit van de volledige set zoekopdrachten
-    fake = {"artist": "a", "title": "t", "label": "l", "barcodes": ["0"]}
+    fake = {"artist": "a", "title": "t", "label": "l", "aliases": ["b"], "barcodes": ["0", "1"]}
     cost = sum(2 if st.get("depth") == "advanced" else 1 for st in search_plan(fake, entry))
     if is_url(entry.get("input", "")) and not discogs_link(entry.get("input", ""))[0]:
         cost += 1
@@ -861,6 +901,7 @@ WEB_MAX_AGE_DAYS = 21
 
 
 def check_album(entry, prev, do_web):
+    SEARCH_LOG.clear()
     info = identify_album(entry, prev)
     if not info.get("artist") and not info.get("title"):
         raise RuntimeError("Kon niet bepalen welk album dit is. Probeer 'Artiest - Album' of een Discogs-link.")
@@ -887,6 +928,8 @@ def check_album(entry, prev, do_web):
                 o["seen"] = now_iso()[:10]
             offers = [o for o in offers if o["url"] != info["link_offer"]["url"]] + extra
     offers.sort(key=lambda x: x["total"])
+    kept = {o["url"] for o in offers}
+    info["search_log"] = [x for x in SEARCH_LOG if x["url"] not in kept][:30] if do_web else prev.get("search_log", [])
     return info, offers
 
 
@@ -959,6 +1002,7 @@ def main():
             "label": info.get("label") or prev.get("label"),
             "barcodes": info.get("barcodes") or prev.get("barcodes") or [],
             "discogs_url": info.get("discogs_url") or prev.get("discogs_url"),
+            "search_log": info.get("search_log", []),
             "cheapest": cheapest,
             "checked": now_iso(),
             "error": None,

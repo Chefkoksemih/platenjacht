@@ -11,12 +11,17 @@
     "jpc.de",
     "hhv.de",
     "muziker.nl",
-    "fnac.com"
+    "fnac.com",
+    "platenzaak.nl",
+    "sounds-venlo.nl",
+    "getbackmusic.nl",
+    "topnotch-shop.nl"
   ],
   "shipping_estimates_eur": {
     "NL": 4.95,
     "EU": 12.5
   },
   "gemini_model": "gemini-2.5-flash-lite",
-  "email_from": "Platenjacht <onboarding@resend.dev>"
+  "email_from": "Platenjacht <onboarding@resend.dev>",
+  "paginas_per_keer": 4
 }

@@ -84,7 +84,9 @@ Voeg een album toe. Op GitHub zie je onder het tabblad **Actions** de check draa
 ## Hoe een plaat gevonden wordt
 
 - **Herkennen**: met een Discogs-link wordt het album direct via het nummer in de link opgehaald. Bij "Artiest - Album" zoekt het script het album eerst op Discogs op. Van Discogs komen de hoes, het label, de barcode, de echte naam van de artiest en alle vinylpersingen met hun kleur.
-- **Zoeken** (grondig, ongeveer 6 credits per plaat): je vaste winkels in één keer, een Nederlandstalige zoekopdracht met voorrang voor Nederlandse sites, een zoekopdracht naar de webshop van het label of de artiest, en een zoekopdracht op barcode.
+- **Zoeken** (grondig, ongeveer 8 credits per plaat): je vaste winkels in één keer, een Nederlandstalige zoekopdracht met voorrang voor Nederlandse sites, een zoekopdracht naar de webshop van het label of de artiest, een met de andere naam van de artiest, en tot twee op barcode.
+- **Uitlezen**: Gemini leest steeds een paar pagina's tegelijk (`paginas_per_keer` in config.json), alleen pagina's waar een europrijs op staat.
+- **Logboek**: open een plaat op de site en klik op "Gevonden, maar niet meegeteld" om te zien welke winkels zijn afgevallen en waarom.
 - **Alleen de EU**: bekende Amerikaanse en Britse winkels worden overgeslagen, en daarna valt alles af wat niet aantoonbaar uit de EU verstuurt (ander land, prijs in dollars of ponden, of herkomst onbekend). Het VK, Zwitserland en Noorwegen tellen niet mee.
 - **Discogs** levert geen prijzen meer, omdat niet te zien is of een verkoper in de EU zit.
 
