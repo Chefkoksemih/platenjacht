@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-11T15:22:31+00:00",
+ "updated": "2026-11-11T15:29:49+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 89,
+  "tavily_credits": 96,
   "budget": 900
  },
  "albums": {
@@ -10,235 +10,13 @@
    "input": "https://www.discogs.com/master/124666-Fugees-The-Score?gad_source=1&gad_campaignid=22178621710&gbraid=0AAAAADmy1_rvoARm23XSOtJM0Iu0kjbA6&gclid=Cj0KCQiAwdDXBhDuARIsAFdLukkZD9Gt9UvSf_VUVOl2MX-trIhOVwE0tSgl3bADTPfZT2PKGwC4rYcaAvC-EALw_wcB",
    "artist": "Fugees",
    "title": "The Score",
-   "offers": [
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Get On Down",
-     "url": "https://getondown.com/products/the-score-2xlp-1",
-     "price": 16.93,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 24.93,
-     "condition": "new",
-     "is_sale": true,
-     "original_price": 25.85,
-     "edition": "2xLP",
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Sony Music Vinyl",
-     "url": "https://vinyl.sonymusic.com/products/fugees-the-score-2lp",
-     "price": 26.73,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 34.73,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2LP",
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "eBay",
-     "url": "https://www.ebay.com/shop/fugees-vinyl?_nkw=fugees+vinyl",
-     "price": 26.94,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 34.94,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2LP/Gatefold",
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "eBay",
-     "url": "https://www.ebay.com/shop/fugees-the-score-vinyl?_nkw=fugees+the+score+vinyl",
-     "price": 26.94,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 34.94,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": 27.63,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Acoustic Sounds",
-     "url": "https://store.acousticsounds.com/d/97180/The_Fugees-The_Score-Vinyl_Record",
-     "price": 27.63,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 35.63,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "180-gram double LP reissue",
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": "https://i.discogs.com/uA1TtHB6tefZgmqqLkFyOolpuxQJwUPEU1HWx8EEeLQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3Mjc2/OTMwLTE2ODU4OTA4/OTMtNTgxNC5qcGVn.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/27276930",
-     "price": 26.69,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 36.69,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2023 US",
-     "source": "10 te koop op Discogs"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": "https://i.discogs.com/jyAJLaMfUcJBo04te1L4x2KSMr4hKuOCSitAsKbVp6Q/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMTUw/Njg0LTE2NTE5Njc1/NzMtNzcxNy5qcGVn.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/23150684",
-     "price": 30.25,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 40.25,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2021 US",
-     "source": "6 te koop op Discogs"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Rough Trade",
-     "url": "https://www.roughtrade.com/product/fugees/the-score-1",
-     "price": 35.9,
-     "shipping": 12.5,
-     "shipping_estimated": true,
-     "total": 48.4,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2LP",
-     "source": "web",
-     "seen": "2026-11-11"
-    }
-   ],
-   "variants": [
-    {
-     "label": "Zwart",
-     "key": "black",
-     "colors": [
-      "#161214"
-     ],
-     "pattern": "solid",
-     "count": 8,
-     "best": {
-      "shop": "Get On Down",
-      "url": "https://getondown.com/products/the-score-2xlp-1",
-      "total": 24.93,
-      "condition": "new"
-     },
-     "thumb": "https://i.discogs.com/uA1TtHB6tefZgmqqLkFyOolpuxQJwUPEU1HWx8EEeLQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3Mjc2/OTMwLTE2ODU4OTA4/OTMtNTgxNC5qcGVn.jpeg"
-    }
-   ],
+   "offers": [],
+   "variants": [],
    "cover": "https://i.discogs.com/sUC-OcPFlR1nXz8VFp1eBUbrdSKSQVM7TYGPAkDgTpg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc5NTk1/OTUtMTQ2ODYxMTk2/OC01MjM2LmpwZWc.jpeg",
-   "cheapest": {
-    "variant": {
-     "label": "Zwart",
-     "key": "black",
-     "colors": [
-      "#161214"
-     ],
-     "pattern": "solid"
-    },
-    "thumb": null,
-    "shop": "Get On Down",
-    "url": "https://getondown.com/products/the-score-2xlp-1",
-    "price": 16.93,
-    "shipping": 8.0,
-    "shipping_estimated": true,
-    "total": 24.93,
-    "condition": "new",
-    "is_sale": true,
-    "original_price": 25.85,
-    "edition": "2xLP",
-    "source": "web",
-    "seen": "2026-11-11"
-   },
-   "checked": "2026-11-11T14:28:21+00:00",
+   "cheapest": null,
+   "checked": "2026-11-11T15:28:22+00:00",
    "error": null,
-   "web_checked": "2026-11-11T14:28:21+00:00",
+   "web_checked": "2026-11-11T15:28:22+00:00",
    "history": [
     {
      "date": "2026-11-11",
@@ -258,106 +36,8 @@
    },
    "notified_sale_urls": [
     "https://getondown.com/products/the-score-2xlp-1"
-   ]
-  },
-  "mwc85efd1wkx": {
-   "input": "Frank Ocean - Blonde",
-   "artist": "Frank Ocean",
-   "title": "Blonde",
-   "offers": [
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": "https://i.discogs.com/lgmCTL4u9YcYJ_gv1yoE37IWcrEl6GdJv9tuZ6RV9LI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3MDIx/OTgzLTE3NzU5MTA0/ODUtNzg4My5qcGVn.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/37021983",
-     "price": 111.85,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 121.85,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2026 Europe",
-     "source": "2 te koop op Discogs"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Ebay",
-     "url": "https://www.ebay.com/b/Frank-Ocean-Vinyl-Records/176985/bn_7121968269",
-     "price": 151.59,
-     "shipping": 0.0,
-     "shipping_estimated": false,
-     "total": 151.59,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Ebay",
-     "url": "https://www.ebay.com/shop/blonde-vinyl-frank-ocean?_nkw=blonde+vinyl+frank+ocean",
-     "price": 151.59,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 159.59,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "Official Repress",
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "PicClick",
-     "url": "https://picclick.com/Popular/blond-frank-ocean-vinyl",
-     "price": 401.28,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 409.28,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2016 XL Recordings",
-     "source": "web",
-     "seen": "2026-11-11"
-    }
    ],
-   "variants": [
+   "pressings": [
     {
      "label": "Zwart",
      "key": "black",
@@ -365,42 +45,57 @@
       "#161214"
      ],
      "pattern": "solid",
-     "count": 4,
-     "best": {
-      "shop": "Discogs",
-      "url": "https://www.discogs.com/sell/release/37021983",
-      "total": 121.85,
-      "condition": "used"
-     },
-     "thumb": "https://i.discogs.com/lgmCTL4u9YcYJ_gv1yoE37IWcrEl6GdJv9tuZ6RV9LI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3MDIx/OTgzLTE3NzU5MTA0/ODUtNzg4My5qcGVn.jpeg"
+     "thumb": "https://i.discogs.com/uA1TtHB6tefZgmqqLkFyOolpuxQJwUPEU1HWx8EEeLQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3Mjc2/OTMwLTE2ODU4OTA4/OTMtNTgxNC5qcGVn.jpeg",
+     "year": "2023",
+     "country": "US"
     }
    ],
-   "cover": "https://i.discogs.com/VurGdqd_vsJCl1tB9JHDfKhu5pQmKbCWSkNYnuHCFZk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg5MzI1/MTQtMTc3MTczMzA2/NS01NjY2LmpwZWc.jpeg",
-   "cheapest": {
-    "variant": {
-     "label": "Zwart",
-     "key": "black",
-     "colors": [
-      "#161214"
-     ],
-     "pattern": "solid"
+   "label": "Columbia",
+   "barcodes": [
+    "887654009111",
+    "0887654009111",
+    "194397936919"
+   ],
+   "discogs_url": "https://www.discogs.com/master/124666",
+   "search_log": [
+    {
+     "url": "https://www.amazon.de/Score-Vinyl-LP-Fugees/dp/B073M1KD5N",
+     "shop": "amazon.de",
+     "reason": "geen europrijs op de pagina"
     },
-    "thumb": "https://i.discogs.com/lgmCTL4u9YcYJ_gv1yoE37IWcrEl6GdJv9tuZ6RV9LI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3MDIx/OTgzLTE3NzU5MTA0/ODUtNzg4My5qcGVn.jpeg",
-    "shop": "Discogs",
-    "url": "https://www.discogs.com/sell/release/37021983",
-    "price": 111.85,
-    "shipping": 10.0,
-    "shipping_estimated": true,
-    "total": 121.85,
-    "condition": "used",
-    "is_sale": false,
-    "original_price": null,
-    "edition": "2026 Europe",
-    "source": "2 te koop op Discogs"
-   },
-   "checked": "2026-11-11T14:39:14+00:00",
+    {
+     "url": "https://www.hhv.de/en-US/records/item/the-fugees-the-score-365290",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en/records/item/the-fugees-the-score-368842",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.amazon.de/Score-Vinyl-LP-Fugees/dp/B07G1YPK23",
+     "shop": "amazon.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.getbackmusic.nl/en/products/fugees-the-score-lp",
+     "shop": "getbackmusic.nl",
+     "reason": "geen europrijs op de pagina"
+    }
+   ]
+  },
+  "mwc85efd1wkx": {
+   "input": "Frank Ocean - Blonde",
+   "artist": "Frank Ocean",
+   "title": "Blonde",
+   "offers": [],
+   "variants": [],
+   "cover": "https://i.discogs.com/VurGdqd_vsJCl1tB9JHDfKhu5pQmKbCWSkNYnuHCFZk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg5MzI1/MTQtMTc3MTczMzA2/NS01NjY2LmpwZWc.jpeg",
+   "cheapest": null,
+   "checked": "2026-11-11T15:28:34+00:00",
    "error": null,
-   "web_checked": "2026-11-11T14:39:14+00:00",
+   "web_checked": "2026-11-11T15:28:34+00:00",
    "history": [
     {
      "date": "2026-11-11",
@@ -408,264 +103,8 @@
      "shop": "Discogs"
     }
    ],
-   "lowest_ever": 121.85
-  },
-  "mwc8gcb1r5sv": {
-   "input": "https://www.discogs.com/master/20048-The-Smiths-Hatful-Of-Hollow",
-   "artist": "The Smiths",
-   "title": "Hatful Of Hollow",
-   "offers": [
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": "https://i.discogs.com/28QvGnsq2NObiExZp5aRYcXNVM6tAkn7CUmmISIC6aM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzMTY3/MTI0LTE3Mzk4MDU3/NDYtNDA5NC5qcGVn.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/33167124",
-     "price": 19.58,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 29.58,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2023 UK, Europe & US",
-     "source": "121 te koop op Discogs"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Turntable Lab",
-     "url": "https://www.turntablelab.com/products/the-smiths-hatful-of-hollow-180g-vinyl-lp",
-     "price": 22.25,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 30.25,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "German Import",
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Rhino",
-     "url": "https://store.rhino.com/products/hatful-of-hollow",
-     "price": 22.28,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 30.28,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Target",
-     "url": "https://www.target.com/p/smiths-hatful-of-hollow-180-gram-vinyl/-/A-90690049",
-     "price": 22.28,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 30.28,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "eBay",
-     "url": "https://www.ebay.com/shop/hatful-of-hollow-vinyl?_nkw=hatful+of+hollow+vinyl",
-     "price": 23.78,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 31.78,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": "https://i.discogs.com/SJ2_HbjQ_eH7XAlO5l9zmTOMUh5HgkjJOCQ62v0h0yU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM1OTg2/MDM2LTE3NjYzNDYx/MDUtMzkyOS5qcGVn.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/35986036",
-     "price": 23.73,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 33.73,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2023 UK, Europe & US",
-     "source": "11 te koop op Discogs"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Deafman Vinyl",
-     "url": "https://www.deafmanvinyl.com/products/smiths-hatful-of-hollow",
-     "price": 27.6,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 35.6,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Rough Trade",
-     "url": "https://www.roughtrade.com/product/the-smiths/hatful-of-hollow",
-     "price": 33.5,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 41.5,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Near Mint",
-      "key": "solid:#3F7A3A",
-      "colors": [
-       "#3F7A3A"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "River Soar Records",
-     "url": "https://www.riversoarrecords.com/en-us/products/the-smiths-hatful-of-hollow-lp-comp-ast-near-mint-nm-or-m",
-     "price": 59.85,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 67.85,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "Near Mint",
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "White Label",
-      "key": "solid:#EFE6D6",
-      "colors": [
-       "#EFE6D6"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": "https://i.discogs.com/NRRZ0i1U0Ax5gtCiWgCMTJKYxGDhD9tciRnKh8-nkPM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY5NDgw/NTUtMTYwODQ1Njk4/NC05MTc2LmpwZWc.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/6948055",
-     "price": 200.0,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 210.0,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "1984 Germany",
-     "source": "3 te koop op Discogs"
-    },
-    {
-     "variant": {
-      "label": "White Label",
-      "key": "solid:#EFE6D6",
-      "colors": [
-       "#EFE6D6"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": "https://i.discogs.com/v-oFka4iuOCXsRb2ZwbNcddPZpJfyvLU__k-Gj3czIE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NTE5/NTYtMTQ2Njc5ODE5/Ny02ODUwLmpwZWc.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/3851956",
-     "price": 320.0,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 330.0,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "1984 UK",
-     "source": "3 te koop op Discogs"
-    }
-   ],
-   "variants": [
+   "lowest_ever": 121.85,
+   "pressings": [
     {
      "label": "Zwart",
      "key": "black",
@@ -673,30 +112,87 @@
       "#161214"
      ],
      "pattern": "solid",
-     "count": 8,
-     "best": {
-      "shop": "Discogs",
-      "url": "https://www.discogs.com/sell/release/33167124",
-      "total": 29.58,
-      "condition": "used"
-     },
-     "thumb": "https://i.discogs.com/28QvGnsq2NObiExZp5aRYcXNVM6tAkn7CUmmISIC6aM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzMTY3/MTI0LTE3Mzk4MDU3/NDYtNDA5NC5qcGVn.jpeg"
+     "thumb": "https://i.discogs.com/lgmCTL4u9YcYJ_gv1yoE37IWcrEl6GdJv9tuZ6RV9LI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3MDIx/OTgzLTE3NzU5MTA0/ODUtNzg4My5qcGVn.jpeg",
+     "year": "2026",
+     "country": "Europe"
+    }
+   ],
+   "label": "Blonded",
+   "barcodes": [],
+   "discogs_url": "https://www.discogs.com/master/1046042",
+   "search_log": [
+    {
+     "url": "https://www.amazon.de/frank-ocean-blonde/s?k=frank+ocean+blonde&page=2",
+     "shop": "amazon.de",
+     "reason": "geen europrijs op de pagina"
     },
     {
-     "label": "Near Mint",
-     "key": "solid:#3F7A3A",
+     "url": "https://www.amazon.de/-/en/Frank-Ocean-CDs-Vinyl/s?k=Frank+Ocean&rh=n%3A255882",
+     "shop": "amazon.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.amazon.de/blond-vinyl/s?k=blond+vinyl",
+     "shop": "amazon.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/p/blond/9300000137491653",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.amazon.de/Frank-Ocean-Blonde-Musik-CDs-Vinyl/s?k=Frank+Ocean+Blonde&rh=n%3A255882",
+     "shop": "amazon.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.jpc.de/s/frank+ocean",
+     "shop": "jpc.de",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.amazon.nl/frank-ocean-blonde-vinyl/s?k=frank+ocean+blonde+vinyl",
+     "shop": "amazon.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.platenzaak.nl/en/collections/vinyl",
+     "shop": "platenzaak.nl",
+     "reason": "geen LP van dit album herkend"
+    }
+   ]
+  },
+  "mwc8gcb1r5sv": {
+   "input": "https://www.discogs.com/master/20048-The-Smiths-Hatful-Of-Hollow",
+   "artist": "The Smiths",
+   "title": "Hatful Of Hollow",
+   "offers": [],
+   "variants": [],
+   "cover": "https://i.discogs.com/oJ85N6HJOBPwHlzIUJpersJGDpAhO9zXYt__ulYOJSY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4MjEz/NS0xNjY4MTM5NDE5/LTk5NjguanBlZw.jpeg",
+   "cheapest": null,
+   "checked": "2026-11-11T15:28:51+00:00",
+   "error": null,
+   "web_checked": "2026-11-11T15:28:51+00:00",
+   "history": [
+    {
+     "date": "2026-11-11",
+     "total": 29.58,
+     "shop": "Discogs"
+    }
+   ],
+   "lowest_ever": 29.58,
+   "pressings": [
+    {
+     "label": "Zwart",
+     "key": "black",
      "colors": [
-      "#3F7A3A"
+      "#161214"
      ],
      "pattern": "solid",
-     "count": 1,
-     "best": {
-      "shop": "River Soar Records",
-      "url": "https://www.riversoarrecords.com/en-us/products/the-smiths-hatful-of-hollow-lp-comp-ast-near-mint-nm-or-m",
-      "total": 67.85,
-      "condition": "used"
-     },
-     "thumb": null
+     "thumb": "https://i.discogs.com/28QvGnsq2NObiExZp5aRYcXNVM6tAkn7CUmmISIC6aM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzMTY3/MTI0LTE3Mzk4MDU3/NDYtNDA5NC5qcGVn.jpeg",
+     "year": "2023",
+     "country": "UK, Europe & US"
     },
     {
      "label": "White Label",
@@ -705,354 +201,59 @@
       "#EFE6D6"
      ],
      "pattern": "solid",
-     "count": 2,
-     "best": {
-      "shop": "Discogs",
-      "url": "https://www.discogs.com/sell/release/6948055",
-      "total": 210.0,
-      "condition": "used"
-     },
-     "thumb": "https://i.discogs.com/NRRZ0i1U0Ax5gtCiWgCMTJKYxGDhD9tciRnKh8-nkPM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY5NDgw/NTUtMTYwODQ1Njk4/NC05MTc2LmpwZWc.jpeg"
+     "thumb": "https://i.discogs.com/NRRZ0i1U0Ax5gtCiWgCMTJKYxGDhD9tciRnKh8-nkPM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY5NDgw/NTUtMTYwODQ1Njk4/NC05MTc2LmpwZWc.jpeg",
+     "year": "1984",
+     "country": "Germany"
     }
    ],
-   "cover": "https://i.discogs.com/oJ85N6HJOBPwHlzIUJpersJGDpAhO9zXYt__ulYOJSY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4MjEz/NS0xNjY4MTM5NDE5/LTk5NjguanBlZw.jpeg",
-   "cheapest": {
-    "variant": {
-     "label": "Zwart",
-     "key": "black",
-     "colors": [
-      "#161214"
-     ],
-     "pattern": "solid"
-    },
-    "thumb": "https://i.discogs.com/28QvGnsq2NObiExZp5aRYcXNVM6tAkn7CUmmISIC6aM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzMTY3/MTI0LTE3Mzk4MDU3/NDYtNDA5NC5qcGVn.jpeg",
-    "shop": "Discogs",
-    "url": "https://www.discogs.com/sell/release/33167124",
-    "price": 19.58,
-    "shipping": 10.0,
-    "shipping_estimated": true,
-    "total": 29.58,
-    "condition": "used",
-    "is_sale": false,
-    "original_price": null,
-    "edition": "2023 UK, Europe & US",
-    "source": "121 te koop op Discogs"
-   },
-   "checked": "2026-11-11T14:47:58+00:00",
-   "error": null,
-   "web_checked": "2026-11-11T14:47:58+00:00",
-   "history": [
+   "label": "Rhino Records",
+   "barcodes": [
+    "825646658824"
+   ],
+   "discogs_url": "https://www.discogs.com/master/20048",
+   "search_log": [
     {
-     "date": "2026-11-11",
-     "total": 29.58,
-     "shop": "Discogs"
+     "url": "https://www.platenzaak.nl/en/products/hatful-of-hollow-lp",
+     "shop": "platenzaak.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.getbackmusic.nl/en/products/the-smiths-hatful-of-hollow",
+     "shop": "getbackmusic.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.amazon.de/Hatful-Hollow-Vinyl-LP-Smiths/dp/B007FGPZTS",
+     "shop": "amazon.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platomania.nl/article/2112780/hatful_of_hollow/smiths",
+     "shop": "platomania.nl",
+     "reason": "geen LP van dit album herkend"
     }
-   ],
-   "lowest_ever": 29.58
+   ]
   },
   "mwc8hd415wtx": {
    "input": "https://www.discogs.com/master/33886-Dr-Dre-2001",
    "artist": "Dr. Dre",
    "title": "2001",
-   "offers": [
+   "offers": [],
+   "variants": [],
+   "cover": "https://i.discogs.com/GHNTAXK6FFH4cKhKsEabncQOnoOUy2aN0npMMnfh034/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMyMDE5/MDUtMTY1MDU1NTYw/Mi05MDk3LmpwZWc.jpeg",
+   "cheapest": null,
+   "checked": "2026-11-11T15:29:02+00:00",
+   "error": null,
+   "web_checked": "2026-11-11T15:29:02+00:00",
+   "history": [
     {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "eBay",
-     "url": "https://www.ebay.com/b/Dr-Dre-Vinyl-Records/176985/bn_7114838241",
-     "price": 24.92,
-     "shipping": 8.0,
-     "shipping_estimated": true,
+     "date": "2026-11-11",
      "total": 32.92,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Target",
-     "url": "https://www.target.com/s/dr+dre+vinyl",
-     "price": 27.53,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 35.53,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Rap Bay",
-     "url": "https://shop.rapbay.com/Dr_Dre_2001_Vinyl_LP",
-     "price": 27.64,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 35.64,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Vinyl.com",
-     "url": "https://vinyl.com/products/dr-dre-dr-dre-2001",
-     "price": 31.2,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 39.2,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Tower Records",
-     "url": "https://tower.com/products/dr-dre-dr-dre-2001",
-     "price": 35.44,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 43.44,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Vinyl Junkies",
-     "url": "https://www.vinyljunkies.net/products/dr-dre-2001-lp",
-     "price": 37.44,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 45.44,
-     "condition": "new",
-     "is_sale": true,
-     "original_price": 41.01,
-     "edition": null,
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": "https://i.discogs.com/pYBSVmLi1tXEKoQK4wWSmLmay1CoEqUCh3gB1m5zxqg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2NDgz/ODY4LTE3NzA5MjM2/MTQtNTcxMC5qcGVn.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/36483868",
-     "price": 44.49,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 54.49,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2026 US",
-     "source": "11 te koop op Discogs"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": "https://i.discogs.com/63FjB-KmvhULXZwoWEr-TCO-q--Kn8-3liQrCdM2Ilo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NTQ4/MTE2LTE3OTA1MTY0/MTYtOTQ4My5qcGVn.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/38548116",
-     "price": 45.0,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 55.0,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2026 Europe",
-     "source": "9 te koop op Discogs"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Interscope Records",
-     "url": "https://interscope.com/collections/dr-dre",
-     "price": 49.04,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 57.04,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "25th Anniversary Edition",
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": "https://i.discogs.com/GgXtRNDvAx1JviyAZzHcPi5wj2o_MyFvMsOU87KHWwk/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjMx/NDk2LTE3Njk1MTkz/MDUtNzAwOS5qcGVn.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/36231496",
-     "price": 89.0,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 99.0,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2026 US",
-     "source": "16 te koop op Discogs"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "eBay",
-     "url": "https://www.ebay.com/b/Dr-Dre-Vinyl-Records/176985/bn_7114838241",
-     "price": 111.47,
-     "shipping": 4.57,
-     "shipping_estimated": false,
-     "total": 116.04,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "Limited Edition Of 2001",
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Zwart",
-      "key": "black",
-      "colors": [
-       "#161214"
-      ],
-      "pattern": "solid"
-     },
-     "thumb": null,
-     "shop": "Music Direct",
-     "url": "https://www.musicdirect.com/vinyl/dr-dre-2001-dss-one-step-numbered-limited-ed-180g-vinyl-2lp",
-     "price": 120.38,
-     "shipping": 8.0,
-     "shipping_estimated": true,
-     "total": 128.38,
-     "condition": "new",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "DSS One-Step Numbered Limited Edition",
-     "source": "web",
-     "seen": "2026-11-11"
-    },
-    {
-     "variant": {
-      "label": "Picture disc",
-      "key": "picture",
-      "colors": [
-       "#C9A23A",
-       "#B3262E"
-      ],
-      "pattern": "picture"
-     },
-     "thumb": "https://i.discogs.com/-flgQg50IxNugmjhmfmvn0DsFxwS0SR7-QND5ev8boo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3MTY5/MDg2LTE2ODU3Njc0/NjQtOTMzNS5qcGVn.jpeg",
-     "shop": "Discogs",
-     "url": "https://www.discogs.com/sell/release/27169086",
-     "price": 132.61,
-     "shipping": 10.0,
-     "shipping_estimated": true,
-     "total": 142.61,
-     "condition": "used",
-     "is_sale": false,
-     "original_price": null,
-     "edition": "2023 US",
-     "source": "14 te koop op Discogs"
+     "shop": "eBay"
     }
    ],
-   "variants": [
+   "lowest_ever": 32.92,
+   "pressings": [
     {
      "label": "Zwart",
      "key": "black",
@@ -1060,14 +261,9 @@
       "#161214"
      ],
      "pattern": "solid",
-     "count": 12,
-     "best": {
-      "shop": "eBay",
-      "url": "https://www.ebay.com/b/Dr-Dre-Vinyl-Records/176985/bn_7114838241",
-      "total": 32.92,
-      "condition": "used"
-     },
-     "thumb": "https://i.discogs.com/pYBSVmLi1tXEKoQK4wWSmLmay1CoEqUCh3gB1m5zxqg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2NDgz/ODY4LTE3NzA5MjM2/MTQtNTcxMC5qcGVn.jpeg"
+     "thumb": "https://i.discogs.com/63FjB-KmvhULXZwoWEr-TCO-q--Kn8-3liQrCdM2Ilo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NTQ4/MTE2LTE3OTA1MTY0/MTYtOTQ4My5qcGVn.jpeg",
+     "year": "2026",
+     "country": "Europe"
     },
     {
      "label": "Picture disc",
@@ -1077,57 +273,162 @@
       "#B3262E"
      ],
      "pattern": "picture",
-     "count": 1,
-     "best": {
-      "shop": "Discogs",
-      "url": "https://www.discogs.com/sell/release/27169086",
-      "total": 142.61,
-      "condition": "used"
-     },
-     "thumb": "https://i.discogs.com/-flgQg50IxNugmjhmfmvn0DsFxwS0SR7-QND5ev8boo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3MTY5/MDg2LTE2ODU3Njc0/NjQtOTMzNS5qcGVn.jpeg"
+     "thumb": "https://i.discogs.com/-flgQg50IxNugmjhmfmvn0DsFxwS0SR7-QND5ev8boo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3MTY5/MDg2LTE2ODU3Njc0/NjQtOTMzNS5qcGVn.jpeg",
+     "year": "2023",
+     "country": "US"
     }
    ],
-   "cover": "https://i.discogs.com/GHNTAXK6FFH4cKhKsEabncQOnoOUy2aN0npMMnfh034/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMyMDE5/MDUtMTY1MDU1NTYw/Mi05MDk3LmpwZWc.jpeg",
-   "cheapest": {
-    "variant": {
-     "label": "Zwart",
-     "key": "black",
-     "colors": [
-      "#161214"
-     ],
-     "pattern": "solid"
-    },
-    "thumb": null,
-    "shop": "eBay",
-    "url": "https://www.ebay.com/b/Dr-Dre-Vinyl-Records/176985/bn_7114838241",
-    "price": 24.92,
-    "shipping": 8.0,
-    "shipping_estimated": true,
-    "total": 32.92,
-    "condition": "used",
-    "is_sale": false,
-    "original_price": null,
-    "edition": null,
-    "source": "web",
-    "seen": "2026-11-11"
-   },
-   "checked": "2026-11-11T14:48:37+00:00",
-   "error": null,
-   "web_checked": "2026-11-11T14:48:37+00:00",
-   "history": [
+   "label": "Aftermath Entertainment",
+   "barcodes": [
+    "602478599705",
+    "602476599705",
+    "602478821929"
+   ],
+   "discogs_url": "https://www.discogs.com/master/33886",
+   "search_log": [
     {
-     "date": "2026-11-11",
-     "total": 32.92,
-     "shop": "eBay"
+     "url": "https://www.platenzaak.nl/en/products/2001-2lp",
+     "shop": "platenzaak.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en/records/item/dr-dre-2001-explicit-vinyl-edition-687573",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.amazon.de/2001-2lp-Vinyl-LP-Dr-Dre/dp/B07S3D966F",
+     "shop": "amazon.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en-AE/records/item/dr-dre-2001-1429736",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en/records/item/dr-dre-2001-768502",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platomania.nl/article/6925542/2001/dr_dre",
+     "shop": "platomania.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.getbackmusic.nl/en/products/dr-dre-2001-lp",
+     "shop": "getbackmusic.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.sounds-venlo.nl/dr-dre-2001-0606949082321",
+     "shop": "sounds-venlo.nl",
+     "reason": "geen LP van dit album herkend"
     }
-   ],
-   "lowest_ever": 32.92
+   ]
   },
   "mwc93x32w4eb": {
    "input": "https://www.discogs.com/master/1500247-Willem-Man-In-Nood",
    "artist": "Willem de Bruin",
    "title": "Man In Nood",
    "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Top Notch Shop",
+     "url": "https://www.topnotch-shop.nl/collections/top-notch",
+     "price": 32.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 37.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Muziker",
+     "url": "https://www.muziker.nl/willem-de-bruin-man-in-nood-reissue-limited-edition-high-quality-lp",
+     "price": 35.0,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 39.95,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 41.9,
+     "edition": "Reissue",
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Muziker",
+     "url": "https://www.muziker.nl/willem-de-bruin",
+     "price": 35.0,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 39.95,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 41.9,
+     "edition": "Reissue",
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Muziker",
+     "url": "https://www.muziker.nl/willem-de-bruin",
+     "price": 39.9,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 44.85,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-11"
+    },
     {
      "variant": {
       "label": "Zwart",
@@ -1161,11 +462,11 @@
       "#161214"
      ],
      "pattern": "solid",
-     "count": 1,
+     "count": 5,
      "best": {
-      "shop": "Pazaruvaj",
-      "url": "https://www.pazaruvaj.com/p/willem-de-bruin-man-in-nood-lp-cdata-0602577346279-pP1347296266",
-      "total": 48.91,
+      "shop": "Top Notch Shop",
+      "url": "https://www.topnotch-shop.nl/collections/top-notch",
+      "total": 37.94,
       "condition": "new"
      },
      "thumb": null
@@ -1201,23 +502,23 @@
      "pattern": "solid"
     },
     "thumb": null,
-    "shop": "Pazaruvaj",
-    "url": "https://www.pazaruvaj.com/p/willem-de-bruin-man-in-nood-lp-cdata-0602577346279-pP1347296266",
-    "price": 36.41,
-    "shipping": 12.5,
+    "shop": "Top Notch Shop",
+    "url": "https://www.topnotch-shop.nl/collections/top-notch",
+    "price": 32.99,
+    "shipping": 4.95,
     "shipping_estimated": true,
-    "total": 48.91,
+    "total": 37.94,
     "condition": "new",
     "is_sale": false,
     "original_price": null,
     "edition": null,
     "source": "web",
-    "region": "EU",
+    "region": "NL",
     "seen": "2026-11-11"
    },
-   "checked": "2026-11-11T15:18:48+00:00",
+   "checked": "2026-11-11T15:29:25+00:00",
    "error": null,
-   "web_checked": "2026-11-11T15:18:48+00:00",
+   "web_checked": "2026-11-11T15:29:25+00:00",
    "history": [
     {
      "date": "2026-11-11",
@@ -1228,9 +529,14 @@
      "date": "2026-11-11",
      "total": 48.91,
      "shop": "Pazaruvaj"
+    },
+    {
+     "date": "2026-11-11",
+     "total": 37.94,
+     "shop": "Top Notch Shop"
     }
    ],
-   "lowest_ever": 39.94,
+   "lowest_ever": 37.94,
    "search_log": [
     {
      "url": "https://www.getbackmusic.nl/en/products/willem-de-bruin-man-in-nood-lp",
@@ -1243,143 +549,18 @@
      "reason": "geen europrijs op de pagina"
     },
     {
-     "url": "https://www.viberate.com/artist/willem-de-bruin",
-     "shop": "viberate.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.instagram.com/p/C3k_rlJMrTK?hl=af",
-     "shop": "instagram.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.bnnvara.nl/dewerelddraaitdoor/artikelen/een-interview-met-paul-geusebroek-de-bekroonde-regisseur-van-de-videoclip-van-houten-pak",
-     "shop": "bnnvara.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.bnnvara.nl/dewerelddraaitdoor/videos/man-in-nood-willem-de-bruin",
-     "shop": "bnnvara.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.top40.nl/releases-nieuws-fresh-ellie-goulding-maakt-comeback",
-     "shop": "top40.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.parool.nl/tag/the-opposites",
-     "shop": "parool.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.standaard.be/nieuws/willem/47942588.html",
-     "shop": "standaard.be",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.muzikaleontdekkingen.nl/willem-man-in-nood-lp-recensie",
-     "shop": "muzikaleontdekkingen.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.vinyl-digital.com/en/Genres/Hip-Hop-Rap/Man-In-Nood-Clear-Vinyl-Only-Vinyl.html",
-     "shop": "vinyl-digital.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.vinyl-digital.com/en/Genres/Hip-Hop-Rap/Man-In-Nood-Black-Vinyl-Only-Vinyl.html",
-     "shop": "vinyl-digital.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.parool.nl/kunst-media/recensie-spuug-van-god-van-willem-is-een-sterke-opvolger-van-man-in-nood~b839d3f4",
-     "shop": "parool.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.artiestboeken.nl/willem-boeken",
-     "shop": "artiestboeken.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.scribd.com/document/320698331/Lp-Netherlands",
-     "shop": "scribd.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://issuu.com/idfa/docs/catalogue_idfa_2014",
-     "shop": "issuu.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://readdork.com/album/willem-de-bruin-man-in-nood/pressing/35400853",
-     "shop": "readdork.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.muziker.co.uk/willem-de-bruin-man-in-nood-reissue-limited-edition-high-quality-lp",
-     "shop": "muziker.co.uk",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://linkedin.com/in/jp-de-bruin-69b12350",
-     "shop": "linkedin.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://linkedin.com/in/jd-de-bruin-92757654",
-     "shop": "linkedin.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://linkedin.com/in/gv-de-bruin-ca-sa-712044b6",
-     "shop": "linkedin.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.ebay.com.au/itm/287378012694",
-     "shop": "ebay.com.au",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://imusic.com/music/0602577346279/willem-2024-man-in-nood-lp",
-     "shop": "imusic.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.fnac.pt/Willem-Man-in-Nood-LP-Vinil/a7680182",
-     "shop": "fnac.pt",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://imusic.co/music/0602577346279/willem-2024-man-in-nood-lp",
-     "shop": "imusic.co",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://vinyla.com/en/products/willem-man-in-nood",
-     "shop": "vinyla.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://shop.rukahore.sk/vinyl-willem-man-in-nood?localeSwitcher-locale=PL&do=localeSwitcher-change",
-     "shop": "shop.rukahore.sk",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.ibs.it/man-in-nood-vinile-willem/e/0602577346279",
-     "shop": "ibs.it",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.groovespin.com/album/willem-man-in-nood-35400853",
-     "shop": "Groovespin",
-     "reason": "niet uit de EU of herkomst onbekend"
-    },
-    {
-     "url": "https://www.topnotch-shop.nl/products/man-in-nood-store-exclusive-white-lp",
+     "url": "https://www.topnotch-shop.nl/en/collections/vinyl",
      "shop": "TopNotch Shop",
+     "reason": "uitverkocht"
+    },
+    {
+     "url": "https://www.topnotch-shop.nl/en/collections/vinyl/store-exclusive",
+     "shop": "TopNotch Shop",
+     "reason": "uitverkocht"
+    },
+    {
+     "url": "https://www.getbackmusic.nl/collections/featured/hip-hop?page=1",
+     "shop": "Get Back Music",
      "reason": "uitverkocht"
     }
    ]
@@ -1457,151 +638,6 @@
      "url": "https://www.hhv.de/en-CA/records/item/fresku-fresku-1275547",
      "shop": "hhv.de",
      "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://vinylpladen.dk/vinyl/fresku-mocromaniac/juice-LP-1",
-     "shop": "vinylpladen.dk",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://calcuttarecords.com/shop/juice-fresku-vinyl-lp-record-arrives-in-50-days",
-     "shop": "calcuttarecords.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.hhv.de/en-BO/records/item/fresku-and-mocromaniac-juice-1282165",
-     "shop": "hhv.de",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://pokoemagazine.nl/hele-oeuvre-van-fresku-verkrijgbaar-op-vinyl",
-     "shop": "pokoemagazine.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.groovespin.nl/album/fresku-mocromaniac-juice-1158238",
-     "shop": "groovespin.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.hhv.de/en-CD/records/artists/fresku-300641",
-     "shop": "hhv.de",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.hhv.de/en-AL/records/artists/fresku-mocromaniac-302054",
-     "shop": "hhv.de",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "http://fresku.nl",
-     "shop": "fresku.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://tavily.com/knowledge/company/7MkeaZEBaMTj",
-     "shop": "tavily.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://tavily.com/knowledge/company/XlzMX9wS1Pmq",
-     "shop": "tavily.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.facebook.com/enkisrecords/videos/i-roy-sky-juice-festival-dumpling-version%EF%B8%8F-7-vinyl-recorded-1977-2012label-chann/2342399769579496",
-     "shop": "facebook.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.heavyheadsrecords.com/newvinylreleasesmay",
-     "shop": "heavyheadsrecords.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "http://usedrecordsandmore.com",
-     "shop": "usedrecordsandmore.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.facebook.com/moonchildmusicstore/posts/vinyl-going-out-nowvinyl-vinylcollection-shoplocal/1019694500932584",
-     "shop": "facebook.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://reckless.com/wordpress/category/new-releases",
-     "shop": "reckless.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.facebook.com/biglovevinyl/posts/friday-vinyl-arrivals-rare-pitch-perfect-vinyl-original-poison-tom-petty-acdcthe/1539633434855726",
-     "shop": "facebook.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://richardcheese.com/discography--credits.html",
-     "shop": "richardcheese.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://dischord.com/store",
-     "shop": "dischord.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://imusic.co/music/0602475004806/fresku-mocromaniac-2024-juice-lp",
-     "shop": "imusic.co",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.nicherecords.ro/catalog/rap-hip-hop/hip-hop/fresku-mocromaniac-juice-vinyl-1.html",
-     "shop": "nicherecords.ro",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.fnac.com/a20867032/JUICE",
-     "shop": "fnac.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.ibs.it/juice-vinile-fresku-mocromaniac/e/0602475004806",
-     "shop": "ibs.it",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.paagman.nl/juice-0602557371505",
-     "shop": "paagman.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.nadvechir.com.ua/index.php?ukey=product&productID=156713",
-     "shop": "nadvechir.com.ua",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://musica.unilibro.it/musica/fresku-mocromaniac/lp-vinile-fresku-mocromaniac-juice/0602557371505",
-     "shop": "musica.unilibro.it",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://colnect.com/tr/music_records/music_record/6269724-Fresku_MocroManiac_Juice",
-     "shop": "colnect.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://colnect.com/fa/music_records/music_record/6269724-Fresku_MocroManiac_Juice",
-     "shop": "colnect.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://planetofsound.nl/products.php?ref=5002&t=Juice",
-     "shop": "planetofsound.nl",
-     "reason": "geen LP van dit album herkend"
-    },
-    {
-     "url": "https://www.planetofsound.nl/products.php?ref=5005&g=13",
-     "shop": "Planet of Sound",
-     "reason": "uitverkocht"
     }
    ],
    "cheapest": {
@@ -1628,10 +664,15 @@
     "region": "NL",
     "seen": "2026-11-11"
    },
-   "checked": "2026-11-11T15:21:17+00:00",
+   "checked": "2026-11-11T15:29:38+00:00",
    "error": null,
-   "web_checked": "2026-11-11T15:21:17+00:00",
+   "web_checked": "2026-11-11T15:29:38+00:00",
    "history": [
+    {
+     "date": "2026-11-11",
+     "total": 35.82,
+     "shop": "Vioolkeuzemaat"
+    },
     {
      "date": "2026-11-11",
      "total": 35.82,
@@ -1754,96 +795,6 @@
      "reason": "geen europrijs op de pagina"
     },
     {
-     "url": "https://www.bol.com/nl/nl/p/mula-b-narcopop/9300000190677040",
-     "shop": "bol.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.qobuz.com/au-en/album/narcopop-mula-b/xaq3ian88b2ya",
-     "shop": "qobuz.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.instagram.com/p/DKhhaLbIN13?hl=ne",
-     "shop": "instagram.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://issuu.com/platoconcerto/docs/mania413",
-     "shop": "issuu.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://podcast.npo.nl/feed/kunststof.xml",
-     "shop": "podcast.npo.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.parool.nl/kunst-media/recensie-mula-b-s-narcopop-is-ongetwijfeld-het-beste-nederlandstalige-hiphopalbum-van-het-jaar~b3b59a69",
-     "shop": "parool.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://issuu.com/uitagendautrecht/docs/uitagenda-utrecht-mei-2024_91",
-     "shop": "issuu.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.parool.nl/kunst-media/edisons-sef-en-son-mieux-zijn-grote-winnaars-roxy-dekker-beste-nieuwkomer~b88e8b44",
-     "shop": "parool.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://tavily.com/knowledge/company/nsjO9WCgyEGf",
-     "shop": "tavily.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://linkedin.com/in/mula-b-9a0883188",
-     "shop": "linkedin.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://concerto.nl/product/mula-b-narcopop",
-     "shop": "concerto.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://imusic.be/music/8720589667358/mula-b-2024-narco-pop-lp",
-     "shop": "imusic.be",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.bengans.com/mula-b-narco-pop",
-     "shop": "bengans.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://imusic.com/music/8720589667358/mula-b-2024-narco-pop-lp",
-     "shop": "imusic.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://myrecordstore.nl/item/dance-rap/lp/mula-b/narco-pop/4868006",
-     "shop": "myrecordstore.nl",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.fr.fnac.ch/a20932209/Mula-B-Narco-Pop-Vinyle-album",
-     "shop": "fr.fnac.ch",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://www.gibert.com/narco-pop-vinyle-14045015.html",
-     "shop": "gibert.com",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
-     "url": "https://shop.rukahore.sk/vinyl-b-mula-narco-pop",
-     "shop": "shop.rukahore.sk",
-     "reason": "geen europrijs op de pagina"
-    },
-    {
      "url": "https://www.fnac.com/ia12032468/Mula-B",
      "shop": "fnac.com",
      "reason": "geen LP van dit album herkend"
@@ -1851,21 +802,6 @@
     {
      "url": "https://www.platomania.nl/mula-b",
      "shop": "platomania.nl",
-     "reason": "geen LP van dit album herkend"
-    },
-    {
-     "url": "https://mula911.shop/collections/narcopop",
-     "shop": "mula911.shop",
-     "reason": "geen LP van dit album herkend"
-    },
-    {
-     "url": "https://www.groovespin.com/album/mula-b-narcopop-3404194",
-     "shop": "groovespin.com",
-     "reason": "geen LP van dit album herkend"
-    },
-    {
-     "url": "https://www.sounds-venlo.nl/8720589667365-4618003",
-     "shop": "sounds-venlo.nl",
      "reason": "geen LP van dit album herkend"
     }
    ],
@@ -1893,10 +829,15 @@
     "region": "NL",
     "seen": "2026-11-11"
    },
-   "checked": "2026-11-11T15:22:31+00:00",
+   "checked": "2026-11-11T15:29:49+00:00",
    "error": null,
-   "web_checked": "2026-11-11T15:22:31+00:00",
+   "web_checked": "2026-11-11T15:29:49+00:00",
    "history": [
+    {
+     "date": "2026-11-11",
+     "total": 36.94,
+     "shop": "3345.nl"
+    },
     {
      "date": "2026-11-11",
      "total": 36.94,
