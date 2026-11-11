@@ -1,1 +1,15 @@
-{"updated": null, "albums": {}}
+{
+ "updated": "2026-11-11T14:12:10+00:00",
+ "albums": {
+  "mwc75ubg5cqs": {
+   "input": "Willem man in nood",
+   "error": "Gemini 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+   "checked": "2026-11-11T14:12:10+00:00"
+  }
+ },
+ "usage": {
+  "month": "2026-11",
+  "tavily_credits": 6,
+  "budget": 900
+ }
+}
