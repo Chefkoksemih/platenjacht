@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-11T15:06:25+00:00",
+ "updated": "2026-11-11T15:18:48+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 66,
+  "tavily_credits": 74,
   "budget": 900
  },
  "albums": {
@@ -1138,18 +1138,18 @@
       "pattern": "solid"
      },
      "thumb": null,
-     "shop": "bol.com",
-     "url": "https://www.bol.com/nl/nl/p/big2-new-life/9300000050601171",
-     "price": 34.99,
-     "shipping": 4.95,
+     "shop": "Pazaruvaj",
+     "url": "https://www.pazaruvaj.com/p/willem-de-bruin-man-in-nood-lp-cdata-0602577346279-pP1347296266",
+     "price": 36.41,
+     "shipping": 12.5,
      "shipping_estimated": true,
-     "total": 39.94,
+     "total": 48.91,
      "condition": "new",
      "is_sale": false,
      "original_price": null,
-     "edition": "Standard Edition",
+     "edition": null,
      "source": "web",
-     "region": "NL",
+     "region": "EU",
      "seen": "2026-11-11"
     }
    ],
@@ -1163,9 +1163,9 @@
      "pattern": "solid",
      "count": 1,
      "best": {
-      "shop": "bol.com",
-      "url": "https://www.bol.com/nl/nl/p/big2-new-life/9300000050601171",
-      "total": 39.94,
+      "shop": "Pazaruvaj",
+      "url": "https://www.pazaruvaj.com/p/willem-de-bruin-man-in-nood-lp-cdata-0602577346279-pP1347296266",
+      "total": 48.91,
       "condition": "new"
      },
      "thumb": null
@@ -1187,7 +1187,8 @@
    "cover": "https://i.discogs.com/7kOEZqu1ZcQA4vU6AAGfMPvy_evMMk2R7oE97eYvMYk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMjAz/NTM1LTE1NDk4NzU0/NTAtOTI1NC5qcGVn.jpeg",
    "label": "TopNotch",
    "barcodes": [
-    "0602458767087"
+    "0602458767087",
+    "0602577346279"
    ],
    "discogs_url": "https://www.discogs.com/master/1500247",
    "cheapest": {
@@ -1200,31 +1201,188 @@
      "pattern": "solid"
     },
     "thumb": null,
-    "shop": "bol.com",
-    "url": "https://www.bol.com/nl/nl/p/big2-new-life/9300000050601171",
-    "price": 34.99,
-    "shipping": 4.95,
+    "shop": "Pazaruvaj",
+    "url": "https://www.pazaruvaj.com/p/willem-de-bruin-man-in-nood-lp-cdata-0602577346279-pP1347296266",
+    "price": 36.41,
+    "shipping": 12.5,
     "shipping_estimated": true,
-    "total": 39.94,
+    "total": 48.91,
     "condition": "new",
     "is_sale": false,
     "original_price": null,
-    "edition": "Standard Edition",
+    "edition": null,
     "source": "web",
-    "region": "NL",
+    "region": "EU",
     "seen": "2026-11-11"
    },
-   "checked": "2026-11-11T15:06:25+00:00",
+   "checked": "2026-11-11T15:18:48+00:00",
    "error": null,
-   "web_checked": "2026-11-11T15:06:25+00:00",
+   "web_checked": "2026-11-11T15:18:48+00:00",
    "history": [
     {
      "date": "2026-11-11",
      "total": 39.94,
      "shop": "bol.com"
+    },
+    {
+     "date": "2026-11-11",
+     "total": 48.91,
+     "shop": "Pazaruvaj"
     }
    ],
-   "lowest_ever": 39.94
+   "lowest_ever": 39.94,
+   "search_log": [
+    {
+     "url": "https://www.getbackmusic.nl/en/products/willem-de-bruin-man-in-nood-lp",
+     "shop": "getbackmusic.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/p/willem-spuug-van-god/9300000191870796",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.viberate.com/artist/willem-de-bruin",
+     "shop": "viberate.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.instagram.com/p/C3k_rlJMrTK?hl=af",
+     "shop": "instagram.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bnnvara.nl/dewerelddraaitdoor/artikelen/een-interview-met-paul-geusebroek-de-bekroonde-regisseur-van-de-videoclip-van-houten-pak",
+     "shop": "bnnvara.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bnnvara.nl/dewerelddraaitdoor/videos/man-in-nood-willem-de-bruin",
+     "shop": "bnnvara.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.top40.nl/releases-nieuws-fresh-ellie-goulding-maakt-comeback",
+     "shop": "top40.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.parool.nl/tag/the-opposites",
+     "shop": "parool.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.standaard.be/nieuws/willem/47942588.html",
+     "shop": "standaard.be",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.muzikaleontdekkingen.nl/willem-man-in-nood-lp-recensie",
+     "shop": "muzikaleontdekkingen.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.vinyl-digital.com/en/Genres/Hip-Hop-Rap/Man-In-Nood-Clear-Vinyl-Only-Vinyl.html",
+     "shop": "vinyl-digital.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.vinyl-digital.com/en/Genres/Hip-Hop-Rap/Man-In-Nood-Black-Vinyl-Only-Vinyl.html",
+     "shop": "vinyl-digital.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.parool.nl/kunst-media/recensie-spuug-van-god-van-willem-is-een-sterke-opvolger-van-man-in-nood~b839d3f4",
+     "shop": "parool.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.artiestboeken.nl/willem-boeken",
+     "shop": "artiestboeken.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.scribd.com/document/320698331/Lp-Netherlands",
+     "shop": "scribd.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://issuu.com/idfa/docs/catalogue_idfa_2014",
+     "shop": "issuu.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://readdork.com/album/willem-de-bruin-man-in-nood/pressing/35400853",
+     "shop": "readdork.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.muziker.co.uk/willem-de-bruin-man-in-nood-reissue-limited-edition-high-quality-lp",
+     "shop": "muziker.co.uk",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://linkedin.com/in/jp-de-bruin-69b12350",
+     "shop": "linkedin.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://linkedin.com/in/jd-de-bruin-92757654",
+     "shop": "linkedin.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://linkedin.com/in/gv-de-bruin-ca-sa-712044b6",
+     "shop": "linkedin.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.ebay.com.au/itm/287378012694",
+     "shop": "ebay.com.au",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://imusic.com/music/0602577346279/willem-2024-man-in-nood-lp",
+     "shop": "imusic.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.fnac.pt/Willem-Man-in-Nood-LP-Vinil/a7680182",
+     "shop": "fnac.pt",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://imusic.co/music/0602577346279/willem-2024-man-in-nood-lp",
+     "shop": "imusic.co",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://vinyla.com/en/products/willem-man-in-nood",
+     "shop": "vinyla.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://shop.rukahore.sk/vinyl-willem-man-in-nood?localeSwitcher-locale=PL&do=localeSwitcher-change",
+     "shop": "shop.rukahore.sk",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.ibs.it/man-in-nood-vinile-willem/e/0602577346279",
+     "shop": "ibs.it",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.groovespin.com/album/willem-man-in-nood-35400853",
+     "shop": "Groovespin",
+     "reason": "niet uit de EU of herkomst onbekend"
+    },
+    {
+     "url": "https://www.topnotch-shop.nl/products/man-in-nood-store-exclusive-white-lp",
+     "shop": "TopNotch Shop",
+     "reason": "uitverkocht"
+    }
+   ]
   }
  }
 }
