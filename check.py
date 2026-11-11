@@ -48,17 +48,33 @@ MODE = (os.environ.get("MODE") or "full").strip().lower()
 ALBUM_ID = (os.environ.get("ALBUM") or "").strip()
 
 
-def depth():
-    return "basic" if MODE == "light" else CONFIG.get("zoekdiepte", "advanced")
+EU_TLDS = {"nl", "be", "de", "fr", "it", "es", "pt", "at", "ie", "lu", "dk", "se", "fi", "pl", "cz", "sk",
+           "hu", "si", "hr", "ro", "bg", "gr", "ee", "lv", "lt", "mt", "cy", "eu"}
+EU_COUNTRIES = {t.upper() for t in EU_TLDS if t != "eu"} | {"GR", "EL"}
+EU_CURRENCIES = {"EUR", "SEK", "DKK", "PLN", "CZK", "HUF", "RON", "BGN"}
+# grote winkels buiten de EU (of in het VK) die we bij het zoeken al overslaan
+NON_EU_DOMAINS = [
+    "target.com", "walmart.com", "amazon.com", "amazon.co.uk", "amazon.ca", "amazon.com.au", "barnesandnoble.com",
+    "bestbuy.com", "urbanoutfitters.com", "roughtrade.com", "hmv.com", "ebay.com", "ebay.co.uk", "musicdirect.com",
+    "deepdiscount.com", "newburycomics.com", "vinylmeplease.com", "sound-of-vinyl.com", "recordstore.co.uk",
+    "imusic.uk", "imusic.co.uk", "vovyl.com", "craigslist.org", "etsy.com", "zavvi.com", "juno.co.uk",
+    "banquetrecords.com", "roughtraderecords.com", "insound.com", "acousticsounds.com", "elusivedisc.com",
+    "allmusic.com", "last.fm", "spotify.com", "youtube.com", "genius.com", "wikipedia.org", "discogs.com",
+    "musicbrainz.org", "rateyourmusic.com", "apple.com", "tidal.com", "deezer.com",
+]
 
 
-def queries():
-    q = CONFIG.get("web_queries", ["{artist} {title} vinyl LP"])
-    return q[:1] if MODE == "light" else q
+def is_eu_domain(url):
+    h = host(url)
+    tld = h.rsplit(".", 1)[-1] if "." in h else ""
+    return tld in EU_TLDS
 
 
-def shops():
-    return [] if MODE == "light" else CONFIG.get("vaste_winkels", [])
+def is_blocked_domain(url):
+    h = host(url)
+    return any(h == d or h.endswith("." + d) for d in NON_EU_DOMAINS)
+
+
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-haiku-5-5")
 
 UA = "Platenjacht/1.0 +https://github.com"
@@ -225,23 +241,33 @@ def ask_claude(prompt, max_tokens=2500):
 CREDITS_USED = 0
 
 
-def tavily_search(query, domains=None):
+def tavily_search(query, domains=None, exclude=None, depth="basic", country=None):
     global CREDITS_USED
     body = {
         "query": query,
-        "search_depth": depth(),
-        "max_results": 5 if domains else 8,
+        "search_depth": depth,
+        "max_results": 8,
         "include_raw_content": True,
     }
     if domains:
         body["include_domains"] = domains
+    if exclude:
+        body["exclude_domains"] = exclude[:150]
+    if country:
+        body["country"] = country
     r = requests.post(
         "https://api.tavily.com/search",
         headers={"Authorization": f"Bearer {TAVILY_KEY}"},
         json=body,
         timeout=90,
     )
-    CREDITS_USED += 2 if depth() == "advanced" else 1
+    CREDITS_USED += 2 if depth == "advanced" else 1
+    if r.status_code == 400 and country:
+        # mocht het land niet geaccepteerd worden: nog een keer zonder
+        body.pop("country", None)
+        r = requests.post("https://api.tavily.com/search", headers={"Authorization": f"Bearer {TAVILY_KEY}"},
+                          json=body, timeout=90)
+        CREDITS_USED += 2 if depth == "advanced" else 1
     if r.status_code >= 400:
         raise RuntimeError(f"Tavily {r.status_code}: {r.text[:300]}")
     return r.json().get("results", [])
@@ -320,63 +346,97 @@ def price_context(raw, limit=2500):
 
 # ---------- album herkennen ----------
 
-def resolve_album(entry, state):
-    """Bepaalt artiest en titel. Bij een link wordt de pagina ook gelezen (en eventueel als aanbieding gebruikt)."""
-    raw_input = (entry.get("input") or "").strip()
-    link_offer = None
+def clean_artist(name):
+    """Discogs zet bij dubbele namen een nummer erachter, bijvoorbeeld 'Willem (4)'."""
+    return re.sub(r"\s*\(\d+\)$", "", (name or "").strip()).rstrip("*").strip()
 
-    if is_url(raw_input):
-        page = ""
-        try:
-            page = tavily_extract(raw_input)
-        except Exception as e:
-            log("  pagina lezen mislukt:", e)
-        prompt = f"""A user pasted this link to say which vinyl album they want to track:
-{raw_input}
+
+def discogs_link(url):
+    m = re.search(r"discogs\.com/(?:[a-z]{2}/)?(?:[^/]+/)?(master|release)/(\d+)", url or "", re.I)
+    return (m.group(1).lower(), int(m.group(2))) if m else (None, None)
+
+
+def split_text(raw):
+    parts = re.split(r"\s+[-–—]\s+", raw, maxsplit=1)
+    if len(parts) == 2:
+        return parts[0].strip(), parts[1].strip()
+    info = parse_json(ask_ai(
+        f'Split this music album description into artist and album title. Text: "{raw}". '
+        'Return ONLY JSON: {"artist": str, "title": str}. If no artist is given, use the best known artist for that album.',
+        200,
+    )) or {}
+    return (info.get("artist") or "").strip(), (info.get("title") or raw).strip()
+
+
+def link_page_info(url):
+    """Leest een (winkel)link uit: welk album, en als het een productpagina is, de prijs."""
+    page = ""
+    try:
+        page = tavily_extract(url)
+    except Exception as e:
+        log("  pagina lezen mislukt:", e)
+    prompt = f"""A user pasted this link to say which vinyl album they want to track:
+{url}
 
 Page text (may be empty or partial):
 \"\"\"{price_context(page, 4000) or page[:3000]}\"\"\"
 
 Return ONLY a JSON object:
 {{"artist": str, "title": str,
-  "is_product_page": bool,  // true if this page sells this exact record
+  "is_product_page": bool,
   "shop": str or null, "price": number or null, "currency": str or null,
   "shipping": number or null, "condition": "new" or "used" or null,
-  "in_stock": true/false/null, "ship_region": "NL" or "EU" or "other" or "unknown"}}
+  "in_stock": true/false/null, "ships_from": ISO country code or null, "variant": str or null}}
 Use the URL slug if the page text is empty. Only fill price if it literally appears in the page text."""
-        info = parse_json(ask_ai(prompt, 600)) or {}
-        artist = (info.get("artist") or state.get("artist") or "").strip()
-        title = (info.get("title") or state.get("title") or "").strip()
-        if info.get("is_product_page") and num(info.get("price")):
-            link_offer = {
-                "shop": info.get("shop") or host(raw_input),
-                "url": raw_input,
-                "price": num(info.get("price")),
-                "currency": info.get("currency") or "EUR",
-                "shipping": num(info.get("shipping")),
-                "ship_region": info.get("ship_region") or "unknown",
-                "condition": info.get("condition") or "new",
-                "in_stock": info.get("in_stock"),
-                "is_sale": False,
-                "original_price": None,
-                "edition": None,
-                "source": "jouw link",
-            }
-        return artist, title, link_offer
+    info = parse_json(ask_ai(prompt, 600)) or {}
+    offer = None
+    if info.get("is_product_page") and num(info.get("price")):
+        offer = {
+            "shop": info.get("shop") or host(url), "url": url, "price": num(info.get("price")),
+            "currency": info.get("currency") or "EUR", "shipping": num(info.get("shipping")),
+            "ships_from": info.get("ships_from"), "condition": info.get("condition") or "new",
+            "in_stock": info.get("in_stock"), "is_sale": False, "original_price": None, "edition": None,
+            "variant_text": info.get("variant") or "", "source": "jouw link",
+        }
+    return (info.get("artist") or "").strip(), (info.get("title") or "").strip(), offer
 
-    if state.get("artist") and state.get("input") == raw_input:
-        return state["artist"], state.get("title", ""), None
 
-    parts = re.split(r"\s+[-–]\s+", raw_input, maxsplit=1)
-    if len(parts) == 2:
-        return parts[0].strip(), parts[1].strip(), None
+def identify_album(entry, prev):
+    """Bepaalt welk album het is en haalt bij Discogs hoes, label, barcode en persingen op.
+    Geeft een dict terug met artist, title, aliases, label, barcodes, cover, pressings en eventueel link_offer."""
+    raw = (entry.get("input") or "").strip()
+    kind, did = discogs_link(raw)
+    info = {"link_offer": None}
 
-    info = parse_json(ask_ai(
-        f'Split this music album description into artist and album title. Text: "{raw_input}". '
-        'Return ONLY JSON: {"artist": str, "title": str}. If no artist is given, use the best known artist for that album.',
-        200,
-    )) or {}
-    return (info.get("artist") or "").strip(), (info.get("title") or raw_input).strip(), None
+    if kind:
+        d = discogs_by_id(kind, did)
+        if d:
+            info.update(d)
+        else:
+            # Discogs onbereikbaar: naam uit de link halen
+            slug = re.sub(r"^\d+-", "", raw.rstrip("/").rsplit("/", 1)[-1]).replace("-", " ")
+            info["artist"], info["title"] = prev.get("artist") or slug, prev.get("title") or ""
+    elif is_url(raw):
+        artist, title, offer = link_page_info(raw)
+        info["link_offer"] = offer
+        info["artist"], info["title"] = artist or prev.get("artist", ""), title or prev.get("title", "")
+        d = discogs_search(info["artist"], info["title"]) if info["artist"] else None
+        if d:
+            info.update({k: v for k, v in d.items() if k not in ("artist", "title")})
+    else:
+        if prev.get("artist") and prev.get("input") == raw:
+            artist, title = prev["artist"], prev.get("title", "")
+        else:
+            artist, title = split_text(raw)
+        info["artist"], info["title"] = artist, title
+        d = discogs_search(artist, title)
+        if d:
+            # Discogs-namen zijn netter gespeld; de getypte naam houden we als alias
+            info.update(d)
+            info["aliases"] = list(dict.fromkeys(d.get("aliases", []) + [artist]))
+    info.setdefault("aliases", [])
+    info["aliases"] = [a for a in dict.fromkeys(info["aliases"]) if a and a.lower() != (info.get("artist") or "").lower()]
+    return info
 
 
 # ---------- aanbiedingen zoeken ----------
@@ -442,142 +502,207 @@ def variant_info(text):
     return {"label": label[:1].upper() + label[1:], "key": key, "colors": found[:3], "pattern": pattern}
 
 
-# ---------- Discogs: hoes, persingen en prijzen ----------
+# ---------- Discogs: hoes, label, barcode en persingen (geen prijzen) ----------
 
-def discogs_lookup(artist, title):
-    """Zoekt de 'master' van een album (alle persingen samen) en de hoes."""
-    q = f"{artist} {title}"
+def discogs_pressings(master_id):
+    """Alle vinylpersingen van een album, samengevat per kleurvariant."""
     try:
-        res = discogs_get("/database/search", {"q": q, "type": "master", "per_page": 5})
-        for item in res.get("results", []):
-            if item.get("id"):
-                return {"master_id": item["id"], "cover": item.get("cover_image") or item.get("thumb")}
-        res = discogs_get("/database/search", {"q": q, "type": "release", "format": "Vinyl", "per_page": 5})
-        for item in res.get("results", []):
-            if item.get("master_id"):
-                return {"master_id": item["master_id"], "cover": item.get("cover_image")}
-            if item.get("id"):
-                return {"release_id": item["id"], "cover": item.get("cover_image")}
+        res = discogs_get(f"/masters/{master_id}/versions",
+                          {"format": "Vinyl", "per_page": 100, "sort": "released", "sort_order": "desc"})
     except Exception as e:
-        log("  Discogs zoeken mislukt:", e)
-    return {}
-
-
-def discogs_offers(artist, title, info_out=None):
-    if not DISCOGS_TOKEN:
-        return []
-    found = discogs_lookup(artist, title)
-    if info_out is not None and found.get("cover"):
-        info_out["cover"] = found["cover"]
-    versions = []
-    if found.get("master_id"):
-        try:
-            res = discogs_get(f"/masters/{found['master_id']}/versions",
-                              {"format": "Vinyl", "per_page": 100, "sort": "released", "sort_order": "desc"})
-            versions = res.get("versions", [])
-        except Exception as e:
-            log("  Discogs persingen ophalen mislukt:", e)
-    elif found.get("release_id"):
-        versions = [{"id": found["release_id"], "format": "", "thumb": found.get("cover")}]
-
-    # per kleurvariant een paar persingen checken, de nieuwste eerst
-    limit = int(CONFIG.get("discogs_releases_to_check", 12))
-    per_variant = 2 if MODE != "light" else 1
-    picked, counts = [], {}
-    for v in versions:
+        log("  Discogs persingen ophalen mislukt:", e)
+        return [], None
+    seen, out, newest = {}, [], None
+    for v in res.get("versions", []):
         fmt = v.get("format") or ""
-        if "lp" not in fmt.lower() and "vinyl" not in fmt.lower() and fmt:
+        if fmt and "lp" not in fmt.lower() and "vinyl" not in fmt.lower():
             continue
+        newest = newest or v.get("id")
         info = variant_info(fmt)
-        if counts.get(info["key"], 0) >= (3 if info["key"] == "black" else per_variant):
+        if info["key"] in seen:
             continue
-        counts[info["key"]] = counts.get(info["key"], 0) + 1
-        picked.append((v, info))
-        if len(picked) >= limit:
-            break
+        seen[info["key"]] = True
+        out.append({**info, "thumb": v.get("thumb") or None,
+                    "year": str(v.get("released") or "")[:4] or None, "country": v.get("country")})
+    return out[:20], newest
 
-    offers = []
-    for v, info in picked:
-        rid = v.get("id")
+
+def discogs_release_extras(release_id):
+    """Label en barcode van een persing."""
+    try:
+        r = discogs_get(f"/releases/{release_id}")
+    except Exception as e:
+        log("  Discogs persing ophalen mislukt:", e)
+        return {}
+    barcodes = []
+    for ident in r.get("identifiers", []):
+        if (ident.get("type") or "").lower() == "barcode":
+            digits = re.sub(r"\D", "", ident.get("value") or "")
+            if len(digits) in (12, 13) and digits not in barcodes:
+                barcodes.append(digits)
+    labels = [clean_artist(l.get("name")) for l in r.get("labels", []) if l.get("name")]
+    return {"barcodes": barcodes[:2], "label": labels[0] if labels else None, "master_id": r.get("master_id")}
+
+
+def discogs_artist_aliases(artist_id):
+    try:
+        a = discogs_get(f"/artists/{artist_id}")
+    except Exception:
+        return []
+    names = [a.get("realname")] + (a.get("namevariations") or [])[:3]
+    return [clean_artist(n) for n in names if n]
+
+
+def discogs_from_master(master_id):
+    try:
+        m = discogs_get(f"/masters/{master_id}")
+    except Exception as e:
+        log("  Discogs album ophalen mislukt:", e)
+        return None
+    artists = m.get("artists") or []
+    images = m.get("images") or []
+    cover = next((i.get("uri") for i in images if i.get("type") == "primary"), None) or (images[0].get("uri") if images else None)
+    pressings, newest = discogs_pressings(master_id)
+    extras = discogs_release_extras(newest or m.get("main_release")) if (newest or m.get("main_release")) else {}
+    aliases = discogs_artist_aliases(artists[0]["id"]) if artists and artists[0].get("id") else []
+    return {
+        "artist": clean_artist(artists[0]["name"]) if artists else "",
+        "title": (m.get("title") or "").strip(),
+        "cover": cover, "pressings": pressings, "aliases": aliases,
+        "label": extras.get("label"), "barcodes": extras.get("barcodes", []),
+        "discogs_url": f"https://www.discogs.com/master/{master_id}",
+    }
+
+
+def discogs_by_id(kind, did):
+    if not DISCOGS_TOKEN:
+        return None
+    if kind == "master":
+        return discogs_from_master(did)
+    extras = discogs_release_extras(did)
+    if extras.get("master_id"):
+        d = discogs_from_master(extras["master_id"])
+        if d:
+            d["barcodes"] = list(dict.fromkeys(extras.get("barcodes", []) + d.get("barcodes", [])))[:2]
+            d["label"] = extras.get("label") or d.get("label")
+        return d
+    try:
+        r = discogs_get(f"/releases/{did}")
+    except Exception:
+        return None
+    artists = r.get("artists") or []
+    images = r.get("images") or []
+    return {
+        "artist": clean_artist(artists[0]["name"]) if artists else "", "title": r.get("title") or "",
+        "cover": images[0].get("uri") if images else None, "pressings": [variant_info(" ".join(
+            d for f in r.get("formats", []) for d in (f.get("descriptions") or []) + [f.get("text") or ""]))],
+        "aliases": [], "label": extras.get("label"), "barcodes": extras.get("barcodes", []),
+        "discogs_url": f"https://www.discogs.com/release/{did}",
+    }
+
+
+def discogs_search(artist, title):
+    """Zoekt het album op Discogs: eerst precies op artiest en titel, dan breder."""
+    if not DISCOGS_TOKEN or not (artist or title):
+        return None
+    attempts = [
+        {"artist": artist, "release_title": title, "type": "master"},
+        {"q": f"{artist} {title}", "type": "master"},
+        {"artist": artist, "release_title": title, "type": "release", "format": "Vinyl"},
+    ]
+    for params in attempts:
         try:
-            stats = discogs_get(f"/marketplace/stats/{rid}", {"curr_abbr": "EUR"})
+            res = discogs_get("/database/search", {**params, "per_page": 5})
         except Exception as e:
-            log("  Discogs prijs mislukt voor", rid, e)
-            continue
-        lp = stats.get("lowest_price") or {}
-        price = num(lp.get("value"))
-        if not price or not stats.get("num_for_sale") or stats.get("blocked_from_sale"):
-            continue
-        bits = [b for b in [str(v.get("released") or "")[:4], v.get("country")] if b]
-        offers.append({
-            "shop": "Discogs",
-            "url": f"https://www.discogs.com/sell/release/{rid}",
-            "price": price,
-            "currency": lp.get("currency") or "EUR",
-            "shipping": None,
-            "ship_region": "discogs",
-            "condition": "used",
-            "in_stock": True,
-            "is_sale": False,
-            "original_price": None,
-            "edition": " ".join(bits) or None,
-            "variant_text": v.get("format") or "",
-            "thumb": v.get("thumb") or None,
-            "source": f"{stats.get('num_for_sale')} te koop op Discogs",
-        })
-    return offers
+            log("  Discogs zoeken mislukt:", e)
+            return None
+        for item in res.get("results", []):
+            if item.get("type") == "master" and item.get("id"):
+                return discogs_from_master(item["id"])
+            if item.get("master_id"):
+                return discogs_from_master(item["master_id"])
+            if item.get("id"):
+                return discogs_by_id("release", item["id"])
+    return None
 
 
 EXTRACT_PROMPT = """You extract shop offers for one specific vinyl record from web search results.
 
 Album: {artist} - {title}
+Artist may also be written as: {aliases}
+Record label: {label}
+Barcode (EAN): {barcodes}
 
 Return ONLY a JSON array. One item per offer:
-{{"shop": str, "url": str, "price": number, "currency": "EUR"|"USD"|"GBP"|other ISO code,
-  "shipping": number or null, "ship_region": "NL"|"EU"|"other"|"unknown",
+{{"shop": str, "url": str, "price": number, "currency": "EUR"|other ISO code,
+  "shipping": number or null, "ships_from": ISO 3166 country code of the shop or null,
   "condition": "new"|"used", "in_stock": true|false|null,
   "is_sale": bool, "original_price": number or null, "edition": short string or null,
-  "variant": vinyl color or special edition as written on the page (e.g. "Red translucent", "Black", "Splatter") or null}}
+  "variant": vinyl color or special edition as written on the page (e.g. "Rood vinyl", "Black", "Splatter") or null}}
 
 Rules:
-- Only vinyl LP versions of exactly this album. Any pressing or color edition is fine. Never CD, cassette, singles, box sets of other albums, merch or other albums.
+- Only vinyl LP versions of exactly this album. Any pressing or color edition is fine. Never CD, cassette, singles, merch or other albums.
+- A matching barcode always means it is the right record.
 - The price must literally appear in the text for that product. Never guess.
 - "url" must be the URL of the result the offer was found on.
 - "shipping": shipping cost to the Netherlands, only if explicitly stated, otherwise null. Free shipping stated = 0.
-- "ship_region": where the shop ships from, judged from the shop and domain (.nl = NL, other EU countries = EU).
+- "ships_from": the country the shop is based in, judged from the shop, address, language and domain. null if unclear.
 - "is_sale": true only if the page marks it as discounted (sale, korting, aanbieding, was/now price).
-- Marketplace pages listing many sellers: give the lowest listed price.
 - If nothing qualifies, return [].
 
 Results:
 {results}"""
 
 
-def web_offers(artist, title):
+def search_plan(info, entry):
+    """Welke zoekopdrachten we doen. Licht = alleen je vaste winkels; grondig = vier invalshoeken."""
+    artist, title = info.get("artist", ""), info.get("title", "")
+    country = CONFIG.get("zoekland", "netherlands")
+    shops = CONFIG.get("vaste_winkels", [])
+    plan = []
+    if shops:
+        plan.append({"q": f"{artist} {title} LP vinyl", "domains": shops,
+                     "depth": "basic" if MODE == "light" else "advanced"})
+    if MODE == "light":
+        return plan
+    plan.append({"q": f'"{artist}" "{title}" LP vinyl kopen', "exclude": NON_EU_DOMAINS,
+                 "depth": "advanced", "country": country})
+    label = info.get("label")
+    plan.append({"q": f"{label} {artist} {title} vinyl webshop" if label else f"{artist} {title} vinyl officiële webshop merch",
+                 "exclude": NON_EU_DOMAINS, "depth": "basic", "country": country})
+    for bc in (info.get("barcodes") or [])[:1]:
+        plan.append({"q": bc, "exclude": NON_EU_DOMAINS, "depth": "basic", "country": country})
+    return plan
+
+
+def web_offers(info, entry):
     if not (TAVILY_KEY and (GEMINI_KEY or ANTHROPIC_KEY)):
         return []
+    artist, title = info.get("artist", ""), info.get("title", "")
     seen, blocks = set(), []
-    searches = [(q.format(artist=artist, title=title), None) for q in queries()]
-    searches += [(f"{artist} {title} vinyl LP", [d]) for d in shops()]
-    for query, domains in searches:
+    for step in search_plan(info, entry):
         try:
-            results = tavily_search(query, domains)
+            results = tavily_search(step["q"], step.get("domains"), step.get("exclude"),
+                                    step.get("depth", "basic"), step.get("country"))
         except Exception as e:
             log("  zoeken mislukt:", e)
             continue
         for res in results:
             url = res.get("url", "")
-            if not url or url in seen or "discogs.com" in url:
-                continue  # Discogs halen we betrouwbaarder via de API
+            if not url or url in seen or is_blocked_domain(url):
+                continue
             seen.add(url)
             body = price_context(res.get("raw_content") or "") or (res.get("content") or "")[:800]
             blocks.append(f"### {res.get('title', '')}\nURL: {url}\nSnippet: {(res.get('content') or '')[:400]}\nPage: {body}")
     if not blocks:
         return []
-    text = ask_ai(EXTRACT_PROMPT.format(artist=artist, title=title, results="\n\n".join(blocks)[:60000]), 3000)
+    text = ask_ai(EXTRACT_PROMPT.format(
+        artist=artist, title=title, aliases=", ".join(info.get("aliases") or []) or "-",
+        label=info.get("label") or "-", barcodes=", ".join(info.get("barcodes") or []) or "-",
+        results="\n\n".join(blocks)[:60000]), 3000)
     data = parse_json(text)
     if not isinstance(data, list):
-        log("  Claude gaf geen bruikbare lijst terug")
+        log("  Gemini gaf geen bruikbare lijst terug")
         return []
     out = []
     for o in data:
@@ -587,21 +712,34 @@ def web_offers(artist, title):
         if not price or not o.get("url"):
             continue
         out.append({
-            "shop": o.get("shop") or host(o["url"]),
-            "url": o["url"],
-            "price": price,
-            "currency": o.get("currency") or "EUR",
-            "shipping": num(o.get("shipping")),
-            "ship_region": o.get("ship_region") or "unknown",
+            "shop": o.get("shop") or host(o["url"]), "url": o["url"], "price": price,
+            "currency": (o.get("currency") or "EUR").upper(), "shipping": num(o.get("shipping")),
+            "ships_from": (o.get("ships_from") or "").upper() or None,
             "condition": "used" if o.get("condition") == "used" else "new",
-            "in_stock": o.get("in_stock"),
-            "is_sale": bool(o.get("is_sale")),
-            "original_price": num(o.get("original_price")),
-            "edition": o.get("edition"),
-            "variant_text": o.get("variant") or "",
-            "source": "web",
+            "in_stock": o.get("in_stock"), "is_sale": bool(o.get("is_sale")),
+            "original_price": num(o.get("original_price")), "edition": o.get("edition"),
+            "variant_text": o.get("variant") or "", "source": "web",
         })
     return out
+
+
+def eu_region(o):
+    """'NL', 'EU' of None (= niet uit de EU, of niet vast te stellen)."""
+    url = o.get("url", "")
+    if is_blocked_domain(url) or (o.get("currency") or "EUR") not in EU_CURRENCIES:
+        return None
+    h = host(url)
+    tld = h.rsplit(".", 1)[-1] if "." in h else ""
+    country = (o.get("ships_from") or "").upper()
+    if tld == "nl" or country == "NL":
+        return "NL"
+    if country and country not in EU_COUNTRIES:
+        return None
+    if tld in EU_TLDS or country in EU_COUNTRIES:
+        return "EU"
+    if any(h == d or h.endswith("." + d) for d in CONFIG.get("vaste_winkels", [])):
+        return "NL" if h.endswith(".nl") or h == "bol.com" else "EU"
+    return None
 
 
 def finalize(offers):
@@ -611,6 +749,11 @@ def finalize(offers):
     for o in offers:
         if o.get("in_stock") is False:
             continue
+        region = o.get("region") or eu_region(o)
+        if not region:
+            log(f"  overgeslagen (niet uit de EU): {o.get('shop')} {host(o.get('url', ''))}")
+            continue
+        o["ship_region"] = region
         price = to_eur(o["price"], o.get("currency"))
         if price is None or not (2 <= price <= 1000):
             continue
@@ -638,6 +781,7 @@ def finalize(offers):
             "original_price": orig,
             "edition": o.get("edition"),
             "source": o.get("source"),
+            "region": region,
         })
     clean.sort(key=lambda x: x["total"])
     return clean
@@ -672,9 +816,10 @@ def deal_reasons(album_entry, prev, cheapest):
 # ---------- tegoed verdelen ----------
 
 def web_cost(entry):
-    per = 2 if depth() == "advanced" else 1
-    cost = per * (len(queries()) + len(shops()))
-    if is_url(entry.get("input", "")):
+    # schatting vooraf: zonder albuminfo gaan we uit van de volledige set zoekopdrachten
+    fake = {"artist": "a", "title": "t", "label": "l", "barcodes": ["0"]}
+    cost = sum(2 if st.get("depth") == "advanced" else 1 for st in search_plan(fake, entry))
+    if is_url(entry.get("input", "")) and not discogs_link(entry.get("input", ""))[0]:
         cost += 1
     return max(cost, 1)
 
@@ -716,43 +861,33 @@ WEB_MAX_AGE_DAYS = 21
 
 
 def check_album(entry, prev, do_web):
-    if do_web or not prev.get("artist"):
-        artist, title, link_offer = resolve_album(entry, prev)
-    else:
-        artist, title, link_offer = prev["artist"], prev.get("title", ""), None
-    if not artist and not title:
-        raise RuntimeError("Kon niet bepalen welk album dit is. Probeer 'Artiest - Album'.")
-    log(f"  = {artist} - {title}" + ("" if do_web else " (alleen Discogs deze keer)"))
-    info = {}
-    fresh = discogs_offers(artist, title, info)
+    info = identify_album(entry, prev)
+    if not info.get("artist") and not info.get("title"):
+        raise RuntimeError("Kon niet bepalen welk album dit is. Probeer 'Artiest - Album' of een Discogs-link.")
+    log(f"  = {info.get('artist')} - {info.get('title')}"
+        + (f" (label {info['label']})" if info.get("label") else "")
+        + (f" (barcode {info['barcodes'][0]})" if info.get("barcodes") else "")
+        + ("" if do_web else " (deze keer niet op het web)"))
+    cutoff = (dt.date.today() - dt.timedelta(days=WEB_MAX_AGE_DAYS)).isoformat()
+    previous = [o for o in prev.get("offers", []) if o.get("shop") != "Discogs" and o.get("region")
+                and (o.get("seen") or "") >= cutoff]
     if do_web:
-        web = []
-        if link_offer:
-            web.append(link_offer)
-        web += web_offers(artist, title)
-        for o in web:
-            o["seen"] = now_iso()[:10]
-        web_final = finalize(web)
-        for o in web_final:
+        web = ([info["link_offer"]] if info.get("link_offer") else []) + web_offers(info, entry)
+        offers = finalize(web)
+        for o in offers:
             o["seen"] = now_iso()[:10]
         if MODE == "light":
-            # snelle check vindt minder winkels: eerdere vondsten bewaren als ze recent zijn
-            cutoff = (dt.date.today() - dt.timedelta(days=WEB_MAX_AGE_DAYS)).isoformat()
-            urls = {o["url"] for o in web_final}
-            web_final += [o for o in prev.get("offers", []) if o.get("shop") != "Discogs"
-                          and o["url"] not in urls and (o.get("seen") or "") >= cutoff]
+            urls = {o["url"] for o in offers}
+            offers += [o for o in previous if o["url"] not in urls]
     else:
-        # webprijzen van eerder bewaren, zolang ze niet te oud zijn
-        cutoff = (dt.date.today() - dt.timedelta(days=WEB_MAX_AGE_DAYS)).isoformat()
-        web_final = [o for o in prev.get("offers", []) if o.get("shop") != "Discogs" and (o.get("seen") or "") >= cutoff]
-        if link_offer:
-            extra = finalize([link_offer])
+        offers = previous
+        if info.get("link_offer"):
+            extra = finalize([info["link_offer"]])
             for o in extra:
                 o["seen"] = now_iso()[:10]
-            web_final = [o for o in web_final if o["url"] != link_offer["url"]] + extra
-    all_offers = finalize(fresh) + web_final
-    all_offers.sort(key=lambda x: x["total"])
-    return artist, title, all_offers, info.get("cover")
+            offers = [o for o in offers if o["url"] != info["link_offer"]["url"]] + extra
+    offers.sort(key=lambda x: x["total"])
+    return info, offers
 
 
 def group_variants(offers):
@@ -802,7 +937,7 @@ def main():
             continue
         log(f"> {entry.get('input')}")
         try:
-            artist, title, offers, cover = check_album(entry, prev, aid in web_ids)
+            info, offers = check_album(entry, prev, aid in web_ids)
         except Exception as e:
             log("  fout:", e)
             prev.update({"input": entry.get("input"), "error": str(e)[:300], "checked": now_iso()})
@@ -815,11 +950,15 @@ def main():
         rec = dict(prev)
         rec.update({
             "input": entry.get("input"),
-            "artist": artist,
-            "title": title,
+            "artist": info.get("artist"),
+            "title": info.get("title"),
             "offers": offers[:30],
             "variants": group_variants(offers),
-            "cover": cover or prev.get("cover"),
+            "pressings": info.get("pressings") or prev.get("pressings") or [],
+            "cover": info.get("cover") or prev.get("cover"),
+            "label": info.get("label") or prev.get("label"),
+            "barcodes": info.get("barcodes") or prev.get("barcodes") or [],
+            "discogs_url": info.get("discogs_url") or prev.get("discogs_url"),
             "cheapest": cheapest,
             "checked": now_iso(),
             "error": None,

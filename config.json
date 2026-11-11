@@ -1,20 +1,22 @@
 {
   "tavily_monthly_budget": 900,
-  "zoekdiepte": "advanced",
-  "web_queries": [
-    "{artist} {title} vinyl LP kopen",
-    "{artist} {title} vinyl LP price",
-    "{artist} {title} LP sale korting"
+  "zoekland": "netherlands",
+  "vaste_winkels": [
+    "platomania.nl",
+    "concerto.nl",
+    "waxwell.nl",
+    "bol.com",
+    "amazon.nl",
+    "amazon.de",
+    "jpc.de",
+    "hhv.de",
+    "muziker.nl",
+    "fnac.com"
   ],
-  "gemini_model": "gemini-2.5-flash-lite",
-  "vaste_winkels": [],
   "shipping_estimates_eur": {
     "NL": 4.95,
-    "EU": 12.5,
-    "other": 25,
-    "unknown": 8,
-    "discogs": 10
+    "EU": 12.5
   },
-  "email_from": "Platenjacht <onboarding@resend.dev>",
-  "discogs_releases_to_check": 12
+  "gemini_model": "gemini-2.5-flash-lite",
+  "email_from": "Platenjacht <onboarding@resend.dev>"
 }

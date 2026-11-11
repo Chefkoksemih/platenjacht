@@ -36,7 +36,7 @@ Voeg je een album toe, dan wordt alleen dat album meteen opgezocht, zodat je de 
 
 1. Maak een account op github.com.
 2. Klik op **New repository**, noem hem `platenjacht`, kies **Public** en vink "Add a README file" aan.
-3. Klik op **Add file > Upload files** en sleep alle bestanden en mappen uit deze zip erin, dus ook de mappen `fonts` (de lettertypen) en `assets` (de kop van de mail). Klik **Commit changes**.
+3. Klik op **Add file > Upload files** en sleep alle bestanden uit deze zip erin. Alles staat los naast elkaar, zonder mappen. Klik **Commit changes**.
 4. Let op: de map `.github` is op een Mac onzichtbaar en wordt vaak niet meegesleept. Controleer of `.github/workflows/check.yml` in de repository staat. Zo niet: **Add file > Create new file**, typ als naam `.github/workflows/check.yml` en plak de inhoud van dat bestand erin.
 
 ### Stap 3. Sleutels als geheim opslaan
@@ -74,16 +74,21 @@ Voeg een album toe. Op GitHub zie je onder het tabblad **Actions** de check draa
 
 - `tavily_monthly_budget`: hoeveel Tavily-credits per maand gebruikt mogen worden (standaard 900, zo blijft er marge onder de gratis 1.000).
 - `zoekdiepte`: `advanced` (grondig, 2 credits per zoekopdracht) of `basic` (1 credit). Met advanced en drie zoekopdrachten kost een album 6 credits per week; zo passen er ruim 35 albums in het gratis tegoed.
-- `vaste_winkels`: winkels die altijd apart doorzocht worden, bijvoorbeeld `["platomania.nl", "concerto.nl"]`. Elke winkel kost 1 credit per album per zoektocht.
+- `vaste_winkels`: de Europese winkels die bij elke zoektocht samen in één zoekopdracht worden doorzocht.
 - `gemini_model`: welk Gemini-model gebruikt wordt. Werkt dit model niet meer, dan valt het script vanzelf terug op het nieuwste gratis Flash-Lite-model.
 
 - `shipping_estimates_eur`: geschatte verzendkosten als een winkel ze niet vermeldt, per herkomst (NL, EU, other, unknown, discogs). Geschatte bedragen staan op de site met een ± ervoor.
 - `web_queries`: de zoekopdrachten per album. Minder zoekopdrachten is minder Tavily-tegoed.
 - Het tijdstip van de wekelijkse ronde staat in `.github/workflows/check.yml` bij `cron` (in UTC-tijd). Wil je de mail een keer tussendoor? Ga op GitHub naar Actions, kies Prijzen checken, Run workflow en vink de mail aan.
 
-## Hoezen en kleurvarianten
+## Hoe een plaat gevonden wordt
 
-De hoes komt van Discogs. Per album bekijkt het script tot 12 persingen, met per kleurvariant (rood, marmer, splatter, picture disc enzovoort) de nieuwste. Webwinkels worden ook op kleur herkend. Op de site zie je onder elke hoes gekleurde schijfjes voor de beschikbare varianten; klik je een album open, dan kun je per variant de aanbiedingen bekijken. Het aantal persingen stel je in met `discogs_releases_to_check` in config.json.
+- **Herkennen**: met een Discogs-link wordt het album direct via het nummer in de link opgehaald. Bij "Artiest - Album" zoekt het script het album eerst op Discogs op. Van Discogs komen de hoes, het label, de barcode, de echte naam van de artiest en alle vinylpersingen met hun kleur.
+- **Zoeken** (grondig, ongeveer 6 credits per plaat): je vaste winkels in één keer, een Nederlandstalige zoekopdracht met voorrang voor Nederlandse sites, een zoekopdracht naar de webshop van het label of de artiest, en een zoekopdracht op barcode.
+- **Alleen de EU**: bekende Amerikaanse en Britse winkels worden overgeslagen, en daarna valt alles af wat niet aantoonbaar uit de EU verstuurt (ander land, prijs in dollars of ponden, of herkomst onbekend). Het VK, Zwitserland en Noorwegen tellen niet mee.
+- **Discogs** levert geen prijzen meer, omdat niet te zien is of een verkoper in de EU zit.
+
+Je vaste winkels staan in `vaste_winkels` in config.json; voeg er gerust een webadres aan toe (zonder www of https).
 
 ## Goed om te weten
 

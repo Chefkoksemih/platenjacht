@@ -210,6 +210,11 @@ dialog::backdrop { background: rgba(20,5,8,.78); }
 .variant .disc { width: 22px; height: 22px; }
 .variant b { font-weight: 700; }
 .variant[aria-pressed="true"] { border-color: var(--amber); background: var(--wine-3); }
+.variant.ghosted { opacity: .55; cursor: default; border-style: dashed; }
+.variant.ghosted:hover { background: var(--night); border-color: var(--wine-3); }
+.variant small { color: var(--cream-dim); font-size: 12.5px; }
+.facts { margin-top: 8px; color: var(--cream-dim); font-size: 14.5px; }
+.facts a { color: var(--cream-dim); }
 .variant:hover { background: var(--wine-3); color: var(--cream); border-color: var(--wine-4); }
 
 .scroll { overflow-x: auto; margin-top: 4px; }
@@ -646,12 +651,19 @@ details.settings summary { cursor: pointer; font-weight: 700; font-size: 18px; c
         ${active ? `<span class="flag down">Goedkoopste ${esc(active.label.toLowerCase())}</span>` : deal ? `<span class="flag">${esc(dealText(a, s))}</span>` : t ? `<span class="flag${t.down ? " down" : ""}">${esc(t.text)}</span>` : ""}</p>`;
     } else best = `<p class="best">Geen LP met prijs gevonden bij de laatste check.</p>`;
 
-    const variantHtml = vars.length ? `<h3 class="section-title">Varianten</h3>
+    // persingen die Discogs kent maar die nergens in de EU te koop zijn gevonden
+    const priced = new Set(vars.map((v) => v.key));
+    const others = (s?.pressings || []).filter((p) => !priced.has(p.key));
+    const variantHtml = (vars.length || others.length) ? `<h3 class="section-title">Varianten</h3>
       <div class="variants">
-        <button class="variant" type="button" data-variant="" aria-pressed="${!variantFilter}">Alle</button>
+        ${vars.length > 1 ? `<button class="variant" type="button" data-variant="" aria-pressed="${!variantFilter}">Alle</button>` : ""}
         ${vars.map((v) => `<button class="variant" type="button" data-variant="${esc(v.key)}" aria-pressed="${variantFilter === v.key}">
           ${disc(v)}${esc(v.label)} <b>${money(v.best.total)}</b></button>`).join("")}
-      </div>` : "";
+      </div>
+      ${others.length ? `<p class="facts" style="margin-top:12px">Ook geperst als, maar nu nergens in de EU te koop gevonden:</p>
+      <div class="variants">${others.map((p) => `<span class="variant ghosted">${disc(p)}${esc(p.label)}${p.year ? ` <small>${esc(p.year)}</small>` : ""}</span>`).join("")}</div>` : ""}` : "";
+    const facts = [s?.label ? `Label: ${esc(s.label)}` : "", s?.barcodes?.length ? `Barcode: ${esc(s.barcodes[0])}` : "",
+      s?.discogs_url ? `<a href="${esc(s.discogs_url)}" target="_blank" rel="noopener">Bekijk op Discogs</a>` : ""].filter(Boolean).join(". ");
 
     const table = offers.length ? `<h3 class="section-title">${variantFilter ? "Aanbiedingen van deze variant" : "Alle aanbiedingen"}</h3>
       <div class="scroll"><table>
@@ -677,7 +689,7 @@ details.settings summary { cursor: pointer; font-weight: 700; font-size: 18px; c
       ${s?.history?.length > 1 || s?.lowest_ever ? `<div class="trend">${spark(s.history)}${s.lowest_ever ? `<span>Laagste ooit<br><strong style="color:var(--cream)">${money(s.lowest_ever)}</strong></span>` : ""}</div>` : ""}
       </div>
       <div>
-        <div class="dhead"><div><h2 id="dTitle">${esc(n.artist)}</h2>${n.album ? `<div class="album">${esc(n.album)}</div>` : ""}</div>
+        <div class="dhead"><div><h2 id="dTitle">${esc(n.artist)}</h2>${n.album ? `<div class="album">${esc(n.album)}</div>` : ""}${facts ? `<div class="facts">${facts}</div>` : ""}</div>
           <button class="ghost close" type="button" data-act="close" aria-label="Sluiten">×</button></div>
         ${best}${variantHtml}${table}
         <div class="tools">
