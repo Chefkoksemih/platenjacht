@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T14:28:21+00:00",
+ "updated": "2026-11-11T14:31:45+00:00",
  "albums": {
   "mwc7rb00vzce": {
    "input": "https://www.discogs.com/master/124666-Fugees-The-Score?gad_source=1&gad_campaignid=22178621710&gbraid=0AAAAADmy1_rvoARm23XSOtJM0Iu0kjbA6&gclid=Cj0KCQiAwdDXBhDuARIsAFdLukkZD9Gt9UvSf_VUVOl2MX-trIhOVwE0tSgl3bADTPfZT2PKGwC4rYcaAvC-EALw_wcB",
@@ -254,11 +254,16 @@
    "notified_sale_urls": [
     "https://getondown.com/products/the-score-2xlp-1"
    ]
+  },
+  "mwc7vxk13n0w": {
+   "input": "https://www.discogs.com/master/1500247-Willem-Man-In-Nood",
+   "error": "Gemini 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+   "checked": "2026-11-11T14:31:45+00:00"
   }
  },
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 13,
+  "tavily_credits": 14,
   "budget": 900
  }
 }
