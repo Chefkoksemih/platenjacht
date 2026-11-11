@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-11T14:47:58+00:00",
+ "updated": "2026-11-11T14:48:37+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 47,
+  "tavily_credits": 54,
   "budget": 900
  },
  "albums": {
@@ -759,6 +759,379 @@
     }
    ],
    "lowest_ever": 29.58
+  },
+  "mwc8hd415wtx": {
+   "input": "https://www.discogs.com/master/33886-Dr-Dre-2001",
+   "artist": "Dr. Dre",
+   "title": "2001",
+   "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "eBay",
+     "url": "https://www.ebay.com/b/Dr-Dre-Vinyl-Records/176985/bn_7114838241",
+     "price": 24.92,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 32.92,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Target",
+     "url": "https://www.target.com/s/dr+dre+vinyl",
+     "price": 27.53,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 35.53,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Rap Bay",
+     "url": "https://shop.rapbay.com/Dr_Dre_2001_Vinyl_LP",
+     "price": 27.64,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 35.64,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Vinyl.com",
+     "url": "https://vinyl.com/products/dr-dre-dr-dre-2001",
+     "price": 31.2,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 39.2,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Tower Records",
+     "url": "https://tower.com/products/dr-dre-dr-dre-2001",
+     "price": 35.44,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 43.44,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Vinyl Junkies",
+     "url": "https://www.vinyljunkies.net/products/dr-dre-2001-lp",
+     "price": 37.44,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 45.44,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 41.01,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": "https://i.discogs.com/pYBSVmLi1tXEKoQK4wWSmLmay1CoEqUCh3gB1m5zxqg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2NDgz/ODY4LTE3NzA5MjM2/MTQtNTcxMC5qcGVn.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/36483868",
+     "price": 44.49,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 54.49,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2026 US",
+     "source": "11 te koop op Discogs"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": "https://i.discogs.com/63FjB-KmvhULXZwoWEr-TCO-q--Kn8-3liQrCdM2Ilo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NTQ4/MTE2LTE3OTA1MTY0/MTYtOTQ4My5qcGVn.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/38548116",
+     "price": 45.0,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 55.0,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2026 Europe",
+     "source": "9 te koop op Discogs"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Interscope Records",
+     "url": "https://interscope.com/collections/dr-dre",
+     "price": 49.04,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 57.04,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "25th Anniversary Edition",
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": "https://i.discogs.com/GgXtRNDvAx1JviyAZzHcPi5wj2o_MyFvMsOU87KHWwk/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MjMx/NDk2LTE3Njk1MTkz/MDUtNzAwOS5qcGVn.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/36231496",
+     "price": 89.0,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 99.0,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2026 US",
+     "source": "16 te koop op Discogs"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "eBay",
+     "url": "https://www.ebay.com/b/Dr-Dre-Vinyl-Records/176985/bn_7114838241",
+     "price": 111.47,
+     "shipping": 4.57,
+     "shipping_estimated": false,
+     "total": 116.04,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "Limited Edition Of 2001",
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Music Direct",
+     "url": "https://www.musicdirect.com/vinyl/dr-dre-2001-dss-one-step-numbered-limited-ed-180g-vinyl-2lp",
+     "price": 120.38,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 128.38,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "DSS One-Step Numbered Limited Edition",
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Picture disc",
+      "key": "picture",
+      "colors": [
+       "#C9A23A",
+       "#B3262E"
+      ],
+      "pattern": "picture"
+     },
+     "thumb": "https://i.discogs.com/-flgQg50IxNugmjhmfmvn0DsFxwS0SR7-QND5ev8boo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3MTY5/MDg2LTE2ODU3Njc0/NjQtOTMzNS5qcGVn.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/27169086",
+     "price": 132.61,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 142.61,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2023 US",
+     "source": "14 te koop op Discogs"
+    }
+   ],
+   "variants": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "count": 12,
+     "best": {
+      "shop": "eBay",
+      "url": "https://www.ebay.com/b/Dr-Dre-Vinyl-Records/176985/bn_7114838241",
+      "total": 32.92,
+      "condition": "used"
+     },
+     "thumb": "https://i.discogs.com/pYBSVmLi1tXEKoQK4wWSmLmay1CoEqUCh3gB1m5zxqg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2NDgz/ODY4LTE3NzA5MjM2/MTQtNTcxMC5qcGVn.jpeg"
+    },
+    {
+     "label": "Picture disc",
+     "key": "picture",
+     "colors": [
+      "#C9A23A",
+      "#B3262E"
+     ],
+     "pattern": "picture",
+     "count": 1,
+     "best": {
+      "shop": "Discogs",
+      "url": "https://www.discogs.com/sell/release/27169086",
+      "total": 142.61,
+      "condition": "used"
+     },
+     "thumb": "https://i.discogs.com/-flgQg50IxNugmjhmfmvn0DsFxwS0SR7-QND5ev8boo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3MTY5/MDg2LTE2ODU3Njc0/NjQtOTMzNS5qcGVn.jpeg"
+    }
+   ],
+   "cover": "https://i.discogs.com/GHNTAXK6FFH4cKhKsEabncQOnoOUy2aN0npMMnfh034/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMyMDE5/MDUtMTY1MDU1NTYw/Mi05MDk3LmpwZWc.jpeg",
+   "cheapest": {
+    "variant": {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": null,
+    "shop": "eBay",
+    "url": "https://www.ebay.com/b/Dr-Dre-Vinyl-Records/176985/bn_7114838241",
+    "price": 24.92,
+    "shipping": 8.0,
+    "shipping_estimated": true,
+    "total": 32.92,
+    "condition": "used",
+    "is_sale": false,
+    "original_price": null,
+    "edition": null,
+    "source": "web",
+    "seen": "2026-11-11"
+   },
+   "checked": "2026-11-11T14:48:37+00:00",
+   "error": null,
+   "web_checked": "2026-11-11T14:48:37+00:00",
+   "history": [
+    {
+     "date": "2026-11-11",
+     "total": 32.92,
+     "shop": "eBay"
+    }
+   ],
+   "lowest_ever": 32.92
   }
  }
 }
