@@ -984,7 +984,36 @@ def send_digest(albums, state):
         log("Weekmail verstuurd.")
 
 
+# ---------- veilig samenvoegen bij opslaan ----------
+
+def merge_into_current(ours_path):
+    """Voegt het resultaat van deze ronde samen met de nieuwste prices.json op GitHub.
+    Per plaat wint het meest recent gecheckte resultaat; verwijderde platen vallen weg."""
+    empty = {"updated": None, "albums": {}}
+    ours = load_json(pathlib.Path(ours_path), empty)
+    theirs = load_json(PRICES_FILE, empty)
+    ids = {a["id"] for a in load_json(ALBUMS_FILE, []) if a.get("id")}
+    merged = dict(theirs.get("albums") or {})
+    for aid, rec in (ours.get("albums") or {}).items():
+        other = merged.get(aid)
+        if other is None or (rec.get("checked") or "") >= (other.get("checked") or ""):
+            merged[aid] = rec
+    merged = {k: v for k, v in merged.items() if k in ids}
+    u1, u2 = ours.get("usage") or {}, theirs.get("usage") or {}
+    if u1.get("month") == u2.get("month"):
+        usage = {**u2, **u1, "tavily_credits": max(u1.get("tavily_credits", 0), u2.get("tavily_credits", 0))}
+    else:
+        usage = u1 if (u1.get("month") or "") > (u2.get("month") or "") else u2
+    out = {"updated": max(ours.get("updated") or "", theirs.get("updated") or "") or None,
+           "usage": usage, "albums": merged}
+    PRICES_FILE.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    log(f"Samengevoegd: {len(merged)} platen.")
+
+
 CONFIG = load_json(CONFIG_FILE, {})
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) == 3 and sys.argv[1] == "--merge":
+        merge_into_current(sys.argv[2])
+    else:
+        main()

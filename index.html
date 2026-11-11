@@ -78,11 +78,14 @@ header p { max-width: 50ch; margin: 2px auto 0; color: var(--cream-dim); font-st
   grid-template-columns: 1fr 140px auto;
   background: var(--wine-2); border: 1px solid var(--wine-3); border-radius: 22px; padding: 10px;
 }
-input {
+input, textarea {
   font: inherit; color: var(--cream); background: var(--night);
   border: 1px solid var(--wine-3); border-radius: 14px; padding: 12px 15px; min-width: 0;
 }
-input::placeholder { color: var(--cream-dim); opacity: .7; }
+textarea { resize: none; line-height: 1.45; min-height: 50px; max-height: 260px; overflow-y: auto; field-sizing: content; }
+input::placeholder, textarea::placeholder { color: var(--cream-dim); opacity: .7; }
+.add { align-items: start; }
+.add button { min-height: 50px; }
 button {
   font: inherit; font-weight: 650; cursor: pointer; border-radius: 999px; padding: 11px 20px;
   border: 1px solid var(--amber); background: var(--amber); color: var(--night);
@@ -241,7 +244,7 @@ details.settings summary { cursor: pointer; font-weight: 700; font-size: 18px; c
 }
 @media (max-width: 560px) {
   .add { grid-template-columns: 1fr 1fr; border-radius: 18px; }
-  .add input:first-child { grid-column: 1 / -1; }
+  .add textarea { grid-column: 1 / -1; }
   .crate { grid-template-columns: repeat(2, 1fr); gap: 26px 16px; }
   .sticker { width: 56px; height: 56px; font-size: 15px; right: -8px; top: -10px; }
   .plants .left { width: 150px; opacity: .75; }
@@ -342,11 +345,11 @@ details.settings summary { cursor: pointer; font-weight: 700; font-size: 18px; c
   </header>
 
   <form class="add" id="addForm" autocomplete="off">
-    <input id="addInput" placeholder="Artiest - Album, of plak een link" aria-label="Album of link">
+    <textarea id="addInput" rows="1" placeholder="Artiest - Album, of plak een link" aria-label="Album of link, of een lijstje met één plaat per regel"></textarea>
     <input id="addTarget" inputmode="decimal" placeholder="Wensprijs €" aria-label="Wensprijs in euro (optioneel)">
     <button type="submit" id="addBtn">In de bak</button>
   </form>
-  <p class="hint">Een link van Spotify, Discogs of een webwinkel mag ook. Zakt een plaat onder je wensprijs, dan staat hij bovenaan je maandagmail.</p>
+  <p class="hint">Typ “Artiest - Album” of plak een Discogs- of winkellink. Meerdere tegelijk? Plak een lijstje met één plaat per regel (zelf typen: Shift+Enter voor een nieuwe regel).</p>
   <div class="msg" id="msg" role="status" aria-live="polite"></div>
 
   <div class="bar">
@@ -460,11 +463,12 @@ details.settings summary { cursor: pointer; font-weight: 700; font-size: 18px; c
     for (let attempt = 0; attempt < 2; attempt++) {
       const { data, sha } = await readAlbums();
       const next = mutate(Array.isArray(data) ? data : []);
+      const msg = typeof message === "function" ? message() : message;
       try {
         await gh("/contents/albums.json", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message, content: b64encode(JSON.stringify(next, null, 2) + "\n"), sha }),
+          body: JSON.stringify({ message: msg, content: b64encode(JSON.stringify(next, null, 2) + "\n"), sha }),
         });
         albums = next;
         return;
@@ -774,21 +778,46 @@ details.settings summary { cursor: pointer; font-weight: 700; font-size: 18px; c
   }
 
   // ---------- acties ----------
+  // tekstvak groeit mee met het aantal regels (voor browsers zonder field-sizing)
+  const grow = () => { const t = $("addInput"); t.style.height = "auto"; t.style.height = Math.min(t.scrollHeight + 2, 260) + "px"; };
+  $("addInput").addEventListener("input", grow);
+  $("addInput").addEventListener("keydown", (ev) => {
+    if (ev.key === "Enter" && !ev.shiftKey && !ev.isComposing) { ev.preventDefault(); $("addForm").requestSubmit(); }
+  });
+
   $("addForm").addEventListener("submit", async (ev) => {
     ev.preventDefault();
-    const input = $("addInput").value.trim();
-    if (!input) { $("addInput").focus(); return; }
+    // één plaat per regel; lege regels, opsommingstekens en nummering weghalen
+    const lines = $("addInput").value.split(/\r?\n/)
+      .map((l) => l.replace(/^\s*(?:[-*•]|\d+[.)])\s+/, "").trim())
+      .filter(Boolean);
+    if (!lines.length) { $("addInput").focus(); return; }
     if (needConnection()) return;
     const tRaw = $("addTarget").value.replace(",", ".").replace(/[^\d.]/g, "");
-    const target = tRaw ? Math.round(parseFloat(tRaw) * 100) / 100 : null;
+    const target = tRaw && lines.length === 1 ? Math.round(parseFloat(tRaw) * 100) / 100 : null;
     $("addBtn").disabled = true;
     try {
-      const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
-      await changeAlbums((list) => [...list, { id, input, target_price: target, added: new Date().toISOString() }], `Album toegevoegd: ${input.slice(0, 60)}`);
-      $("addInput").value = ""; $("addTarget").value = "";
-      say("In de bak. De prijzen en de hoes worden nu opgezocht, dat duurt een paar minuten.");
+      let added = [], skipped = [];
+      await changeAlbums((list) => {
+        added = []; skipped = [];
+        const have = new Set(list.map((x) => x.input.trim().toLowerCase()));
+        const now = Date.now();
+        const extra = [];
+        lines.forEach((input, i) => {
+          const key = input.toLowerCase();
+          if (have.has(key)) { skipped.push(input); return; }
+          have.add(key);
+          added.push(input);
+          extra.push({ id: (now + i).toString(36) + Math.random().toString(36).slice(2, 6), input, target_price: target, added: new Date(now + i).toISOString() });
+        });
+        return [...list, ...extra];
+      }, () => added.length === 1 ? `Album toegevoegd: ${added[0].slice(0, 60)}` : `${added.length} albums toegevoegd`);
+      $("addInput").value = ""; $("addTarget").value = ""; grow();
+      const skipText = skipped.length ? ` ${skipped.length === 1 ? "Eén plaat stond er al in" : `${skipped.length} platen stonden er al in`} en ${skipped.length === 1 ? "is" : "zijn"} overgeslagen.` : "";
+      if (!added.length) say(`Die ${skipped.length === 1 ? "plaat staat" : "platen staan"} al in je bak.`);
+      else say(`${added.length === 1 ? "In de bak." : `${added.length} platen in de bak.`} De prijzen en hoezen worden nu opgezocht, reken op een minuut of twee per plaat.${skipText}${tRaw && lines.length > 1 ? " De wensprijs stel je per plaat in door hem open te klikken." : ""}`);
       render();
-      setTimeout(watchRuns, 6000);
+      if (added.length) setTimeout(watchRuns, 6000);
     } catch (e) { say(explain(e), true); }
     finally { $("addBtn").disabled = false; }
   });
