@@ -1,0 +1,76 @@
+name: Prijzen checken
+
+on:
+  schedule:
+    - cron: "30 4 * * 1"   # elke maandag rond 05:30/06:30 Nederlandse tijd, mail volgt na afloop
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "Welke albums checken?"
+        type: choice
+        options: [all, new]
+        default: all
+      mode:
+        description: "Grondig (full) of snel (light)?"
+        type: choice
+        options: [full, light]
+        default: full
+      album:
+        description: "Alleen dit album (id), leeg = alle albums"
+        type: string
+        default: ""
+      mail:
+        description: "Daarna de weekmail sturen?"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ["albums.json"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: platenjacht-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r checker/requirements.txt
+
+      - name: Prijzen zoeken
+        run: python checker/check.py
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DISCOGS_TOKEN: ${{ secrets.DISCOGS_TOKEN }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          SCOPE: ${{ github.event_name == 'push' && 'new' || inputs.scope || 'all' }}
+          MODE: ${{ inputs.mode || 'full' }}
+          ALBUM: ${{ inputs.album || '' }}
+          SEND_DIGEST: ${{ github.event_name == 'schedule' || inputs.mail == true }}
+          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+
+      - name: Resultaten opslaan
+        run: |
+          git config user.name "platenjacht-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/prices.json
+          if git diff --cached --quiet; then
+            echo "Niets veranderd."
+          else
+            git commit -m "Prijzen bijgewerkt"
+            git pull --rebase origin main
+            git push
+          fi
