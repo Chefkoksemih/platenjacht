@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-11T15:18:48+00:00",
+ "updated": "2026-11-11T15:22:31+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 74,
+  "tavily_credits": 89,
   "budget": 900
  },
  "albums": {
@@ -1383,6 +1383,527 @@
      "reason": "uitverkocht"
     }
    ]
+  },
+  "mwc9lwfen7h5": {
+   "input": "https://www.discogs.com/master/1158238-Fresku-MocroManiac-Juice",
+   "artist": "Fresku",
+   "title": "Juice",
+   "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Vioolkeuzemaat",
+     "url": "https://www.vioolkeuzemaat.com/product/fresku-mocromaniac-juice-lp-album",
+     "price": 30.87,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 35.82,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 123.49,
+     "edition": "LP, Album",
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-11"
+    }
+   ],
+   "variants": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "count": 1,
+     "best": {
+      "shop": "Vioolkeuzemaat",
+      "url": "https://www.vioolkeuzemaat.com/product/fresku-mocromaniac-juice-lp-album",
+      "total": 35.82,
+      "condition": "new"
+     },
+     "thumb": null
+    }
+   ],
+   "pressings": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "thumb": "https://i.discogs.com/vy-96NYu9RaY2_XtZylGpVnACjcQWndMFK_N1znB-bM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxODM2/ODY5LTE3Mjc0MzEy/MDMtMTQwOS5qcGVn.jpeg",
+     "year": "2024",
+     "country": "Netherlands"
+    }
+   ],
+   "cover": "https://i.discogs.com/7YHEE3yhRQG3V6Pken-kYgO4N2MD1velukLj-HCGefI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwMDYx/MTg0LTE0OTA5NTAx/NDEtMTY4Ni5qcGVn.jpeg",
+   "label": "TopNotch",
+   "barcodes": [
+    "0602475004806",
+    "0602557371505"
+   ],
+   "discogs_url": "https://www.discogs.com/master/1158238",
+   "search_log": [
+    {
+     "url": "https://www.hhv.de/en-CA/records/item/fresku-fresku-1275547",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://vinylpladen.dk/vinyl/fresku-mocromaniac/juice-LP-1",
+     "shop": "vinylpladen.dk",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://calcuttarecords.com/shop/juice-fresku-vinyl-lp-record-arrives-in-50-days",
+     "shop": "calcuttarecords.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en-BO/records/item/fresku-and-mocromaniac-juice-1282165",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://pokoemagazine.nl/hele-oeuvre-van-fresku-verkrijgbaar-op-vinyl",
+     "shop": "pokoemagazine.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.groovespin.nl/album/fresku-mocromaniac-juice-1158238",
+     "shop": "groovespin.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en-CD/records/artists/fresku-300641",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en-AL/records/artists/fresku-mocromaniac-302054",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "http://fresku.nl",
+     "shop": "fresku.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://tavily.com/knowledge/company/7MkeaZEBaMTj",
+     "shop": "tavily.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://tavily.com/knowledge/company/XlzMX9wS1Pmq",
+     "shop": "tavily.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.facebook.com/enkisrecords/videos/i-roy-sky-juice-festival-dumpling-version%EF%B8%8F-7-vinyl-recorded-1977-2012label-chann/2342399769579496",
+     "shop": "facebook.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.heavyheadsrecords.com/newvinylreleasesmay",
+     "shop": "heavyheadsrecords.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "http://usedrecordsandmore.com",
+     "shop": "usedrecordsandmore.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.facebook.com/moonchildmusicstore/posts/vinyl-going-out-nowvinyl-vinylcollection-shoplocal/1019694500932584",
+     "shop": "facebook.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://reckless.com/wordpress/category/new-releases",
+     "shop": "reckless.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.facebook.com/biglovevinyl/posts/friday-vinyl-arrivals-rare-pitch-perfect-vinyl-original-poison-tom-petty-acdcthe/1539633434855726",
+     "shop": "facebook.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://richardcheese.com/discography--credits.html",
+     "shop": "richardcheese.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://dischord.com/store",
+     "shop": "dischord.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://imusic.co/music/0602475004806/fresku-mocromaniac-2024-juice-lp",
+     "shop": "imusic.co",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.nicherecords.ro/catalog/rap-hip-hop/hip-hop/fresku-mocromaniac-juice-vinyl-1.html",
+     "shop": "nicherecords.ro",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.fnac.com/a20867032/JUICE",
+     "shop": "fnac.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.ibs.it/juice-vinile-fresku-mocromaniac/e/0602475004806",
+     "shop": "ibs.it",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.paagman.nl/juice-0602557371505",
+     "shop": "paagman.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.nadvechir.com.ua/index.php?ukey=product&productID=156713",
+     "shop": "nadvechir.com.ua",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://musica.unilibro.it/musica/fresku-mocromaniac/lp-vinile-fresku-mocromaniac-juice/0602557371505",
+     "shop": "musica.unilibro.it",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://colnect.com/tr/music_records/music_record/6269724-Fresku_MocroManiac_Juice",
+     "shop": "colnect.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://colnect.com/fa/music_records/music_record/6269724-Fresku_MocroManiac_Juice",
+     "shop": "colnect.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://planetofsound.nl/products.php?ref=5002&t=Juice",
+     "shop": "planetofsound.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.planetofsound.nl/products.php?ref=5005&g=13",
+     "shop": "Planet of Sound",
+     "reason": "uitverkocht"
+    }
+   ],
+   "cheapest": {
+    "variant": {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": null,
+    "shop": "Vioolkeuzemaat",
+    "url": "https://www.vioolkeuzemaat.com/product/fresku-mocromaniac-juice-lp-album",
+    "price": 30.87,
+    "shipping": 4.95,
+    "shipping_estimated": true,
+    "total": 35.82,
+    "condition": "new",
+    "is_sale": true,
+    "original_price": 123.49,
+    "edition": "LP, Album",
+    "source": "web",
+    "region": "NL",
+    "seen": "2026-11-11"
+   },
+   "checked": "2026-11-11T15:21:17+00:00",
+   "error": null,
+   "web_checked": "2026-11-11T15:21:17+00:00",
+   "history": [
+    {
+     "date": "2026-11-11",
+     "total": 35.82,
+     "shop": "Vioolkeuzemaat"
+    }
+   ],
+   "lowest_ever": 35.82,
+   "last_notified_total": 35.82,
+   "last_deal": {
+    "date": "2026-11-11",
+    "reasons": [
+     "als aanbieding gemarkeerd bij Vioolkeuzemaat, was € 123,49"
+    ],
+    "total": 35.82
+   },
+   "notified_sale_urls": [
+    "https://www.vioolkeuzemaat.com/product/fresku-mocromaniac-juice-lp-album"
+   ]
+  },
+  "mwc9lwffjlfn": {
+   "input": "https://www.discogs.com/master/3404194-Mula-B-Narcopop",
+   "artist": "Mula B",
+   "title": "Narcopop",
+   "offers": [
+    {
+     "variant": {
+      "label": "White Vinyl",
+      "key": "solid:#EFE6D6",
+      "colors": [
+       "#EFE6D6"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "3345.nl",
+     "url": "https://3345.nl/nl/products/mula-b-narco-pop-lp",
+     "price": 31.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 36.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "White Vinyl",
+      "key": "solid:#EFE6D6",
+      "colors": [
+       "#EFE6D6"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "3345.nl",
+     "url": "https://3345.nl/products/mula-b-narco-pop-lp",
+     "price": 43.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 48.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-11"
+    }
+   ],
+   "variants": [
+    {
+     "label": "White Vinyl",
+     "key": "solid:#EFE6D6",
+     "colors": [
+      "#EFE6D6"
+     ],
+     "pattern": "solid",
+     "count": 2,
+     "best": {
+      "shop": "3345.nl",
+      "url": "https://3345.nl/nl/products/mula-b-narco-pop-lp",
+      "total": 36.94,
+      "condition": "new"
+     },
+     "thumb": null
+    }
+   ],
+   "pressings": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "thumb": "https://i.discogs.com/Ax9JteZz_KHvpWoWYU8tek8sXz_zQJPnG25_ukm2P6U/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5ODkx/MDg2LTE3MDkwNDI5/OTUtMjgyMi5qcGVn.jpeg",
+     "year": "2023",
+     "country": "Netherlands"
+    }
+   ],
+   "cover": "https://i.discogs.com/-OgThOcnh4uUqB6v804XdyuJa3u3m9E9_DQkS6rklek/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5NDM4/ODk5LTE3MDQ4MTg3/NTAtMTMwNy5qcGVn.jpeg",
+   "label": "Plus Records",
+   "barcodes": [
+    "8720589667358"
+   ],
+   "discogs_url": "https://www.discogs.com/master/3404194",
+   "search_log": [
+    {
+     "url": "https://www.fnac.com/a20932209/Mula-B-Narco-Pop-Vinyle-album",
+     "shop": "fnac.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platomania.nl/article/14073774/narcopop_white_vinyl/mula_b",
+     "shop": "platomania.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/p/mula-b-narcopop/9300000190677040",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.qobuz.com/au-en/album/narcopop-mula-b/xaq3ian88b2ya",
+     "shop": "qobuz.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.instagram.com/p/DKhhaLbIN13?hl=ne",
+     "shop": "instagram.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://issuu.com/platoconcerto/docs/mania413",
+     "shop": "issuu.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://podcast.npo.nl/feed/kunststof.xml",
+     "shop": "podcast.npo.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.parool.nl/kunst-media/recensie-mula-b-s-narcopop-is-ongetwijfeld-het-beste-nederlandstalige-hiphopalbum-van-het-jaar~b3b59a69",
+     "shop": "parool.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://issuu.com/uitagendautrecht/docs/uitagenda-utrecht-mei-2024_91",
+     "shop": "issuu.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.parool.nl/kunst-media/edisons-sef-en-son-mieux-zijn-grote-winnaars-roxy-dekker-beste-nieuwkomer~b88e8b44",
+     "shop": "parool.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://tavily.com/knowledge/company/nsjO9WCgyEGf",
+     "shop": "tavily.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://linkedin.com/in/mula-b-9a0883188",
+     "shop": "linkedin.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://concerto.nl/product/mula-b-narcopop",
+     "shop": "concerto.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://imusic.be/music/8720589667358/mula-b-2024-narco-pop-lp",
+     "shop": "imusic.be",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bengans.com/mula-b-narco-pop",
+     "shop": "bengans.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://imusic.com/music/8720589667358/mula-b-2024-narco-pop-lp",
+     "shop": "imusic.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://myrecordstore.nl/item/dance-rap/lp/mula-b/narco-pop/4868006",
+     "shop": "myrecordstore.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.fr.fnac.ch/a20932209/Mula-B-Narco-Pop-Vinyle-album",
+     "shop": "fr.fnac.ch",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.gibert.com/narco-pop-vinyle-14045015.html",
+     "shop": "gibert.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://shop.rukahore.sk/vinyl-b-mula-narco-pop",
+     "shop": "shop.rukahore.sk",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.fnac.com/ia12032468/Mula-B",
+     "shop": "fnac.com",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.platomania.nl/mula-b",
+     "shop": "platomania.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://mula911.shop/collections/narcopop",
+     "shop": "mula911.shop",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.groovespin.com/album/mula-b-narcopop-3404194",
+     "shop": "groovespin.com",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.sounds-venlo.nl/8720589667365-4618003",
+     "shop": "sounds-venlo.nl",
+     "reason": "geen LP van dit album herkend"
+    }
+   ],
+   "cheapest": {
+    "variant": {
+     "label": "White Vinyl",
+     "key": "solid:#EFE6D6",
+     "colors": [
+      "#EFE6D6"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": null,
+    "shop": "3345.nl",
+    "url": "https://3345.nl/nl/products/mula-b-narco-pop-lp",
+    "price": 31.99,
+    "shipping": 4.95,
+    "shipping_estimated": true,
+    "total": 36.94,
+    "condition": "new",
+    "is_sale": false,
+    "original_price": null,
+    "edition": null,
+    "source": "web",
+    "region": "NL",
+    "seen": "2026-11-11"
+   },
+   "checked": "2026-11-11T15:22:31+00:00",
+   "error": null,
+   "web_checked": "2026-11-11T15:22:31+00:00",
+   "history": [
+    {
+     "date": "2026-11-11",
+     "total": 36.94,
+     "shop": "3345.nl"
+    }
+   ],
+   "lowest_ever": 36.94
   }
  }
 }
