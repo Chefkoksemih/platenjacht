@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-11T14:42:18+00:00",
+ "updated": "2026-11-11T14:45:03+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 32,
+  "tavily_credits": 33,
   "budget": 900
  },
  "albums": {
@@ -409,6 +409,11 @@
     }
    ],
    "lowest_ever": 121.85
+  },
+  "mwc8d0sj3v1u": {
+   "input": "https://www.discogs.com/master/1158238-Fresku-MocroManiac-Juice",
+   "error": "Gemini 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+   "checked": "2026-11-11T14:45:03+00:00"
   }
  }
 }
