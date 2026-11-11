@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2A0B12">
+<title>Platenjacht</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231E0A0E'/><circle cx='50' cy='50' r='19' fill='%23E09A3A'/><circle cx='50' cy='50' r='3' fill='%231E0A0E'/></svg>">
+<link rel="preload" href="fonts/shrikhand.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Shrikhand"; src: url("fonts/shrikhand.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Fraunces"; src: url("fonts/fraunces.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Fraunces"; src: url("fonts/fraunces-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
+
+:root {
+  color-scheme: dark;
+  --night: #1E0A0E;
+  --wine: #2A0B12;
+  --wine-2: #3D111A;
+  --wine-3: #5A1824;
+  --wine-4: #7A2433;
+  --cream: #F2E2C4;
+  --cream-dim: #C8A98B;
+  --amber: #E09A3A;
+  --leaf: #6B9A45;
+  --leaf-dark: #2F5A2A;
+  --gold: #EBC665;
+  --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --display: "Shrikhand", "Cooper Black", "Fraunces", Georgia, serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*, *::before, *::after { box-sizing: inherit; }
+html {
+  background: var(--wine);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(224,154,58,.16), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(47,90,42,.22), transparent 70%);
+  background-attachment: fixed;
+  min-height: 100%;
+}
+body {
+  margin: 0; color: var(--cream); font-family: var(--serif);
+  font-size: 17px; line-height: 1.55; font-variation-settings: "SOFT" 60, "WONK" 0;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+a { color: var(--amber); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- planten ---------- */
+.plants { position: absolute; inset: 0 0 auto 0; height: 340px; pointer-events: none; overflow: hidden; z-index: -1; }
+.plants svg { position: absolute; top: -6px; }
+.plants .left { left: -10px; width: 260px; }
+.plants .right { right: 4%; width: 170px; }
+.monstera { position: fixed; right: -40px; bottom: -50px; width: 300px; pointer-events: none; z-index: -1; opacity: .9; }
+
+.wrap { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 36px 24px 120px; }
+
+/* ---------- kop ---------- */
+header { text-align: center; padding-top: 34px; }
+.title { display: block; width: min(640px, 100%); margin: 0 auto; overflow: visible; }
+.title text { font-family: var(--display); font-size: 96px; }
+.title .t3 { fill: var(--wine-4); }
+.title .t2 { fill: var(--amber); }
+.title .t1 { fill: var(--cream); }
+.ball { display: inline-block; width: 22px; height: 22px; vertical-align: -3px; margin-left: 6px; }
+.ball .facets { animation: facets 9s linear infinite; }
+@keyframes facets { to { transform: translateX(-12px); } }
+.ball .glint { animation: glint 4.5s ease-in-out infinite; transform-origin: center; }
+@keyframes glint { 0%, 70%, 100% { opacity: 0; } 80% { opacity: 1; } }
+header p { max-width: 50ch; margin: 2px auto 0; color: var(--cream-dim); font-style: italic; font-size: 18px; }
+
+/* ---------- toevoegen ---------- */
+.add {
+  margin: 34px auto 0; max-width: 760px; display: grid; gap: 10px;
+  grid-template-columns: 1fr 140px auto;
+  background: var(--wine-2); border: 1px solid var(--wine-3); border-radius: 22px; padding: 10px;
+}
+input {
+  font: inherit; color: var(--cream); background: var(--night);
+  border: 1px solid var(--wine-3); border-radius: 14px; padding: 12px 15px; min-width: 0;
+}
+input::placeholder { color: var(--cream-dim); opacity: .7; }
+button {
+  font: inherit; font-weight: 650; cursor: pointer; border-radius: 999px; padding: 11px 20px;
+  border: 1px solid var(--amber); background: var(--amber); color: var(--night);
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+button:hover { background: var(--gold); border-color: var(--gold); }
+button.ghost { background: transparent; color: var(--cream); border-color: var(--wine-4); }
+button.ghost:hover { border-color: var(--amber); color: var(--amber); background: transparent; }
+button.small { padding: 7px 14px; font-size: 15px; }
+button:disabled { opacity: .5; cursor: wait; }
+.hint { color: var(--cream-dim); font-size: 14.5px; margin: 10px auto 0; max-width: 760px; text-align: center; }
+
+.msg { max-width: 760px; margin: 16px auto 0; padding: 12px 16px; border-radius: 14px; background: var(--wine-2); border-left: 4px solid var(--leaf); }
+.msg.err { border-left-color: var(--amber); }
+.msg:empty { display: none; }
+
+/* ---------- balk ---------- */
+.bar {
+  display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; justify-content: space-between;
+  margin: 46px 0 22px; padding-bottom: 14px; border-bottom: 1px solid var(--wine-3);
+}
+.bar h2 { margin: 0; font-size: 26px; font-weight: 700; font-variation-settings: "SOFT" 100, "WONK" 1; }
+.bar .status { color: var(--cream-dim); font-size: 15px; display: block; }
+.bar .status.busy::before {
+  content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 8px; border-radius: 50%;
+  background: var(--leaf); animation: pulse 1.2s ease-in-out infinite;
+}
+@keyframes pulse { 50% { opacity: .25; } }
+
+/* ---------- platenbak ---------- */
+.crate { list-style: none; margin: 0; padding: 0; display: grid; gap: 30px 22px; grid-template-columns: repeat(auto-fill, minmax(178px, 1fr)); }
+.sleeve { all: unset; display: block; cursor: pointer; width: 100%; border-radius: 6px; }
+.sleeve:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+.cover {
+  position: relative; aspect-ratio: 1; border-radius: 4px; background: var(--wine-3);
+  box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 14px 26px -12px rgba(0,0,0,.7);
+  transition: transform .25s ease;
+}
+.sleeve:hover .cover, .sleeve:focus-visible .cover { transform: translateY(-6px) rotate(-1deg); }
+.cover img, .stage .front img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block; }
+.cover .blank {
+  width: 100%; height: 100%; display: grid; place-items: center; border-radius: 4px;
+  background: repeating-linear-gradient(135deg, var(--wine-3) 0 14px, var(--wine-2) 14px 28px);
+  font-family: var(--display); font-size: 64px; color: var(--amber);
+}
+.cover.pending { animation: breathe 2.4s ease-in-out infinite; }
+@keyframes breathe { 50% { opacity: .55; } }
+
+/* het prijsstickertje */
+.sticker {
+  position: absolute; right: -12px; top: -12px; width: 66px; height: 66px; border-radius: 50%;
+  display: grid; place-content: center; text-align: center; line-height: 1;
+  background: var(--amber); color: var(--night); transform: rotate(9deg);
+  box-shadow: 0 6px 12px -4px rgba(0,0,0,.6);
+  font-weight: 800; font-size: 17px; font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 30;
+}
+.sticker small { display: block; font-size: 9.5px; font-weight: 600; margin-top: 2px; letter-spacing: .02em; }
+.sticker.deal {
+  background: linear-gradient(115deg, #C9A23A 0%, var(--gold) 38%, #FFF3C9 50%, var(--gold) 62%, #C9A23A 100%);
+  background-size: 260% 100%; animation: shimmer 5s ease-in-out infinite;
+}
+@keyframes shimmer { 0%, 60% { background-position: 100% 0; } 85%, 100% { background-position: 0 0; } }
+.sticker.none { background: var(--wine-4); color: var(--cream); font-size: 11px; font-weight: 600; padding: 6px; }
+.sticker.wait { background: var(--leaf-dark); color: var(--cream); font-size: 11px; font-weight: 600; }
+
+.card-meta { padding: 12px 2px 0; }
+.card-meta .artist { font-weight: 700; font-size: 17px; line-height: 1.2; font-variation-settings: "SOFT" 100, "WONK" 1; }
+.card-meta .album { color: var(--cream-dim); font-style: italic; font-size: 15.5px; line-height: 1.3; margin-top: 2px; }
+.card-meta .flag { color: var(--gold); font-size: 13.5px; margin-top: 5px; }
+.card-meta .flag.down { color: var(--leaf); }
+.dots { display: flex; gap: 4px; margin-top: 8px; align-items: center; }
+.dots .more { font-size: 12px; color: var(--cream-dim); margin-left: 3px; }
+
+/* schijfjes in variantkleur */
+.disc { width: 16px; height: 16px; border-radius: 50%; flex: none; position: relative; box-shadow: 0 0 0 1px rgba(242,226,196,.25); }
+.disc::after { content: ""; position: absolute; inset: 36%; border-radius: 50%; background: var(--wine); box-shadow: 0 0 0 1px rgba(242,226,196,.15); }
+
+.empty {
+  grid-column: 1 / -1; text-align: center; padding: 56px 20px; color: var(--cream-dim);
+  border: 1px dashed var(--wine-4); border-radius: 22px;
+}
+.empty strong { display: block; color: var(--cream); font-size: 24px; margin-bottom: 6px; font-variation-settings: "SOFT" 100, "WONK" 1; }
+
+/* ---------- detailvenster ---------- */
+dialog {
+  width: min(940px, calc(100vw - 24px)); max-height: calc(100dvh - 32px); padding: 0; border: 1px solid var(--wine-4);
+  border-radius: 24px; background: var(--wine-2); color: var(--cream); overflow-y: auto; overflow-x: hidden;
+}
+dialog::backdrop { background: rgba(20,5,8,.78); }
+.detail { display: grid; grid-template-columns: 300px 1fr; gap: 34px; padding: 30px; }
+.detail > div { min-width: 0; }
+.stage { position: relative; width: 74%; aspect-ratio: 1; }
+.stage .record {
+  position: absolute; top: 4%; left: 4%; width: 92%; height: 92%; border-radius: 50%;
+  transition: transform .6s cubic-bezier(.2,.8,.2,1);
+  box-shadow: 0 10px 22px -8px rgba(0,0,0,.8);
+}
+.stage .record.out { transform: translateX(32%); }
+.stage .record::before { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: repeating-radial-gradient(circle, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); }
+.stage .record::after { content: ""; position: absolute; inset: 38%; border-radius: 50%; background: var(--amber);
+  box-shadow: 0 0 0 4px rgba(0,0,0,.25); }
+.stage .front { position: relative; width: 100%; height: 100%; box-shadow: 0 16px 30px -10px rgba(0,0,0,.8); border-radius: 4px; }
+.stage .front .blank { width: 100%; height: 100%; border-radius: 4px; display: grid; place-items: center; }
+.stage .front .blank { background: repeating-linear-gradient(135deg, var(--wine-3) 0 14px, var(--wine-2) 14px 28px); font-family: var(--display); font-size: 90px; color: var(--amber); }
+
+.dhead { display: flex; justify-content: space-between; gap: 16px; align-items: start; }
+.dhead h2 { margin: 0; font-size: 32px; line-height: 1.05; font-variation-settings: "SOFT" 100, "WONK" 1; }
+.dhead .album { font-style: italic; color: var(--cream-dim); font-size: 21px; margin-top: 2px; }
+.close { flex: none; width: 40px; height: 40px; padding: 0; border-radius: 50%; font-size: 20px; line-height: 1; }
+.best { margin: 18px 0 0; font-size: 16px; color: var(--cream-dim); }
+.best .big { display: block; font-size: 42px; font-weight: 800; color: var(--cream); line-height: 1.1; font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 72; }
+.best .flag { color: var(--gold); display: block; margin-top: 4px; }
+.best .flag.down { color: var(--leaf); }
+
+.section-title { margin: 26px 0 10px; font-size: 19px; font-weight: 700; font-variation-settings: "SOFT" 100, "WONK" 1; }
+.variants { display: flex; flex-wrap: wrap; gap: 8px; }
+.variant {
+  display: flex; align-items: center; gap: 9px; padding: 7px 13px 7px 8px; border-radius: 999px;
+  background: var(--night); color: var(--cream); border: 1px solid var(--wine-3); font-weight: 500; font-size: 14.5px;
+}
+.variant .disc { width: 22px; height: 22px; }
+.variant b { font-weight: 700; }
+.variant[aria-pressed="true"] { border-color: var(--amber); background: var(--wine-3); }
+.variant:hover { background: var(--wine-3); color: var(--cream); border-color: var(--wine-4); }
+
+.scroll { overflow-x: auto; margin-top: 4px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 540px; }
+th, td { text-align: left; padding: 9px 12px 9px 0; border-bottom: 1px solid var(--wine-3); vertical-align: top; }
+th { font-weight: 600; color: var(--cream-dim); font-size: 14px; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+td.est { color: var(--cream-dim); }
+td .sub { display: block; color: var(--cream-dim); font-size: 13px; }
+td .sale { color: var(--gold); font-weight: 700; font-size: 13px; display: block; }
+.vcell { display: flex; gap: 7px; align-items: center; }
+
+.tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--wine-3); }
+.tools label { display: flex; gap: 8px; align-items: center; color: var(--cream-dim); }
+.tools input { width: 100px; padding: 8px 12px; }
+.trend { display: flex; gap: 18px; align-items: center; margin-top: 16px; color: var(--cream-dim); font-size: 14px; }
+.spark { width: 170px; height: 44px; }
+.spark polyline { fill: none; stroke: var(--leaf); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.spark circle { fill: var(--gold); }
+
+/* ---------- koppeling ---------- */
+details.settings { margin-top: 70px; max-width: 560px; }
+details.settings summary { cursor: pointer; font-weight: 700; font-size: 18px; color: var(--cream-dim); font-variation-settings: "SOFT" 100, "WONK" 1; }
+.settings .grid { display: grid; gap: 12px; margin-top: 16px; }
+.settings label { display: grid; gap: 5px; font-size: 15px; color: var(--cream-dim); }
+
+@media (max-width: 760px) {
+  .detail { grid-template-columns: 1fr; padding: 22px; gap: 22px; }
+  .stage { width: 56%; }
+  .plants .right { display: none; }
+  .monstera { width: 200px; opacity: .55; }
+}
+@media (max-width: 560px) {
+  .add { grid-template-columns: 1fr 1fr; border-radius: 18px; }
+  .add input:first-child { grid-column: 1 / -1; }
+  .crate { grid-template-columns: repeat(2, 1fr); gap: 26px 16px; }
+  .sticker { width: 56px; height: 56px; font-size: 15px; right: -8px; top: -10px; }
+  .plants .left { width: 150px; opacity: .75; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="plants" aria-hidden="true">
+  <!-- hangplant links -->
+  <svg class="left" viewBox="0 0 260 330">
+    <g fill="none" stroke="#3E6B30" stroke-width="2.4" stroke-linecap="round">
+      <path d="M40 0 C 30 60, 70 100, 48 160 S 60 250, 44 320"/>
+      <path d="M95 0 C 110 50, 80 90, 104 140 S 92 200, 110 236"/>
+      <path d="M150 0 C 140 30, 170 60, 156 98"/>
+    </g>
+    <g fill="#5E8C3A">
+      <path d="M48 40 c-14 -4 -22 8 -16 18 c4 6 12 6 16 -18z"/><path d="M52 70 c14 -6 24 6 18 16 c-4 6 -12 6 -18 -16z"/>
+      <path d="M58 110 c-16 -2 -22 12 -14 20 c5 5 13 3 14 -20z"/><path d="M50 150 c15 -5 24 8 17 17 c-5 6 -13 4 -17 -17z"/>
+      <path d="M50 190 c-15 -3 -22 11 -15 19 c5 6 13 4 15 -19z"/><path d="M54 228 c14 -5 23 8 16 16 c-5 6 -12 4 -16 -16z"/>
+      <path d="M46 268 c-15 -3 -22 11 -15 19 c5 5 13 3 15 -19z"/><path d="M46 304 c13 -4 21 8 15 15 c-5 5 -12 3 -15 -15z"/>
+      <path d="M100 30 c15 -4 24 9 17 17 c-5 6 -13 4 -17 -17z"/><path d="M96 70 c-15 -3 -22 11 -15 19 c5 6 13 4 15 -19z"/>
+      <path d="M100 112 c14 -5 23 8 16 16 c-5 6 -12 4 -16 -16z"/><path d="M98 156 c-14 -3 -21 10 -14 18 c5 5 12 3 14 -18z"/>
+      <path d="M100 196 c13 -5 22 8 15 15 c-5 6 -12 4 -15 -15z"/><path d="M110 226 c-12 -2 -18 9 -12 15 c4 4 11 3 12 -15z"/>
+      <path d="M152 30 c-13 -3 -20 10 -13 17 c4 5 11 3 13 -17z"/><path d="M160 62 c13 -4 21 8 15 15 c-5 5 -12 3 -15 -15z"/>
+      <path d="M156 92 c-11 -2 -17 8 -11 14 c4 4 10 2 11 -14z"/>
+    </g>
+    <g fill="#2F5A2A">
+      <path d="M44 88 c-12 -2 -16 9 -10 14 c4 3 10 1 10 -14z"/><path d="M60 250 c12 -3 18 7 12 13 c-4 4 -10 2 -12 -13z"/>
+      <path d="M108 92 c12 -3 18 7 12 13 c-4 4 -10 2 -12 -13z"/>
+    </g>
+  </svg>
+  <!-- hangpot rechts -->
+  <svg class="right" viewBox="0 0 170 300">
+    <g stroke="#C8A98B" stroke-width="1.2" opacity=".55"><path d="M85 0 V60"/><path d="M85 60 L48 112"/><path d="M85 60 L122 112"/></g>
+    <path d="M44 110 h82 l-10 40 h-62z" fill="#A9552E"/><path d="M44 110 h82 v8 h-82z" fill="#C46A3A"/>
+    <g fill="none" stroke="#3E6B30" stroke-width="2.2" stroke-linecap="round">
+      <path d="M58 140 C 50 180, 66 220, 52 290"/><path d="M110 140 C 122 170, 104 210, 118 250"/><path d="M84 148 C 84 170, 92 190, 86 210"/>
+    </g>
+    <g fill="#5E8C3A">
+      <path d="M56 170 c-12 -3 -19 9 -13 16 c4 5 11 3 13 -16z"/><path d="M60 205 c12 -4 20 8 14 14 c-4 5 -11 3 -14 -14z"/>
+      <path d="M54 240 c-12 -3 -19 9 -13 16 c4 5 11 3 13 -16z"/><path d="M54 276 c11 -4 18 7 13 13 c-4 4 -10 2 -13 -13z"/>
+      <path d="M114 166 c12 -4 20 8 14 14 c-4 5 -11 3 -14 -14z"/><path d="M110 200 c-12 -3 -18 9 -12 15 c4 4 10 2 12 -15z"/>
+      <path d="M118 236 c11 -4 18 7 13 13 c-4 4 -10 2 -13 -13z"/><path d="M86 180 c-10 -2 -15 8 -10 13 c3 3 9 2 10 -13z"/>
+      <path d="M62 112 c-10 -18 4 -30 14 -20 c-6 2 -10 10 -14 20z"/><path d="M100 112 c8 -20 26 -14 22 -2 c-6 -2 -14 0 -22 2z"/>
+    </g>
+  </svg>
+</div>
+
+<svg class="monstera" viewBox="0 0 300 320" aria-hidden="true">
+  <path d="M200 320 C 190 270, 175 230, 150 200" fill="none" stroke="#2F5A2A" stroke-width="5"/>
+  <path d="M250 320 C 250 280, 240 250, 228 230" fill="none" stroke="#2F5A2A" stroke-width="4"/>
+  <g>
+    <path fill="#3E6B30" d="M150 205 C 70 210, 20 150, 40 80 C 55 30, 120 10, 170 40 C 220 70, 225 150, 150 205 Z"/>
+    <g fill="#2A0B12">
+      <path d="M150 205 L 62 160 L 66 150 Z"/><path d="M150 205 L 48 112 L 54 104 Z"/><path d="M150 205 L 66 58 L 76 54 Z"/>
+      <path d="M150 205 L 132 26 L 142 26 Z"/><path d="M150 205 L 196 56 L 204 62 Z"/><path d="M150 205 L 214 118 L 216 128 Z"/>
+      <ellipse cx="96" cy="128" rx="7" ry="11" transform="rotate(-30 96 128)"/><ellipse cx="120" cy="88" rx="6" ry="10" transform="rotate(-15 120 88)"/>
+      <ellipse cx="172" cy="104" rx="6" ry="10" transform="rotate(20 172 104)"/>
+    </g>
+    <path d="M150 205 C 120 150, 110 100, 118 40" fill="none" stroke="#5E8C3A" stroke-width="2.4" opacity=".7"/>
+  </g>
+  <g transform="translate(150 70) rotate(28)">
+    <path fill="#5E8C3A" d="M80 160 C 20 160, -10 110, 10 60 C 25 20, 80 5, 115 35 C 150 65, 145 130, 80 160 Z"/>
+    <g fill="#2A0B12">
+      <path d="M80 160 L 14 120 L 18 112 Z"/><path d="M80 160 L 22 60 L 30 56 Z"/><path d="M80 160 L 84 14 L 92 16 Z"/>
+      <path d="M80 160 L 132 52 L 138 58 Z"/><ellipse cx="54" cy="90" rx="5" ry="9" transform="rotate(-25 54 90)"/>
+      <ellipse cx="104" cy="88" rx="5" ry="9" transform="rotate(20 104 88)"/>
+    </g>
+    <path d="M80 160 C 60 120, 60 70, 76 24" fill="none" stroke="#7DAE52" stroke-width="2" opacity=".7"/>
+  </g>
+</svg>
+
+<div class="wrap">
+  <header>
+    <h1 style="margin:0">
+      <svg class="title" viewBox="0 0 680 170" role="img" aria-label="Platenjacht">
+        <defs><path id="wave" d="M 18 118 C 120 40, 210 150, 340 96 S 560 40, 668 112"/></defs>
+        <text class="t3" transform="translate(7 9)"><textPath href="#wave" startOffset="50%" text-anchor="middle">Platenjacht</textPath></text>
+        <text class="t2" transform="translate(3.5 4.5)"><textPath href="#wave" startOffset="50%" text-anchor="middle">Platenjacht</textPath></text>
+        <text class="t1"><textPath href="#wave" startOffset="50%" text-anchor="middle">Platenjacht</textPath></text>
+      </svg>
+    </h1>
+    <p>Jouw platen, de laagste prijs inclusief verzending, en elke maandagochtend de beste deals in je mail.
+      <svg class="ball" viewBox="0 0 24 24" aria-hidden="true">
+        <defs><clipPath id="bc"><circle cx="12" cy="12" r="10"/></clipPath></defs>
+        <circle cx="12" cy="12" r="10" fill="#9B8C82"/>
+        <g clip-path="url(#bc)"><g class="facets" stroke="#2A0B12" stroke-width=".7" fill="none" opacity=".7">
+          <path d="M-12 6 H36 M-12 10 H36 M-12 14 H36 M-12 18 H36"/>
+          <path d="M-8 0 V24 M-4 0 V24 M0 0 V24 M4 0 V24 M8 0 V24 M12 0 V24 M16 0 V24 M20 0 V24 M24 0 V24 M28 0 V24"/>
+        </g><circle cx="8" cy="8" r="5" fill="#F2E2C4" opacity=".35"/></g>
+        <path class="glint" d="M18 3 l1 2 2 1 -2 1 -1 2 -1 -2 -2 -1 2 -1z" fill="#EBC665"/>
+      </svg>
+    </p>
+  </header>
+
+  <form class="add" id="addForm" autocomplete="off">
+    <input id="addInput" placeholder="Artiest - Album, of plak een link" aria-label="Album of link">
+    <input id="addTarget" inputmode="decimal" placeholder="Wensprijs €" aria-label="Wensprijs in euro (optioneel)">
+    <button type="submit" id="addBtn">In de bak</button>
+  </form>
+  <p class="hint">Een link van Spotify, Discogs of een webwinkel mag ook. Zakt een plaat onder je wensprijs, dan staat hij bovenaan je maandagmail.</p>
+  <div class="msg" id="msg" role="status" aria-live="polite"></div>
+
+  <div class="bar">
+    <div>
+      <h2>Je platenbak</h2>
+      <span class="status" id="status">Laden</span>
+    </div>
+    <button class="ghost small" id="checkBtn" type="button">Alles snel checken</button>
+  </div>
+
+  <ul class="crate" id="list"></ul>
+
+  <details class="settings" id="settings">
+    <summary>Koppeling met GitHub</summary>
+    <p class="hint" style="text-align:left;margin-left:0">Nodig om vanaf deze pagina platen toe te voegen en checks te starten. De sleutel blijft alleen in deze browser bewaard. In de README staat hoe je hem aanmaakt.</p>
+    <div class="grid">
+      <label>GitHub-gebruikersnaam <input id="cfgOwner" autocomplete="off"></label>
+      <label>Naam van de repository <input id="cfgRepo" autocomplete="off"></label>
+      <label>Toegangssleutel (fine-grained token) <input id="cfgToken" type="password" autocomplete="off"></label>
+      <div><button type="button" id="saveCfg">Koppeling opslaan</button></div>
+    </div>
+  </details>
+</div>
+
+<dialog id="detail" aria-labelledby="dTitle"></dialog>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const store = {
+    get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
+    set: (k, v) => { try { localStorage.setItem(k, v); } catch {} },
+  };
+  const eur = new Intl.NumberFormat("nl-NL", { style: "currency", currency: "EUR" });
+  const money = (n) => eur.format(n);
+  const bare = (n) => eur.format(n).replace(/^€\s?/, "");
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const isLink = (s) => /^https?:\/\//i.test(s || "");
+
+  function guessRepo() {
+    const h = location.hostname;
+    if (h.endsWith(".github.io")) {
+      const owner = h.split(".")[0];
+      const seg = location.pathname.split("/").filter(Boolean)[0];
+      return { owner, repo: seg || `${owner}.github.io` };
+    }
+    return { owner: "", repo: "" };
+  }
+  const guess = guessRepo();
+  const cfg = {
+    owner: store.get("pj_owner") || guess.owner,
+    repo: store.get("pj_repo") || guess.repo,
+    token: store.get("pj_token") || "",
+  };
+  const connected = () => Boolean(cfg.owner && cfg.repo && cfg.token);
+
+  let albums = [];
+  let prices = { updated: null, albums: {} };
+  let busy = false;
+  let openId = null;
+
+  // ---------- GitHub ----------
+  const b64encode = (str) => {
+    const bytes = new TextEncoder().encode(str);
+    let bin = ""; bytes.forEach((b) => (bin += String.fromCharCode(b)));
+    return btoa(bin);
+  };
+  const b64decode = (s) => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, "")), (c) => c.charCodeAt(0)));
+
+  async function gh(path, opts = {}) {
+    const r = await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}${path}`, {
+      ...opts,
+      headers: {
+        Accept: "application/vnd.github+json",
+        Authorization: `Bearer ${cfg.token}`,
+        "X-GitHub-Api-Version": "2022-11-28",
+        ...(opts.headers || {}),
+      },
+    });
+    if (!r.ok) {
+      let detail = "";
+      try { detail = (await r.json()).message || ""; } catch {}
+      const err = new Error(detail || `GitHub gaf status ${r.status}`);
+      err.status = r.status;
+      throw err;
+    }
+    return r;
+  }
+
+  async function readAlbums() {
+    if (connected()) {
+      const j = await (await gh(`/contents/albums.json?t=${Date.now()}`, { cache: "no-store" })).json();
+      return { data: JSON.parse(b64decode(j.content)), sha: j.sha };
+    }
+    const r = await fetch(`albums.json?t=${Date.now()}`, { cache: "no-store" });
+    return { data: r.ok ? await r.json() : [], sha: null };
+  }
+
+  async function readPrices() {
+    if (connected()) {
+      const r = await gh(`/contents/data/prices.json?t=${Date.now()}`, {
+        cache: "no-store", headers: { Accept: "application/vnd.github.raw+json" },
+      });
+      return await r.json();
+    }
+    const r = await fetch(`data/prices.json?t=${Date.now()}`, { cache: "no-store" });
+    return r.ok ? await r.json() : { updated: null, albums: {} };
+  }
+
+  async function changeAlbums(mutate, message) {
+    for (let attempt = 0; attempt < 2; attempt++) {
+      const { data, sha } = await readAlbums();
+      const next = mutate(Array.isArray(data) ? data : []);
+      try {
+        await gh("/contents/albums.json", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message, content: b64encode(JSON.stringify(next, null, 2) + "\n"), sha }),
+        });
+        albums = next;
+        return;
+      } catch (e) {
+        if (e.status !== 409 || attempt === 1) throw e;
+      }
+    }
+  }
+
+  async function runCheck(inputs) {
+    await gh("/actions/workflows/check.yml/dispatches", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ref: "main", inputs: { scope: "all", mode: "full", album: "", mail: "false", ...inputs } }),
+    });
+    setTimeout(watchRuns, 5000);
+  }
+
+  // ---------- meldingen ----------
+  function say(text, isError = false) {
+    const m = $("msg");
+    m.textContent = text;
+    m.classList.toggle("err", isError);
+  }
+  function explain(e) {
+    if (e.status === 401) return "De toegangssleutel klopt niet of is verlopen. Maak een nieuwe aan en sla hem op onder Koppeling met GitHub.";
+    if (e.status === 403) return "De toegangssleutel mag dit niet. Geef hem rechten voor Contents en Actions (lezen en schrijven).";
+    if (e.status === 404) return "Repository niet gevonden. Controleer gebruikersnaam en repositorynaam onder Koppeling met GitHub.";
+    return e.message || "Er ging iets mis.";
+  }
+  function needConnection() {
+    if (connected()) return false;
+    say("Koppel eerst GitHub onderaan de pagina, dan kun je vanaf hier platen toevoegen en checken.", true);
+    $("detail").open && $("detail").close();
+    $("settings").open = true;
+    $("cfgToken").focus();
+    return true;
+  }
+
+  // ---------- vinyl in variantkleur ----------
+  function discBg(v) {
+    const c = (v && v.colors && v.colors.length) ? v.colors : ["#161214"];
+    const p = v ? v.pattern : "solid";
+    if (p === "marble") return `conic-gradient(from 30deg, ${c[0]}, ${c[1] || "#EFE6D6"}, ${c[0]}, ${c[2] || c[1] || "#EFE6D6"}, ${c[0]})`;
+    if (p === "splatter") {
+      const base = c[c.length - 1], dot = c[0] === base ? "#161214" : c[0];
+      return `radial-gradient(circle at 25% 30%, ${dot} 0 9%, transparent 10%), radial-gradient(circle at 70% 25%, ${dot} 0 6%, transparent 7%),
+              radial-gradient(circle at 60% 72%, ${dot} 0 8%, transparent 9%), radial-gradient(circle at 30% 75%, ${dot} 0 5%, transparent 6%), ${base}`;
+    }
+    if (p === "split") return `linear-gradient(90deg, ${c[0]} 50%, ${c[1] || "#EFE6D6"} 50%)`;
+    if (p === "picture") return `conic-gradient(#C9A23A, #B3262E, #E09A3A, #6B3FA0, #C9A23A)`;
+    if (p === "clear") return `radial-gradient(circle, ${c[0]}aa, ${c[0]}66)`;
+    return c[0];
+  }
+  const disc = (v) => `<span class="disc" style="background:${discBg(v)}" title="${esc(v?.label || "Zwart")}"></span>`;
+
+  // ---------- helpers ----------
+  function names(a, s) {
+    let host = "";
+    try { host = isLink(a.input) ? new URL(a.input).hostname.replace(/^www\./, "") : ""; } catch {}
+    const parts = a.input.split(" - ");
+    return {
+      artist: s?.artist || (isLink(a.input) ? "Plaat via link" : parts[0]),
+      album: s?.title || (isLink(a.input) ? host : parts.slice(1).join(" - ")),
+    };
+  }
+  function trend(s) {
+    const h = s?.history || [];
+    if (h.length < 2 || !s.cheapest) return null;
+    const prev = h[h.length - 2].total, now = s.cheapest.total;
+    if (now < prev - 0.01) return { down: true, text: `${money(prev - now)} goedkoper dan vorige check` };
+    if (now > prev + 0.01) return { down: false, text: `${money(now - prev)} duurder dan vorige check` };
+    return null;
+  }
+  function isDeal(a, s) {
+    const c = s?.cheapest;
+    if (!c) return false;
+    const target = parseFloat(a.target_price);
+    if (target && c.total <= target) return true;
+    if (c.is_sale) return true;
+    return Boolean(s.last_deal && s.last_deal.total === c.total);
+  }
+  function dealText(a, s) {
+    const c = s?.cheapest; if (!c) return "";
+    const target = parseFloat(a.target_price);
+    if (target && c.total <= target) return `Onder je wensprijs van ${money(target)}`;
+    if (c.is_sale) return `In de aanbieding bij ${c.shop}`;
+    if (s.last_deal?.reasons?.length) { const t = s.last_deal.reasons[0]; return t.charAt(0).toUpperCase() + t.slice(1); }
+    return "";
+  }
+  // reservehoes ligt altijd onder de echte hoes; laadt die niet, dan verdwijnt hij en zie je de reserve
+  const coverHtml = (s, n) => `<div class="blank" aria-hidden="true">${esc((n.artist || "?").charAt(0))}</div>` +
+    (s?.cover ? `<img src="${esc(s.cover)}" alt="Hoes van ${esc(n.album || n.artist)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : "");
+
+  function spark(hist) {
+    const pts = (hist || []).slice(-40);
+    if (pts.length < 2) return "";
+    const w = 170, h = 44, pad = 5;
+    const vals = pts.map((p) => p.total);
+    const min = Math.min(...vals), max = Math.max(...vals), span = max - min || 1;
+    const xy = vals.map((v, i) => [pad + (i * (w - pad * 2)) / (vals.length - 1), pad + (h - pad * 2) * (1 - (v - min) / span)]);
+    const last = xy[xy.length - 1];
+    return `<svg class="spark" viewBox="0 0 ${w} ${h}" role="img" aria-label="Prijsverloop van ${money(vals[0])} naar ${money(vals[vals.length - 1])}">
+      <polyline points="${xy.map((p) => p.map((n) => n.toFixed(1)).join(",")).join(" ")}"/><circle cx="${last[0].toFixed(1)}" cy="${last[1].toFixed(1)}" r="3.4"/></svg>`;
+  }
+
+  // ---------- platenbak ----------
+  function card(a) {
+    const s = prices.albums?.[a.id];
+    const pending = !s || !s.checked;
+    const c = s?.cheapest;
+    const n = names(a, s);
+    const deal = isDeal(a, s);
+    const sticker = pending ? `<span class="sticker wait">zoeken</span>`
+      : c ? `<span class="sticker${deal ? " deal" : ""}">${esc(bare(c.total))}<small>euro</small></span>`
+      : `<span class="sticker none">niets gevonden</span>`;
+    const vars = s?.variants || [];
+    const dots = vars.length > 1
+      ? `<div class="dots" aria-label="${vars.length} varianten">${vars.slice(0, 6).map(disc).join("")}${vars.length > 6 ? `<span class="more">+${vars.length - 6}</span>` : ""}</div>` : "";
+    const t = trend(s);
+    const flag = deal ? `<div class="flag">${esc(dealText(a, s))}</div>`
+      : t && t.down ? `<div class="flag down">${esc(t.text)}</div>` : "";
+    return `<li><button class="sleeve" type="button" data-id="${esc(a.id)}" aria-label="${esc(n.artist)}, ${esc(n.album)}${c ? `, vanaf ${money(c.total)}` : ""}">
+      <div class="cover${pending ? " pending" : ""}">${coverHtml(s, n)}${sticker}</div>
+      <div class="card-meta"><div class="artist">${esc(n.artist)}</div>${n.album ? `<div class="album">${esc(n.album)}</div>` : ""}${flag}${dots}</div>
+    </button></li>`;
+  }
+
+  function render() {
+    const list = $("list");
+    if (!albums.length) {
+      list.innerHTML = `<li class="empty"><strong>De bak is nog leeg</strong>Zet hierboven je eerste plaat erin, bijvoorbeeld “Marvin Gaye - What's Going On”.</li>`;
+    } else {
+      const score = (a) => { const s = prices.albums?.[a.id]; return isDeal(a, s) ? 0 : (trend(s)?.down ? 1 : 2); };
+      const sorted = [...albums].sort((x, y) => score(x) - score(y) || (y.added || "").localeCompare(x.added || ""));
+      list.innerHTML = sorted.map(card).join("");
+    }
+    if (!busy) {
+      const st = $("status");
+      st.className = "status";
+      const count = `${albums.length} ${albums.length === 1 ? "plaat" : "platen"}`;
+      st.textContent = prices.updated
+        ? `${count}, bijgewerkt ${new Date(prices.updated).toLocaleString("nl-NL", { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" })}`
+        : `${count}, nog niet gecheckt`;
+      const u = prices.usage;
+      if (u && u.budget) st.textContent += `. Zoektegoed: ${u.tavily_credits} van ${u.budget}`;
+    }
+    if (openId) openDetail(openId, true);
+  }
+
+  // ---------- detailvenster ----------
+  let variantFilter = null;
+  function openDetail(id, refresh = false) {
+    const a = albums.find((x) => x.id === id);
+    const dlg = $("detail");
+    if (!a) { if (dlg.open) dlg.close(); return; }
+    if (!refresh) variantFilter = null;
+    openId = id;
+    const s = prices.albums?.[id];
+    const n = names(a, s);
+    const vars = s?.variants || [];
+    const active = variantFilter ? vars.find((v) => v.key === variantFilter) : null;
+    const offers = (s?.offers || []).filter((o) => !variantFilter || (o.variant?.key || "black") === variantFilter);
+    const c = active ? offers[0] : s?.cheapest;
+    const shownVariant = active || (c ? c.variant : null) || vars[0] || null;
+    const t = trend(s);
+    const deal = isDeal(a, s);
+
+    let best;
+    if (!s || !s.checked) best = `<p class="best">Wordt opgezocht, over een paar minuten staan hier de prijzen.</p>`;
+    else if (c) {
+      const ship = c.shipping_estimated ? `verzending geschat op ${money(c.shipping)}` : c.shipping === 0 ? "gratis verzending" : `incl. ${money(c.shipping)} verzending`;
+      best = `<p class="best"><span class="big">${money(c.total)}</span>
+        bij <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.shop)}</a>, ${c.condition === "used" ? "tweedehands" : "nieuw"}, ${ship}
+        ${active ? `<span class="flag down">Goedkoopste ${esc(active.label.toLowerCase())}</span>` : deal ? `<span class="flag">${esc(dealText(a, s))}</span>` : t ? `<span class="flag${t.down ? " down" : ""}">${esc(t.text)}</span>` : ""}</p>`;
+    } else best = `<p class="best">Geen LP met prijs gevonden bij de laatste check.</p>`;
+
+    const variantHtml = vars.length ? `<h3 class="section-title">Varianten</h3>
+      <div class="variants">
+        <button class="variant" type="button" data-variant="" aria-pressed="${!variantFilter}">Alle</button>
+        ${vars.map((v) => `<button class="variant" type="button" data-variant="${esc(v.key)}" aria-pressed="${variantFilter === v.key}">
+          ${disc(v)}${esc(v.label)} <b>${money(v.best.total)}</b></button>`).join("")}
+      </div>` : "";
+
+    const table = offers.length ? `<h3 class="section-title">${variantFilter ? "Aanbiedingen van deze variant" : "Alle aanbiedingen"}</h3>
+      <div class="scroll"><table>
+        <thead><tr><th>Winkel</th><th>Variant</th><th>Staat</th><th class="num">Prijs</th><th class="num">Verzending</th><th class="num">Totaal</th></tr></thead>
+        <tbody>${offers.map((o) => `<tr>
+          <td><a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.shop)}</a>
+            ${o.is_sale ? `<span class="sale">Aanbieding${o.original_price ? `, was ${money(o.original_price)}` : ""}</span>` : ""}
+            ${o.source && o.source !== "web" ? `<span class="sub">${esc(o.source)}</span>` : ""}
+            ${o.seen ? `<span class="sub">gezien ${esc(new Date(o.seen).toLocaleDateString("nl-NL", { day: "numeric", month: "short" }))}</span>` : ""}</td>
+          <td><span class="vcell">${disc(o.variant)}${esc(o.variant?.label || "Zwart")}</span>${o.edition ? `<span class="sub">${esc(o.edition)}</span>` : ""}</td>
+          <td>${o.condition === "used" ? "tweedehands" : "nieuw"}</td>
+          <td class="num">${money(o.price)}</td>
+          <td class="num${o.shipping_estimated ? " est" : ""}">${o.shipping_estimated ? "± " + money(o.shipping) : o.shipping === 0 ? "gratis" : money(o.shipping)}</td>
+          <td class="num"><strong>${money(o.total)}</strong></td></tr>`).join("")}</tbody>
+      </table></div>` : "";
+
+    const checked = s?.checked ? new Date(s.checked).toLocaleString("nl-NL", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) : "";
+    dlg.innerHTML = `<div class="detail">
+      <div><div class="stage">
+        <div class="record" style="background:${discBg(shownVariant)}"></div>
+        <div class="front">${coverHtml(s, n)}</div>
+      </div>
+      ${s?.history?.length > 1 || s?.lowest_ever ? `<div class="trend">${spark(s.history)}${s.lowest_ever ? `<span>Laagste ooit<br><strong style="color:var(--cream)">${money(s.lowest_ever)}</strong></span>` : ""}</div>` : ""}
+      </div>
+      <div>
+        <div class="dhead"><div><h2 id="dTitle">${esc(n.artist)}</h2>${n.album ? `<div class="album">${esc(n.album)}</div>` : ""}</div>
+          <button class="ghost close" type="button" data-act="close" aria-label="Sluiten">×</button></div>
+        ${best}${variantHtml}${table}
+        <div class="tools">
+          <label>Wensprijs <input id="dTarget" inputmode="decimal" value="${a.target_price ?? ""}" placeholder="€"></label>
+          <button class="ghost small" type="button" data-act="target">Opslaan</button>
+          <button class="ghost small" type="button" data-act="check">Dit album grondig checken</button>
+          <button class="ghost small" type="button" data-act="delete">Uit de bak halen</button>
+          ${isLink(a.input) ? `<a href="${esc(a.input)}" target="_blank" rel="noopener">Jouw link</a>` : ""}
+        </div>
+        ${checked ? `<p class="hint" style="text-align:left;margin-left:0">Laatst gecheckt ${esc(checked)}</p>` : ""}
+      </div>
+    </div>`;
+    if (!dlg.open) dlg.showModal();
+    // de plaat schuift uit de hoes
+    const rec = dlg.querySelector(".record");
+    requestAnimationFrame(() => requestAnimationFrame(() => rec && rec.classList.add("out")));
+  }
+
+  $("list").addEventListener("click", (ev) => {
+    const b = ev.target.closest(".sleeve");
+    if (b) openDetail(b.dataset.id);
+  });
+
+  $("detail").addEventListener("click", async (ev) => {
+    const dlg = $("detail");
+    if (ev.target === dlg) { dlg.close(); return; }
+    const v = ev.target.closest("[data-variant]");
+    if (v) {
+      variantFilter = v.dataset.variant || null;
+      openDetail(openId, true);
+      return;
+    }
+    const btn = ev.target.closest("[data-act]");
+    if (!btn) return;
+    const a = albums.find((x) => x.id === openId);
+    const act = btn.dataset.act;
+    if (act === "close") { dlg.close(); return; }
+    if (!a || needConnection()) return;
+    btn.disabled = true;
+    try {
+      if (act === "target") {
+        const raw = $("dTarget").value.replace(",", ".").replace(/[^\d.]/g, "");
+        const val = raw ? Math.round(parseFloat(raw) * 100) / 100 : null;
+        await changeAlbums((list) => list.map((x) => (x.id === a.id ? { ...x, target_price: val } : x)), `Wensprijs aangepast: ${a.input.slice(0, 60)}`);
+        say(val ? `Wensprijs opgeslagen: ${money(val)}.` : "Wensprijs verwijderd.");
+        render();
+      } else if (act === "check") {
+        await runCheck({ mode: "full", album: a.id });
+        say(`Grondige check gestart voor “${a.input}”. Over een paar minuten staan de nieuwe prijzen hier.`);
+        dlg.close();
+      } else if (act === "delete") {
+        if (!confirm(`“${a.input}” uit de bak halen?`)) { btn.disabled = false; return; }
+        await changeAlbums((list) => list.filter((x) => x.id !== a.id), `Album verwijderd: ${a.input.slice(0, 60)}`);
+        say("Uit de bak gehaald.");
+        dlg.close();
+        render();
+      }
+    } catch (e) { say(explain(e), true); }
+    finally { btn.disabled = false; }
+  });
+  $("detail").addEventListener("close", () => { openId = null; });
+
+  async function load() {
+    try {
+      const [a, p] = await Promise.all([readAlbums(), readPrices()]);
+      albums = Array.isArray(a.data) ? a.data : [];
+      prices = p && p.albums ? p : { updated: null, albums: {} };
+      render();
+    } catch (e) {
+      $("status").textContent = "Gegevens laden lukte niet";
+      say(explain(e), true);
+    }
+  }
+
+  // ---------- lopende check volgen ----------
+  let pollTimer = null;
+  async function watchRuns() {
+    if (!connected()) return;
+    clearTimeout(pollTimer);
+    try {
+      const r = await (await gh("/actions/runs?per_page=1")).json();
+      const run = r.workflow_runs?.[0];
+      const running = run && run.status !== "completed";
+      if (running) {
+        busy = true;
+        $("status").className = "status busy";
+        $("status").textContent = "Bezig met prijzen zoeken";
+        $("checkBtn").disabled = true;
+        pollTimer = setTimeout(watchRuns, 20000);
+      } else if (busy) {
+        busy = false;
+        $("checkBtn").disabled = false;
+        if (run && run.conclusion !== "success") say("De laatste check is mislukt. Bekijk het tabblad Actions op GitHub voor de details.", true);
+        else say("Klaar, de prijzen zijn bijgewerkt.");
+        setTimeout(load, 8000);
+      }
+    } catch { /* status is een extraatje */ }
+  }
+
+  // ---------- acties ----------
+  $("addForm").addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+    const input = $("addInput").value.trim();
+    if (!input) { $("addInput").focus(); return; }
+    if (needConnection()) return;
+    const tRaw = $("addTarget").value.replace(",", ".").replace(/[^\d.]/g, "");
+    const target = tRaw ? Math.round(parseFloat(tRaw) * 100) / 100 : null;
+    $("addBtn").disabled = true;
+    try {
+      const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+      await changeAlbums((list) => [...list, { id, input, target_price: target, added: new Date().toISOString() }], `Album toegevoegd: ${input.slice(0, 60)}`);
+      $("addInput").value = ""; $("addTarget").value = "";
+      say("In de bak. De prijzen en de hoes worden nu opgezocht, dat duurt een paar minuten.");
+      render();
+      setTimeout(watchRuns, 6000);
+    } catch (e) { say(explain(e), true); }
+    finally { $("addBtn").disabled = false; }
+  });
+
+  $("checkBtn").addEventListener("click", async () => {
+    if (needConnection()) return;
+    $("checkBtn").disabled = true;
+    try {
+      await runCheck({ mode: "light" });
+      say("Snelle check gestart: Discogs volledig en één webzoekopdracht per plaat. Duurt een paar minuten.");
+    } catch (e) { say(explain(e), true); $("checkBtn").disabled = false; }
+  });
+
+  $("cfgOwner").value = cfg.owner;
+  $("cfgRepo").value = cfg.repo;
+  $("cfgToken").value = cfg.token;
+  if (!connected()) $("settings").open = true;
+  $("saveCfg").addEventListener("click", async () => {
+    cfg.owner = $("cfgOwner").value.trim();
+    cfg.repo = $("cfgRepo").value.trim();
+    cfg.token = $("cfgToken").value.trim();
+    store.set("pj_owner", cfg.owner); store.set("pj_repo", cfg.repo); store.set("pj_token", cfg.token);
+    try {
+      await gh("");
+      say("Gekoppeld.");
+      $("settings").open = false;
+      load(); watchRuns();
+    } catch (e) { say(explain(e), true); }
+  });
+
+  load();
+  watchRuns();
+})();
+</script>
+</body>
+</html>
