@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-11T14:46:52+00:00",
+ "updated": "2026-11-11T14:47:58+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 40,
+  "tavily_credits": 47,
   "budget": 900
  },
  "albums": {
@@ -419,6 +419,346 @@
    "input": "https://www.discogs.com/master/1539847-Loyle-Carner-Not-Waving-But-Drowning",
    "error": "Gemini 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
    "checked": "2026-11-11T14:46:52+00:00"
+  },
+  "mwc8gcb1r5sv": {
+   "input": "https://www.discogs.com/master/20048-The-Smiths-Hatful-Of-Hollow",
+   "artist": "The Smiths",
+   "title": "Hatful Of Hollow",
+   "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": "https://i.discogs.com/28QvGnsq2NObiExZp5aRYcXNVM6tAkn7CUmmISIC6aM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzMTY3/MTI0LTE3Mzk4MDU3/NDYtNDA5NC5qcGVn.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/33167124",
+     "price": 19.58,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 29.58,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2023 UK, Europe & US",
+     "source": "121 te koop op Discogs"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Turntable Lab",
+     "url": "https://www.turntablelab.com/products/the-smiths-hatful-of-hollow-180g-vinyl-lp",
+     "price": 22.25,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 30.25,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "German Import",
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Rhino",
+     "url": "https://store.rhino.com/products/hatful-of-hollow",
+     "price": 22.28,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 30.28,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Target",
+     "url": "https://www.target.com/p/smiths-hatful-of-hollow-180-gram-vinyl/-/A-90690049",
+     "price": 22.28,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 30.28,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "eBay",
+     "url": "https://www.ebay.com/shop/hatful-of-hollow-vinyl?_nkw=hatful+of+hollow+vinyl",
+     "price": 23.78,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 31.78,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": "https://i.discogs.com/SJ2_HbjQ_eH7XAlO5l9zmTOMUh5HgkjJOCQ62v0h0yU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM1OTg2/MDM2LTE3NjYzNDYx/MDUtMzkyOS5qcGVn.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/35986036",
+     "price": 23.73,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 33.73,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2023 UK, Europe & US",
+     "source": "11 te koop op Discogs"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Deafman Vinyl",
+     "url": "https://www.deafmanvinyl.com/products/smiths-hatful-of-hollow",
+     "price": 27.6,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 35.6,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Rough Trade",
+     "url": "https://www.roughtrade.com/product/the-smiths/hatful-of-hollow",
+     "price": 33.5,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 41.5,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Near Mint",
+      "key": "solid:#3F7A3A",
+      "colors": [
+       "#3F7A3A"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "River Soar Records",
+     "url": "https://www.riversoarrecords.com/en-us/products/the-smiths-hatful-of-hollow-lp-comp-ast-near-mint-nm-or-m",
+     "price": 59.85,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 67.85,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "Near Mint",
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "White Label",
+      "key": "solid:#EFE6D6",
+      "colors": [
+       "#EFE6D6"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": "https://i.discogs.com/NRRZ0i1U0Ax5gtCiWgCMTJKYxGDhD9tciRnKh8-nkPM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY5NDgw/NTUtMTYwODQ1Njk4/NC05MTc2LmpwZWc.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/6948055",
+     "price": 200.0,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 210.0,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "1984 Germany",
+     "source": "3 te koop op Discogs"
+    },
+    {
+     "variant": {
+      "label": "White Label",
+      "key": "solid:#EFE6D6",
+      "colors": [
+       "#EFE6D6"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": "https://i.discogs.com/v-oFka4iuOCXsRb2ZwbNcddPZpJfyvLU__k-Gj3czIE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NTE5/NTYtMTQ2Njc5ODE5/Ny02ODUwLmpwZWc.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/3851956",
+     "price": 320.0,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 330.0,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "1984 UK",
+     "source": "3 te koop op Discogs"
+    }
+   ],
+   "variants": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "count": 8,
+     "best": {
+      "shop": "Discogs",
+      "url": "https://www.discogs.com/sell/release/33167124",
+      "total": 29.58,
+      "condition": "used"
+     },
+     "thumb": "https://i.discogs.com/28QvGnsq2NObiExZp5aRYcXNVM6tAkn7CUmmISIC6aM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzMTY3/MTI0LTE3Mzk4MDU3/NDYtNDA5NC5qcGVn.jpeg"
+    },
+    {
+     "label": "Near Mint",
+     "key": "solid:#3F7A3A",
+     "colors": [
+      "#3F7A3A"
+     ],
+     "pattern": "solid",
+     "count": 1,
+     "best": {
+      "shop": "River Soar Records",
+      "url": "https://www.riversoarrecords.com/en-us/products/the-smiths-hatful-of-hollow-lp-comp-ast-near-mint-nm-or-m",
+      "total": 67.85,
+      "condition": "used"
+     },
+     "thumb": null
+    },
+    {
+     "label": "White Label",
+     "key": "solid:#EFE6D6",
+     "colors": [
+      "#EFE6D6"
+     ],
+     "pattern": "solid",
+     "count": 2,
+     "best": {
+      "shop": "Discogs",
+      "url": "https://www.discogs.com/sell/release/6948055",
+      "total": 210.0,
+      "condition": "used"
+     },
+     "thumb": "https://i.discogs.com/NRRZ0i1U0Ax5gtCiWgCMTJKYxGDhD9tciRnKh8-nkPM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY5NDgw/NTUtMTYwODQ1Njk4/NC05MTc2LmpwZWc.jpeg"
+    }
+   ],
+   "cover": "https://i.discogs.com/oJ85N6HJOBPwHlzIUJpersJGDpAhO9zXYt__ulYOJSY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4MjEz/NS0xNjY4MTM5NDE5/LTk5NjguanBlZw.jpeg",
+   "cheapest": {
+    "variant": {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": "https://i.discogs.com/28QvGnsq2NObiExZp5aRYcXNVM6tAkn7CUmmISIC6aM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzMTY3/MTI0LTE3Mzk4MDU3/NDYtNDA5NC5qcGVn.jpeg",
+    "shop": "Discogs",
+    "url": "https://www.discogs.com/sell/release/33167124",
+    "price": 19.58,
+    "shipping": 10.0,
+    "shipping_estimated": true,
+    "total": 29.58,
+    "condition": "used",
+    "is_sale": false,
+    "original_price": null,
+    "edition": "2023 UK, Europe & US",
+    "source": "121 te koop op Discogs"
+   },
+   "checked": "2026-11-11T14:47:58+00:00",
+   "error": null,
+   "web_checked": "2026-11-11T14:47:58+00:00",
+   "history": [
+    {
+     "date": "2026-11-11",
+     "total": 29.58,
+     "shop": "Discogs"
+    }
+   ],
+   "lowest_ever": 29.58
   }
  }
 }
