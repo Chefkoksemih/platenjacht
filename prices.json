@@ -1,9 +1,264 @@
 {
- "updated": "2026-11-11T14:27:43+00:00",
- "albums": {},
+ "updated": "2026-11-11T14:28:21+00:00",
+ "albums": {
+  "mwc7rb00vzce": {
+   "input": "https://www.discogs.com/master/124666-Fugees-The-Score?gad_source=1&gad_campaignid=22178621710&gbraid=0AAAAADmy1_rvoARm23XSOtJM0Iu0kjbA6&gclid=Cj0KCQiAwdDXBhDuARIsAFdLukkZD9Gt9UvSf_VUVOl2MX-trIhOVwE0tSgl3bADTPfZT2PKGwC4rYcaAvC-EALw_wcB",
+   "artist": "Fugees",
+   "title": "The Score",
+   "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Get On Down",
+     "url": "https://getondown.com/products/the-score-2xlp-1",
+     "price": 16.93,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 24.93,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 25.85,
+     "edition": "2xLP",
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Sony Music Vinyl",
+     "url": "https://vinyl.sonymusic.com/products/fugees-the-score-2lp",
+     "price": 26.73,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 34.73,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2LP",
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "eBay",
+     "url": "https://www.ebay.com/shop/fugees-vinyl?_nkw=fugees+vinyl",
+     "price": 26.94,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 34.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2LP/Gatefold",
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "eBay",
+     "url": "https://www.ebay.com/shop/fugees-the-score-vinyl?_nkw=fugees+the+score+vinyl",
+     "price": 26.94,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 34.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": 27.63,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Acoustic Sounds",
+     "url": "https://store.acousticsounds.com/d/97180/The_Fugees-The_Score-Vinyl_Record",
+     "price": 27.63,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 35.63,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "180-gram double LP reissue",
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": "https://i.discogs.com/uA1TtHB6tefZgmqqLkFyOolpuxQJwUPEU1HWx8EEeLQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3Mjc2/OTMwLTE2ODU4OTA4/OTMtNTgxNC5qcGVn.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/27276930",
+     "price": 26.69,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 36.69,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2023 US",
+     "source": "10 te koop op Discogs"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": "https://i.discogs.com/jyAJLaMfUcJBo04te1L4x2KSMr4hKuOCSitAsKbVp6Q/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMTUw/Njg0LTE2NTE5Njc1/NzMtNzcxNy5qcGVn.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/23150684",
+     "price": 30.25,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 40.25,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2021 US",
+     "source": "6 te koop op Discogs"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Rough Trade",
+     "url": "https://www.roughtrade.com/product/fugees/the-score-1",
+     "price": 35.9,
+     "shipping": 12.5,
+     "shipping_estimated": true,
+     "total": 48.4,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2LP",
+     "source": "web",
+     "seen": "2026-11-11"
+    }
+   ],
+   "variants": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "count": 8,
+     "best": {
+      "shop": "Get On Down",
+      "url": "https://getondown.com/products/the-score-2xlp-1",
+      "total": 24.93,
+      "condition": "new"
+     },
+     "thumb": "https://i.discogs.com/uA1TtHB6tefZgmqqLkFyOolpuxQJwUPEU1HWx8EEeLQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3Mjc2/OTMwLTE2ODU4OTA4/OTMtNTgxNC5qcGVn.jpeg"
+    }
+   ],
+   "cover": "https://i.discogs.com/sUC-OcPFlR1nXz8VFp1eBUbrdSKSQVM7TYGPAkDgTpg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc5NTk1/OTUtMTQ2ODYxMTk2/OC01MjM2LmpwZWc.jpeg",
+   "cheapest": {
+    "variant": {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": null,
+    "shop": "Get On Down",
+    "url": "https://getondown.com/products/the-score-2xlp-1",
+    "price": 16.93,
+    "shipping": 8.0,
+    "shipping_estimated": true,
+    "total": 24.93,
+    "condition": "new",
+    "is_sale": true,
+    "original_price": 25.85,
+    "edition": "2xLP",
+    "source": "web",
+    "seen": "2026-11-11"
+   },
+   "checked": "2026-11-11T14:28:21+00:00",
+   "error": null,
+   "web_checked": "2026-11-11T14:28:21+00:00",
+   "history": [
+    {
+     "date": "2026-11-11",
+     "total": 24.93,
+     "shop": "Get On Down"
+    }
+   ],
+   "lowest_ever": 24.93,
+   "last_notified_total": 24.93,
+   "last_deal": {
+    "date": "2026-11-11",
+    "reasons": [
+     "onder je wensprijs van € 25,00",
+     "als aanbieding gemarkeerd bij Get On Down, was € 25,85"
+    ],
+    "total": 24.93
+   },
+   "notified_sale_urls": [
+    "https://getondown.com/products/the-score-2xlp-1"
+   ]
+  }
+ },
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 6,
+  "tavily_credits": 13,
   "budget": 900
  }
 }
