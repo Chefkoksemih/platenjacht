@@ -6,12 +6,12 @@
 <meta name="theme-color" content="#2A0B12">
 <title>Platenjacht</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%231E0A0E'/><circle cx='50' cy='50' r='19' fill='%23E09A3A'/><circle cx='50' cy='50' r='3' fill='%231E0A0E'/></svg>">
-<link rel="preload" href="fonts/shrikhand.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="shrikhand.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face { font-family: "Shrikhand"; src: url("fonts/shrikhand.woff2") format("woff2"); font-display: swap; }
-@font-face { font-family: "Fraunces"; src: url("fonts/fraunces.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Fraunces"; src: url("fonts/fraunces-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "Shrikhand"; src: url("shrikhand.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Fraunces"; src: url("fraunces.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Fraunces"; src: url("fraunces-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
 
 :root {
   color-scheme: dark;
@@ -447,12 +447,12 @@ details.settings summary { cursor: pointer; font-weight: 700; font-size: 18px; c
 
   async function readPrices() {
     if (connected()) {
-      const r = await gh(`/contents/data/prices.json?t=${Date.now()}`, {
+      const r = await gh(`/contents/prices.json?t=${Date.now()}`, {
         cache: "no-store", headers: { Accept: "application/vnd.github.raw+json" },
       });
       return await r.json();
     }
-    const r = await fetch(`data/prices.json?t=${Date.now()}`, { cache: "no-store" });
+    const r = await fetch(`prices.json?t=${Date.now()}`, { cache: "no-store" });
     return r.ok ? await r.json() : { updated: null, albums: {} };
   }
 

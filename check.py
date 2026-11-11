@@ -2,7 +2,8 @@
 Platenjacht: zoekt eens per week per album de goedkoopste LP (incl. verzending)
 en stuurt op maandagochtend een overzicht met de beste deals en laagste prijzen.
 
-Draait via GitHub Actions. Leest albums.json en config.json, schrijft data/prices.json.
+Draait via GitHub Actions. Leest albums.json en config.json, schrijft prices.json.
+Alle bestanden staan naast elkaar in de hoofdmap van de repository.
 
 Omgevingsvariabelen (GitHub Secrets):
   TAVILY_API_KEY      verplicht, voor zoeken op het web
@@ -29,9 +30,9 @@ from urllib.parse import urlparse
 
 import requests
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+ROOT = pathlib.Path(__file__).resolve().parent
 ALBUMS_FILE = ROOT / "albums.json"
-PRICES_FILE = ROOT / "data" / "prices.json"
+PRICES_FILE = ROOT / "prices.json"
 CONFIG_FILE = ROOT / "config.json"
 
 TAVILY_KEY = os.environ.get("TAVILY_API_KEY", "")
@@ -844,7 +845,6 @@ def main():
     usage["budget"] = int(CONFIG.get("tavily_monthly_budget", 900))
     db["usage"] = usage
     db["updated"] = now_iso()
-    PRICES_FILE.parent.mkdir(parents=True, exist_ok=True)
     PRICES_FILE.write_text(json.dumps(db, ensure_ascii=False, indent=1), encoding="utf-8")
 
     if SEND_DIGEST:
@@ -957,7 +957,7 @@ def send_digest(albums, state):
 
     week = dt.date.today().isocalendar()[1]
     base = SITE_URL.rstrip("/") + "/" if SITE_URL else ""
-    header = (f"<img src='{base}assets/mail-header.jpg' width='600' alt='Platenjacht' style='display:block;width:100%;max-width:600px;height:auto;border-radius:18px 18px 0 0'>"
+    header = (f"<img src='{base}mail-header.jpg' width='600' alt='Platenjacht' style='display:block;width:100%;max-width:600px;height:auto;border-radius:18px 18px 0 0'>"
               if base else f"<div style='padding:28px;text-align:center;font:bold 36px {serif};color:{CREAM}'>Platenjacht</div>")
     intro = (f"{deals} {'deal' if deals == 1 else 'deals'} deze week, bovenaan in goud." if deals
              else "Geen opvallende deals deze week. Hieronder de laagste prijs per plaat.")
