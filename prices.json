@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-11T15:05:48+00:00",
+ "updated": "2026-11-11T15:06:25+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 60,
+  "tavily_credits": 66,
   "budget": 900
  },
  "albums": {
@@ -1122,6 +1122,109 @@
     }
    ],
    "lowest_ever": 32.92
+  },
+  "mwc93x32w4eb": {
+   "input": "https://www.discogs.com/master/1500247-Willem-Man-In-Nood",
+   "artist": "Willem de Bruin",
+   "title": "Man In Nood",
+   "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "bol.com",
+     "url": "https://www.bol.com/nl/nl/p/big2-new-life/9300000050601171",
+     "price": 34.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 39.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "Standard Edition",
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-11"
+    }
+   ],
+   "variants": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "count": 1,
+     "best": {
+      "shop": "bol.com",
+      "url": "https://www.bol.com/nl/nl/p/big2-new-life/9300000050601171",
+      "total": 39.94,
+      "condition": "new"
+     },
+     "thumb": null
+    }
+   ],
+   "pressings": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "thumb": "https://i.discogs.com/xGzJ9tdiuTSGA9UYc5ErH98pvsUZmwbjNpjJsju0wjQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwNjYx/NTQwLTE3MTU1NDg0/NTUtOTEyOC5qcGVn.jpeg",
+     "year": "2024",
+     "country": "Netherlands"
+    }
+   ],
+   "cover": "https://i.discogs.com/7kOEZqu1ZcQA4vU6AAGfMPvy_evMMk2R7oE97eYvMYk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMjAz/NTM1LTE1NDk4NzU0/NTAtOTI1NC5qcGVn.jpeg",
+   "label": "TopNotch",
+   "barcodes": [
+    "0602458767087"
+   ],
+   "discogs_url": "https://www.discogs.com/master/1500247",
+   "cheapest": {
+    "variant": {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": null,
+    "shop": "bol.com",
+    "url": "https://www.bol.com/nl/nl/p/big2-new-life/9300000050601171",
+    "price": 34.99,
+    "shipping": 4.95,
+    "shipping_estimated": true,
+    "total": 39.94,
+    "condition": "new",
+    "is_sale": false,
+    "original_price": null,
+    "edition": "Standard Edition",
+    "source": "web",
+    "region": "NL",
+    "seen": "2026-11-11"
+   },
+   "checked": "2026-11-11T15:06:25+00:00",
+   "error": null,
+   "web_checked": "2026-11-11T15:06:25+00:00",
+   "history": [
+    {
+     "date": "2026-11-11",
+     "total": 39.94,
+     "shop": "bol.com"
+    }
+   ],
+   "lowest_ever": 39.94
   }
  }
 }
