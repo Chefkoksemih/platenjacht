@@ -182,39 +182,47 @@ def ask_ai(prompt, max_tokens=2500):
     return ask_claude(prompt, max_tokens)
 
 
+AI_FAILED = False   # wordt True als een uitleesbeurt echt niet lukte
+
+
 def ask_gemini(prompt, max_tokens=2500):
-    models = [CONFIG.get("gemini_model", "gemini-2.5-flash-lite"), "gemini-flash-lite-latest", "gemini-flash-latest"]
+    models = [CONFIG.get("gemini_model", "gemini-2.5-flash-lite"), "gemini-flash-lite-latest",
+              "gemini-2.5-flash", "gemini-flash-latest"]
     last_err = None
     for model in dict.fromkeys(models):
         for attempt in range(3):
-            r = requests.post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-                headers={"x-goog-api-key": GEMINI_KEY, "Content-Type": "application/json"},
-                json={
-                    "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-                    "generationConfig": {
-                        "temperature": 0,
-                        "maxOutputTokens": max_tokens,
-                        "responseMimeType": "application/json",
+            try:
+                r = requests.post(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                    headers={"x-goog-api-key": GEMINI_KEY, "Content-Type": "application/json"},
+                    json={
+                        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                        "generationConfig": {"temperature": 0, "maxOutputTokens": max_tokens,
+                                             "responseMimeType": "application/json"},
                     },
-                },
-                timeout=180,
-            )
-            if r.status_code == 429:
-                log("  Gemini-limiet bereikt, even wachten...")
-                time.sleep(30 * (attempt + 1))
+                    timeout=180,
+                )
+            except requests.RequestException as e:
+                last_err = str(e)
+                time.sleep(10)
+                continue
+            if r.status_code in (429, 500, 502, 503, 504):
+                wait = [15, 30, 60][attempt]
+                last_err = f"{model} gaf {r.status_code}"
+                log(f"  Gemini druk of limiet ({r.status_code}, {model}), {wait} seconden wachten...")
+                time.sleep(wait)
                 continue
             if r.status_code == 404:
                 last_err = f"model {model} niet gevonden"
-                break  # probeer het volgende model
+                break
             if r.status_code >= 400:
-                raise RuntimeError(f"Gemini {r.status_code}: {r.text[:300]}")
+                last_err = f"{model} gaf {r.status_code}: {r.text[:200]}"
+                break
             data = r.json()
             parts = (data.get("candidates") or [{}])[0].get("content", {}).get("parts", [])
             return "".join(p.get("text", "") for p in parts)
-        else:
-            last_err = "Gemini-limiet bleef bereikt"
-    raise RuntimeError(f"Gemini werkt niet: {last_err}")
+        log(f"  {model} lukt nu niet, ander model proberen")
+    raise RuntimeError(f"Gemini werkt nu niet: {last_err}")
 
 
 def ask_claude(prompt, max_tokens=2500):
@@ -241,12 +249,12 @@ def ask_claude(prompt, max_tokens=2500):
 CREDITS_USED = 0
 
 
-def tavily_search(query, domains=None, exclude=None, depth="basic", country=None):
+def tavily_search(query, domains=None, exclude=None, depth="basic", country=None, max_results=8):
     global CREDITS_USED
     body = {
         "query": query,
         "search_depth": depth,
-        "max_results": 8,
+        "max_results": max_results,
         "include_raw_content": True,
     }
     if domains:
@@ -550,7 +558,7 @@ def discogs_artist_aliases(artist_id):
         a = discogs_get(f"/artists/{artist_id}")
     except Exception:
         return []
-    names = [a.get("realname")] + (a.get("namevariations") or [])[:3]
+    names = (a.get("namevariations") or [])[:3] + [a.get("realname")]
     return [clean_artist(n) for n in names if n]
 
 
@@ -579,6 +587,15 @@ def discogs_from_master(master_id):
         "label": extras.get("label"), "barcodes": barcodes[:3],
         "discogs_url": f"https://www.discogs.com/master/{master_id}",
     }
+
+
+def discogs_nl_link(url):
+    """Link naar de Discogs-marktplaats, alleen verkopers uit Nederland."""
+    kind, did = discogs_link(url or "")
+    if not kind:
+        return None
+    key = "master_id" if kind == "master" else "release_id"
+    return f"https://www.discogs.com/sell/list?{key}={did}&ships_from=Netherlands&format=Vinyl"
 
 
 def discogs_by_id(kind, did):
@@ -662,27 +679,37 @@ Results:
 
 
 def search_plan(info, entry):
-    """Welke zoekopdrachten we doen. Licht = alleen je vaste winkels; grondig = vier invalshoeken."""
+    """Licht = alleen je vaste winkels (in groepjes van vijf); grondig = ook breed zoeken, andere naam en barcode."""
     artist, title = info.get("artist", ""), info.get("title", "")
     country = CONFIG.get("zoekland", "netherlands")
     shops = CONFIG.get("vaste_winkels", [])
+    size = int(CONFIG.get("winkels_per_zoekopdracht", 5))
     plan = []
-    if shops:
-        plan.append({"q": f"{artist} {title} LP vinyl", "domains": shops,
-                     "depth": "basic" if MODE == "light" else "advanced"})
+    for i in range(0, len(shops), size):
+        plan.append({"q": f"{artist} {title} LP vinyl", "domains": shops[i:i + size], "depth": "basic", "max": 15})
     if MODE == "light":
         return plan
-    plan.append({"q": f'"{artist}" "{title}" LP vinyl kopen', "exclude": NON_EU_DOMAINS,
-                 "depth": "advanced", "country": country})
-    label = info.get("label")
-    plan.append({"q": f"{label} {artist} {title} vinyl webshop" if label else f"{artist} {title} vinyl officiële webshop merch",
-                 "exclude": NON_EU_DOMAINS, "depth": "basic", "country": country})
+    plan.append({"q": f"{artist} {title} LP vinyl kopen", "exclude": NON_EU_DOMAINS,
+                 "depth": "advanced", "country": country, "max": 12})
     alias = next((a for a in info.get("aliases") or [] if a.lower() != artist.lower()), None)
     if alias:
         plan.append({"q": f"{alias} {title} LP vinyl", "exclude": NON_EU_DOMAINS, "depth": "basic", "country": country})
-    for bc in (info.get("barcodes") or [])[:2]:
+    for bc in (info.get("barcodes") or [])[:1]:
         plan.append({"q": bc, "exclude": NON_EU_DOMAINS, "depth": "basic", "country": country})
     return plan
+
+
+def words(text):
+    return [w for w in re.findall(r"[a-z0-9]+", (text or "").lower()) if len(w) > 1 or w.isdigit()]
+
+
+def mentions_album(info, text):
+    """Staat de albumtitel (of de barcode) op de pagina? Zo niet, dan gaat hij niet naar Gemini."""
+    t = (text or "").lower()
+    if any(bc in t.replace(" ", "") for bc in info.get("barcodes") or []):
+        return True
+    tw = words(info.get("title"))
+    return bool(tw) and all(w in words(t) for w in tw)
 
 
 EURO_PRICE = re.compile(r"(€\s?\d|\d[\d.]*,\d{2}\s?(€|eur)|eur\s?\d)", re.I)
@@ -702,7 +729,7 @@ def web_offers(info, entry):
     for step in search_plan(info, entry):
         try:
             results = tavily_search(step["q"], step.get("domains"), step.get("exclude"),
-                                    step.get("depth", "basic"), step.get("country"))
+                                    step.get("depth", "basic"), step.get("country"), step.get("max", 8))
         except Exception as e:
             log("  zoeken mislukt:", e)
             continue
@@ -715,6 +742,8 @@ def web_offers(info, entry):
                 continue
             snippet = (res.get("content") or "")[:900]
             body = price_context(res.get("raw_content") or "")
+            if not mentions_album(info, (res.get("title") or "") + " " + url.replace("-", " ") + " " + snippet + " " + body):
+                continue   # pagina over iets anders (bijvoorbeeld een ander album van dezelfde artiest)
             if not EURO_PRICE.search(snippet + " " + body):
                 note(url, None, "geen europrijs op de pagina")
                 continue
@@ -724,7 +753,8 @@ def web_offers(info, entry):
         return []
 
     out, found_urls = [], set()
-    batch = int(CONFIG.get("paginas_per_keer", 4))
+    global AI_FAILED
+    batch = int(CONFIG.get("paginas_per_keer", 5))
     for i in range(0, len(pages), batch):
         chunk = pages[i:i + batch]
         try:
@@ -733,7 +763,11 @@ def web_offers(info, entry):
                 label=info.get("label") or "-", barcodes=", ".join(info.get("barcodes") or []) or "-",
                 results="\n\n".join(chunk)), 1500)
         except Exception as e:
-            log("  uitlezen mislukt:", e)
+            log("  uitlezen mislukt:", str(e)[:200])
+            AI_FAILED = True
+            for page in chunk:
+                url = page.split("URL: ", 1)[1].split("\n", 1)[0]
+                note(url, None, "kon niet worden uitgelezen (Gemini had het te druk)")
             continue
         data = parse_json(text)
         if not isinstance(data, list):
@@ -744,6 +778,12 @@ def web_offers(info, entry):
             price = num(o.get("price"))
             if not price or not o.get("url"):
                 continue
+            if not (5 <= price <= 400):
+                note(o["url"], o.get("shop"), f"onwaarschijnlijke prijs ({price})")
+                continue
+            orig = num(o.get("original_price"))
+            if orig and not (price < orig <= price * 2):
+                o["original_price"], o["is_sale"] = None, False
             found_urls.add(o["url"])
             out.append({
                 "shop": o.get("shop") or host(o["url"]), "url": o["url"], "price": price,
@@ -776,7 +816,7 @@ def eu_region(o):
     if tld in EU_TLDS or country in EU_COUNTRIES:
         return "EU"
     if any(h == d or h.endswith("." + d) for d in CONFIG.get("vaste_winkels", [])):
-        return "NL" if h.endswith(".nl") or h == "bol.com" else "EU"
+        return "EU" if tld in EU_TLDS and tld != "nl" else "NL"
     return None
 
 
@@ -901,6 +941,8 @@ WEB_MAX_AGE_DAYS = 21
 
 
 def check_album(entry, prev, do_web):
+    global AI_FAILED
+    AI_FAILED = False
     SEARCH_LOG.clear()
     info = identify_album(entry, prev)
     if not info.get("artist") and not info.get("title"):
@@ -917,7 +959,8 @@ def check_album(entry, prev, do_web):
         offers = finalize(web)
         for o in offers:
             o["seen"] = now_iso()[:10]
-        if MODE == "light":
+        if MODE == "light" or AI_FAILED:
+            # snelle check, of Gemini kon niet alles lezen: eerdere vondsten bewaren
             urls = {o["url"] for o in offers}
             offers += [o for o in previous if o["url"] not in urls]
     else:
@@ -1002,6 +1045,7 @@ def main():
             "label": info.get("label") or prev.get("label"),
             "barcodes": info.get("barcodes") or prev.get("barcodes") or [],
             "discogs_url": info.get("discogs_url") or prev.get("discogs_url"),
+            "discogs_nl_url": discogs_nl_link(info.get("discogs_url") or prev.get("discogs_url")),
             "search_log": info.get("search_log", []),
             "cheapest": cheapest,
             "checked": now_iso(),

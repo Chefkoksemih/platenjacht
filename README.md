@@ -84,8 +84,10 @@ Voeg een album toe. Op GitHub zie je onder het tabblad **Actions** de check draa
 ## Hoe een plaat gevonden wordt
 
 - **Herkennen**: met een Discogs-link wordt het album direct via het nummer in de link opgehaald. Bij "Artiest - Album" zoekt het script het album eerst op Discogs op. Van Discogs komen de hoes, het label, de barcode, de echte naam van de artiest en alle vinylpersingen met hun kleur.
-- **Zoeken** (grondig, ongeveer 8 credits per plaat): je vaste winkels in één keer, een Nederlandstalige zoekopdracht met voorrang voor Nederlandse sites, een zoekopdracht naar de webshop van het label of de artiest, een met de andere naam van de artiest, en tot twee op barcode.
-- **Uitlezen**: Gemini leest steeds een paar pagina's tegelijk (`paginas_per_keer` in config.json), alleen pagina's waar een europrijs op staat.
+- **Zoeken** (grondig, ongeveer 9 credits per plaat): je vaste winkels in groepjes van vijf (`winkels_per_zoekopdracht`), een brede Nederlandstalige zoekopdracht met voorrang voor Nederlandse sites, een met een andere schrijfwijze van de artiest, en een op barcode. Een snelle check doet alleen de groepjes vaste winkels (ongeveer 5 credits).
+- **Gemini te druk?** Dan wacht het script en probeert het opnieuw, zo nodig met een ander gratis model. Lukt het echt niet, dan blijven de prijzen van de vorige keer staan.
+- **Uitlezen**: Gemini leest steeds een paar pagina's tegelijk (`paginas_per_keer` in config.json), alleen pagina's waar de albumtitel (of barcode) en een europrijs op staan.
+- **Discogs**: bij elke plaat staat een link naar de Discogs-marktplaats, gefilterd op verkopers uit Nederland.
 - **Logboek**: open een plaat op de site en klik op "Gevonden, maar niet meegeteld" om te zien welke winkels zijn afgevallen en waarom.
 - **Alleen de EU**: bekende Amerikaanse en Britse winkels worden overgeslagen, en daarna valt alles af wat niet aantoonbaar uit de EU verstuurt (ander land, prijs in dollars of ponden, of herkomst onbekend). Het VK, Zwitserland en Noorwegen tellen niet mee.
 - **Discogs** levert geen prijzen meer, omdat niet te zien is of een verkoper in de EU zit.

@@ -4,18 +4,29 @@
   "vaste_winkels": [
     "platomania.nl",
     "concerto.nl",
-    "waxwell.nl",
+    "velvetmusic.nl",
+    "sounds-venlo.nl",
+    "waterput.nl",
+    "kroese-online.nl",
+    "northendhaarlem.nl",
+    "plaatboef.nl",
+    "recordsonvinyl.nl",
+    "vinyleers.com",
+    "mijnplatenzaak.nl",
+    "distortionrecords.nl",
+    "rushhour.nl",
+    "clone.nl",
+    "redlightrecords.nl",
     "bol.com",
     "amazon.nl",
-    "amazon.de",
-    "jpc.de",
-    "hhv.de",
-    "muziker.nl",
-    "fnac.com",
+    "mediamarkt.nl",
     "platenzaak.nl",
-    "sounds-venlo.nl",
+    "topnotch-shop.nl",
+    "muziker.nl",
     "getbackmusic.nl",
-    "topnotch-shop.nl"
+    "waxwell.nl",
+    "jpc.de",
+    "hhv.de"
   ],
   "shipping_estimates_eur": {
     "NL": 4.95,
@@ -23,5 +34,6 @@
   },
   "gemini_model": "gemini-2.5-flash-lite",
   "email_from": "Platenjacht <onboarding@resend.dev>",
-  "paginas_per_keer": 4
+  "paginas_per_keer": 5,
+  "winkels_per_zoekopdracht": 5
 }

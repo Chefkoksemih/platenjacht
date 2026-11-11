@@ -668,7 +668,8 @@ details.settings summary { cursor: pointer; font-weight: 700; font-size: 18px; c
       ${others.length ? `<p class="facts" style="margin-top:12px">Ook geperst als, maar nu nergens in de EU te koop gevonden:</p>
       <div class="variants">${others.map((p) => `<span class="variant ghosted">${disc(p)}${esc(p.label)}${p.year ? ` <small>${esc(p.year)}</small>` : ""}</span>`).join("")}</div>` : ""}` : "";
     const facts = [s?.label ? `Label: ${esc(s.label)}` : "", s?.barcodes?.length ? `Barcode: ${esc(s.barcodes[0])}` : "",
-      s?.discogs_url ? `<a href="${esc(s.discogs_url)}" target="_blank" rel="noopener">Bekijk op Discogs</a>` : ""].filter(Boolean).join(". ");
+      s?.discogs_url ? `<a href="${esc(s.discogs_url)}" target="_blank" rel="noopener">Bekijk op Discogs</a>` : "",
+      s?.discogs_nl_url ? `<a href="${esc(s.discogs_nl_url)}" target="_blank" rel="noopener">Nederlandse verkopers op Discogs</a>` : ""].filter(Boolean).join(". ");
 
     const table = offers.length ? `<h3 class="section-title">${variantFilter ? "Aanbiedingen van deze variant" : "Alle aanbiedingen"}</h3>
       <div class="scroll"><table>
