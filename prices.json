@@ -1,5 +1,10 @@
 {
- "updated": "2026-11-11T14:34:29+00:00",
+ "updated": "2026-11-11T14:39:14+00:00",
+ "usage": {
+  "month": "2026-11",
+  "tavily_credits": 20,
+  "budget": 900
+ },
  "albums": {
   "mwc7rb00vzce": {
    "input": "https://www.discogs.com/master/124666-Fugees-The-Score?gad_source=1&gad_campaignid=22178621710&gbraid=0AAAAADmy1_rvoARm23XSOtJM0Iu0kjbA6&gclid=Cj0KCQiAwdDXBhDuARIsAFdLukkZD9Gt9UvSf_VUVOl2MX-trIhOVwE0tSgl3bADTPfZT2PKGwC4rYcaAvC-EALw_wcB",
@@ -254,11 +259,156 @@
    "notified_sale_urls": [
     "https://getondown.com/products/the-score-2xlp-1"
    ]
+  },
+  "mwc85efd1wkx": {
+   "input": "Frank Ocean - Blonde",
+   "artist": "Frank Ocean",
+   "title": "Blonde",
+   "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": "https://i.discogs.com/lgmCTL4u9YcYJ_gv1yoE37IWcrEl6GdJv9tuZ6RV9LI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3MDIx/OTgzLTE3NzU5MTA0/ODUtNzg4My5qcGVn.jpeg",
+     "shop": "Discogs",
+     "url": "https://www.discogs.com/sell/release/37021983",
+     "price": 111.85,
+     "shipping": 10.0,
+     "shipping_estimated": true,
+     "total": 121.85,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2026 Europe",
+     "source": "2 te koop op Discogs"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Ebay",
+     "url": "https://www.ebay.com/b/Frank-Ocean-Vinyl-Records/176985/bn_7121968269",
+     "price": 151.59,
+     "shipping": 0.0,
+     "shipping_estimated": false,
+     "total": 151.59,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Ebay",
+     "url": "https://www.ebay.com/shop/blonde-vinyl-frank-ocean?_nkw=blonde+vinyl+frank+ocean",
+     "price": 151.59,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 159.59,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "Official Repress",
+     "source": "web",
+     "seen": "2026-11-11"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "PicClick",
+     "url": "https://picclick.com/Popular/blond-frank-ocean-vinyl",
+     "price": 401.28,
+     "shipping": 8.0,
+     "shipping_estimated": true,
+     "total": 409.28,
+     "condition": "used",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "2016 XL Recordings",
+     "source": "web",
+     "seen": "2026-11-11"
+    }
+   ],
+   "variants": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "count": 4,
+     "best": {
+      "shop": "Discogs",
+      "url": "https://www.discogs.com/sell/release/37021983",
+      "total": 121.85,
+      "condition": "used"
+     },
+     "thumb": "https://i.discogs.com/lgmCTL4u9YcYJ_gv1yoE37IWcrEl6GdJv9tuZ6RV9LI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3MDIx/OTgzLTE3NzU5MTA0/ODUtNzg4My5qcGVn.jpeg"
+    }
+   ],
+   "cover": "https://i.discogs.com/VurGdqd_vsJCl1tB9JHDfKhu5pQmKbCWSkNYnuHCFZk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg5MzI1/MTQtMTc3MTczMzA2/NS01NjY2LmpwZWc.jpeg",
+   "cheapest": {
+    "variant": {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": "https://i.discogs.com/lgmCTL4u9YcYJ_gv1yoE37IWcrEl6GdJv9tuZ6RV9LI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3MDIx/OTgzLTE3NzU5MTA0/ODUtNzg4My5qcGVn.jpeg",
+    "shop": "Discogs",
+    "url": "https://www.discogs.com/sell/release/37021983",
+    "price": 111.85,
+    "shipping": 10.0,
+    "shipping_estimated": true,
+    "total": 121.85,
+    "condition": "used",
+    "is_sale": false,
+    "original_price": null,
+    "edition": "2026 Europe",
+    "source": "2 te koop op Discogs"
+   },
+   "checked": "2026-11-11T14:39:14+00:00",
+   "error": null,
+   "web_checked": "2026-11-11T14:39:14+00:00",
+   "history": [
+    {
+     "date": "2026-11-11",
+     "total": 121.85,
+     "shop": "Discogs"
+    }
+   ],
+   "lowest_ever": 121.85
   }
- },
- "usage": {
-  "month": "2026-11",
-  "tavily_credits": 14,
-  "budget": 900
  }
 }
