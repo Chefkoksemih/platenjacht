@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-23T08:45:15+00:00",
+ "updated": "2026-11-23T08:46:09+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 280,
+  "tavily_credits": 289,
   "budget": 900
  },
  "albums": {
@@ -4032,6 +4032,446 @@
     }
    ],
    "lowest_ever": 24.26
+  },
+  "mwt0regq2bmc": {
+   "input": "Loyle Carner - Not waving but drowning",
+   "artist": "Loyle Carner",
+   "title": "Not Waving, But Drowning",
+   "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Records on Vinyl",
+     "url": "https://recordsonvinyl.nl/en/collections/down-the-rabbit-hole-2026/verkrijgbaar-vanaf-2019",
+     "price": 24.95,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 29.9,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 39.95,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Records on Vinyl",
+     "url": "https://recordsonvinyl.nl/en/collections/down-the-rabbit-hole-2026/vinyl-lp",
+     "price": 24.95,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 29.9,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 39.95,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Records on Vinyl",
+     "url": "https://recordsonvinyl.nl/en/products/loyle-carner-not-waving-but-drowning-lp",
+     "price": 24.95,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 29.9,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 39.95,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Platenzaak.nl",
+     "url": "https://www.platenzaak.nl/collections/loyle-carner",
+     "price": 27.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 32.94,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 32.99,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Amazon",
+     "url": "https://www.amazon.nl/Not-Waving-Drowning-Loyle-Carner/dp/B07NN37WH3",
+     "price": 32.99,
+     "shipping": 0.0,
+     "shipping_estimated": false,
+     "total": 32.99,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "jpc",
+     "url": "https://www.jpc.de/jpcng/poprock/detail/-/art/loyle-carner-not-waving-but-drowning/hnum/9046885",
+     "price": 26.99,
+     "shipping": 12.5,
+     "shipping_estimated": true,
+     "total": 39.49,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 34.99,
+     "edition": "180g",
+     "source": "web",
+     "region": "EU",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Records on Vinyl",
+     "url": "https://recordsonvinyl.nl/de/collections/musync/40-60?page=524",
+     "price": 40.95,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 45.9,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Records on Vinyl",
+     "url": "https://recordsonvinyl.nl/en/collections/down-the-rabbit-hole-2026",
+     "price": 40.95,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 45.9,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Records on Vinyl",
+     "url": "https://recordsonvinyl.nl/collections/vinyl-catalogus/vinyl-lp?page=81",
+     "price": 40.95,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 45.9,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Records on Vinyl",
+     "url": "https://recordsonvinyl.nl/en/collections/rock-vandaag-toegevoegd/pop?page=228",
+     "price": 40.95,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 45.9,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    }
+   ],
+   "variants": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "count": 10,
+     "best": {
+      "shop": "Records on Vinyl",
+      "url": "https://recordsonvinyl.nl/en/collections/down-the-rabbit-hole-2026/verkrijgbaar-vanaf-2019",
+      "total": 29.9,
+      "condition": "new"
+     },
+     "thumb": null
+    }
+   ],
+   "pressings": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "thumb": "https://i.discogs.com/AkEafiQlSHpGhRNMflJqVsLCJ-MDkXX6iptF6x9w96E/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMyNTk5/MTk3LTE3NTk0MDk2/MjUtOTc0NC5qcGVn.jpeg",
+     "year": "2024",
+     "country": "UK"
+    },
+    {
+     "label": "White Label",
+     "key": "solid:#EFE6D6",
+     "colors": [
+      "#EFE6D6"
+     ],
+     "pattern": "solid",
+     "thumb": "https://i.discogs.com/8oPGveBoqKCLCAplVZKq9e4FzL7NLzezVaSQKFAJDfw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4Njcx/NTQ4LTE3OTE2MzYz/OTctNDM2MC5qcGVn.jpeg",
+     "year": "2022",
+     "country": "UK"
+    }
+   ],
+   "cover": "https://i.discogs.com/2OgS_0_Iuy75TZ4x-FfeTuoOYB_lpgs2eG2vQp4WLPs/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNTE4/ODE5LTE2NzkwOTAw/MTctOTM0My5qcGVn.jpeg",
+   "label": "EMI",
+   "barcodes": [
+    "602448393104",
+    "602577391965"
+   ],
+   "discogs_url": "https://www.discogs.com/master/1539847",
+   "discogs_nl_url": "https://www.discogs.com/sell/list?master_id=1539847&ships_from=Netherlands&format=Vinyl",
+   "search_log": [
+    {
+     "url": "https://recordsonvinyl.nl/en/products/loyle-carner-hugo-lp",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/de/collections/vinyl-catalogus/products/loyle-carner-hugo-lp",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en-AU/records/item/loyle-carner-not-waving-but-drowning-897529",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.jpc.de/s/145970022?searchtype=contributorId",
+     "shop": "jpc.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.jpc.de/s/Loyle%20Carner%20Not%20waving,%20but%20drowning",
+     "shop": "jpc.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en/records/item/loyle-carner-not-waving-but-drowning-648541",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platomania.nl/article/6794313/not_waving_but_drowning/carner_loyle",
+     "shop": "platomania.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.marktplaats.nl/v/cd-s-en-dvd-s/vinyl-pop/m2455011392-loyle-carner-not-waving-but-drowning-lp-sealed",
+     "shop": "marktplaats.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://emirecords.com/products/not-waving-but-drowning-lp",
+     "shop": "emirecords.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://shop.loylecarner.com/products/not-waving-but-drowning-lp",
+     "shop": "shop.loylecarner.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://readdork.com/album/loyle-carner-not-waving-but-drowning",
+     "shop": "readdork.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/en/collections/in-stock-1/nederland?page=318",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/de/collections/rock-vandaag-toegevoegd/pop?page=223",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/collections/in-stock-1/nederland?page=320",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/en/collections/cadeau-ideeen-2025/nederland?page=418",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/de/collections/rock-pop/pop?page=23",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/collections/cadeau-idee-1?page=96",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://jpc.de/jpcng/poprock/detail/-/art/loyle-carner-not-waving-but-drowning/hnum/9046885",
+     "shop": "jpc.de",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.jpc.de/s/Vater%20und%20Sohn%20Beziehung?searchtype=stichw",
+     "shop": "jpc.de",
+     "reason": "geen LP van dit album herkend"
+    }
+   ],
+   "cheapest": {
+    "variant": {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": null,
+    "shop": "Records on Vinyl",
+    "url": "https://recordsonvinyl.nl/en/collections/down-the-rabbit-hole-2026/verkrijgbaar-vanaf-2019",
+    "price": 24.95,
+    "shipping": 4.95,
+    "shipping_estimated": true,
+    "total": 29.9,
+    "condition": "new",
+    "is_sale": true,
+    "original_price": 39.95,
+    "edition": null,
+    "source": "web",
+    "region": "NL",
+    "seen": "2026-11-23"
+   },
+   "checked": "2026-11-23T08:46:09+00:00",
+   "error": null,
+   "web_checked": "2026-11-23T08:46:09+00:00",
+   "history": [
+    {
+     "date": "2026-11-23",
+     "total": 29.9,
+     "shop": "Records on Vinyl"
+    }
+   ],
+   "lowest_ever": 29.9,
+   "last_notified_total": 29.9,
+   "last_deal": {
+    "date": "2026-11-23",
+    "reasons": [
+     "als aanbieding gemarkeerd bij Records on Vinyl, was € 39,95"
+    ],
+    "total": 29.9
+   },
+   "notified_sale_urls": [
+    "https://recordsonvinyl.nl/en/collections/down-the-rabbit-hole-2026/verkrijgbaar-vanaf-2019"
+   ]
   }
  }
 }
