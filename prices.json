@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-23T05:44:29+00:00",
+ "updated": "2026-11-23T08:43:37+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 255,
+  "tavily_credits": 263,
   "budget": 900
  },
  "albums": {
@@ -3075,6 +3075,519 @@
     ],
     "total": 22.94
    }
+  },
+  "mwt0pja2km72": {
+   "input": "Racoon - Spijt is iets voor later",
+   "artist": "Racoon",
+   "title": "Spijt Is Iets Voor Later",
+   "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "North End Haarlem",
+     "url": "https://www.northendhaarlem.nl/a-66203981/pop/adele-30-2lp",
+     "price": 24.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 29.94,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 29.99,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Kroese",
+     "url": "https://www.kroese-online.nl/zoekresultaat?Artist=Racoon&sort=formaat",
+     "price": 25.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 30.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Kroese Online",
+     "url": "https://www.kroese-online.nl/nieuw-binnen/cd-dvd-vinyl-releases-week-41/2021",
+     "price": 25.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 30.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Sounds Venlo",
+     "url": "https://www.sounds-venlo.nl/4696995-racoon-it-is-what-it-is--transparent-vinyl-",
+     "price": 26.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 31.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Sounds Venlo",
+     "url": "https://www.sounds-venlo.nl/racoon-spijt-is-iets-voor-later-zwart-0194398875316",
+     "price": 26.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 31.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Platomania",
+     "url": "https://www.platomania.nl/racoon",
+     "price": 26.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 31.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Velvet Music",
+     "url": "https://www.velvetmusic.nl/collections/racoon",
+     "price": 27.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 32.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Velvet Music",
+     "url": "https://www.velvetmusic.nl/products/racoon-spijt-is-iets-voor-later-lp",
+     "price": 27.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 32.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "jpc.de",
+     "url": "https://jpc.de/jpcng/poprock/detail/-/art/racoon-spijt-is-iets-voor-later/hnum/10746747",
+     "price": 29.99,
+     "shipping": 12.5,
+     "shipping_estimated": true,
+     "total": 42.49,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "1 LP und 1 CD",
+     "source": "web",
+     "region": "EU",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Records on Vinyl",
+     "url": "https://recordsonvinyl.nl/en/collections/dutch-pop-music/vinyl-lp?page=5",
+     "price": 39.95,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 44.9,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Records on Vinyl",
+     "url": "https://recordsonvinyl.nl/en/collections/sony",
+     "price": 39.98,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 44.93,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Fnac",
+     "url": "https://www.fnac.com/a18798381/Racoon-Racoon-Spijt-Is-Iets-Voor-Later-Artone-Sessions-Vinyle-album",
+     "price": 34.02,
+     "shipping": 12.5,
+     "shipping_estimated": true,
+     "total": 46.52,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "Artone Sessions",
+     "source": "web",
+     "region": "EU",
+     "seen": "2026-11-23"
+    }
+   ],
+   "variants": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "count": 12,
+     "best": {
+      "shop": "North End Haarlem",
+      "url": "https://www.northendhaarlem.nl/a-66203981/pop/adele-30-2lp",
+      "total": 29.94,
+      "condition": "new"
+     },
+     "thumb": null
+    }
+   ],
+   "pressings": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "thumb": "https://i.discogs.com/Xjqwe84WFEiRtl7A9ArTx38fKxxD8MVf_VO4IzVGMz4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NzY1/MDc1LTE3NjkwODYx/MjUtNzU2NC5qcGVn.jpeg",
+     "year": "2023",
+     "country": "Netherlands"
+    }
+   ],
+   "cover": "https://i.discogs.com/0isJesHJV8StMHeKU0FRfQ8X9U4ykNmy3fOQgl15RAo/rs:fit/g:sm/q:90/h:534/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwNDY4/MjM2LTE2MzMzNTYx/NTYtOTEyMC5qcGVn.jpeg",
+   "label": "Sony Music",
+   "barcodes": [
+    "0194399769010",
+    "194399769119",
+    "194398875415"
+   ],
+   "discogs_url": "https://www.discogs.com/master/2328904",
+   "discogs_nl_url": "https://www.discogs.com/sell/list?master_id=2328904&ships_from=Netherlands&format=Vinyl",
+   "search_log": [
+    {
+     "url": "https://www.platomania.nl/article/11039551/spijt_is_iets_voor_later_artone_session_coloured/racoon",
+     "shop": "platomania.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platomania.nl/article/10242056/spijt_is_iets_voor_later_zwart/racoon",
+     "shop": "platomania.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platomania.nl/article/13907536/spijt_is_iets_voor_later_artone_session/racoon",
+     "shop": "platomania.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.velvetmusic.nl/en/collections/racoon/products/racoon-spijt-is-iets-voor-later-artone-session-lp-1",
+     "shop": "velvetmusic.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.velvetmusic.nl/en/collections/vendors?page=2&q=racoon",
+     "shop": "velvetmusic.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platomania.nl/article/9667576/spijt_is_iets_voor_later/racoon",
+     "shop": "platomania.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platomania.nl/article/14018424/spijt_is_iets_voor_later/racoon",
+     "shop": "platomania.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.velvetmusic.nl/en/products/racoon-spijt-is-iets-voor-later-lp",
+     "shop": "velvetmusic.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/en/products/racoon-spijt-is",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/en/products/racoon-spijt-is-iets-voor-later-2-lps",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/en/collections/sony/verkrijgbaar-vanaf-2021",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/collections/nieuw-vinyl-week-78/nederland",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.northendhaarlem.nl/a-70669707/pop/racoon-spijt-is-iets-voor-later-artone-sessions-lp",
+     "shop": "northendhaarlem.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.northendhaarlem.nl/c-504448-14/pop",
+     "shop": "northendhaarlem.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/l/nederlandstalige-muziek/3132/7686286348",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.racoon.nl/nieuws/archief/spijt-is-iets-voor-later",
+     "shop": "racoon.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/p/spijt-is-iets-voor-later/9300000049936540",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.jpc.de/jpcng/poprock/detail/-/art/racoon-spijt-is-iets-voor-later-artone-session/hnum/11630721",
+     "shop": "jpc.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.sounds.nl/detail/4395799/lp/racoon/spijt_is_iets_voor_later_-_artone_session",
+     "shop": "sounds.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.sounds-venlo.nl/8718627236529-4614131",
+     "shop": "sounds-venlo.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.northendhaarlem.nl/c-6161975/beste-verkochte-albums-2021",
+     "shop": "northendhaarlem.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.kroese-online.nl/nieuw-binnen/cd-dvd-vinyl-releases-week-2/2024?sort=alfabet&direction=down&tab=",
+     "shop": "kroese-online.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.amazon.nl/Spijt/dp/B00FO0TLXS",
+     "shop": "amazon.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://jpc.de/jpcng/poprock/detail/-/art/racoon-it-is-what-it-is/hnum/11952542",
+     "shop": "jpc.de",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.velvetmusic.nl/en/products/racoon-spijt-is-iets-voor-later-artone-session-lp",
+     "shop": "Velvet Music",
+     "reason": "uitverkocht"
+    },
+    {
+     "url": "https://www.kroese-online.nl/artikel/4215645/Racoon/Spijt_Is_Iets_Voor_Later_-transparant-",
+     "shop": "Kroese Online",
+     "reason": "uitverkocht"
+    }
+   ],
+   "cheapest": {
+    "variant": {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": null,
+    "shop": "North End Haarlem",
+    "url": "https://www.northendhaarlem.nl/a-66203981/pop/adele-30-2lp",
+    "price": 24.99,
+    "shipping": 4.95,
+    "shipping_estimated": true,
+    "total": 29.94,
+    "condition": "new",
+    "is_sale": true,
+    "original_price": 29.99,
+    "edition": null,
+    "source": "web",
+    "region": "NL",
+    "seen": "2026-11-23"
+   },
+   "checked": "2026-11-23T08:43:37+00:00",
+   "error": null,
+   "web_checked": "2026-11-23T08:43:37+00:00",
+   "history": [
+    {
+     "date": "2026-11-23",
+     "total": 29.94,
+     "shop": "North End Haarlem"
+    }
+   ],
+   "lowest_ever": 29.94,
+   "last_notified_total": 29.94,
+   "last_deal": {
+    "date": "2026-11-23",
+    "reasons": [
+     "als aanbieding gemarkeerd bij North End Haarlem, was € 29,99"
+    ],
+    "total": 29.94
+   },
+   "notified_sale_urls": [
+    "https://www.northendhaarlem.nl/a-66203981/pop/adele-30-2lp"
+   ]
   }
  }
 }
