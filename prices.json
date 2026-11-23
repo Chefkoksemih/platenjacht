@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-23T08:43:37+00:00",
+ "updated": "2026-11-23T08:45:15+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 263,
+  "tavily_credits": 280,
   "budget": 900
  },
  "albums": {
@@ -3588,6 +3588,450 @@
    "notified_sale_urls": [
     "https://www.northendhaarlem.nl/a-66203981/pop/adele-30-2lp"
    ]
+  },
+  "mwt0qku43082": {
+   "input": "Opposites - slapeloze nachten",
+   "artist": "The Opposites",
+   "title": "Slapeloze Nachten",
+   "offers": [],
+   "variants": [],
+   "pressings": [],
+   "cover": "https://i.discogs.com/FhUAQmj_EkIZM99zX_mBgTjDy398LIREWrYv-vLzo4E/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQxMzE4/MjctMTM1NjM0OTYy/Ni0zMjYxLmpwZWc.jpeg",
+   "label": "TopNotch",
+   "barcodes": [],
+   "discogs_url": "https://www.discogs.com/master/625612",
+   "discogs_nl_url": "https://www.discogs.com/sell/list?master_id=625612&ships_from=Netherlands&format=Vinyl",
+   "search_log": [
+    {
+     "url": "https://www.bol.com/nl/nl/l/dance/54512?page=498",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/p/tops-tender-opposites/1000004012862349",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platenzaak.nl/en/products/hard-hout-lp",
+     "shop": "platenzaak.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.amazon.nl/Opposites-Slapeloze-Nachten/dp/B00BQ6G772",
+     "shop": "amazon.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/p/slapeloze-nachten/1000004013601538",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/p/jack-harlon-the-dead-crows-inexorable-opposites/9300000250498655",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.topnotch-shop.nl/en/products/slapeloze-nachten-cd",
+     "shop": "topnotch-shop.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/b/muziek-the-opposites/9165356+3132",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://imusic.com/music/0602537347186/the-opposites-2024-slapeloze-nachten-cd",
+     "shop": "imusic.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platenzaak.nl/collections/alle-muziek?page=126",
+     "shop": "platenzaak.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.topnotch-shop.nl/collections/the-opposites",
+     "shop": "topnotch-shop.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.topnotch-shop.nl/en/collections/all?page=15",
+     "shop": "topnotch-shop.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.platenzaak.nl/en/products/slapeloze-nachten-cd",
+     "shop": "platenzaak.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.cdenlp.eu/a-87896402/r-b-soul-dance-rap/opposites-slapeloze-nachten-cd-reissue",
+     "shop": "cdenlp.eu",
+     "reason": "geen LP van dit album herkend"
+    }
+   ],
+   "cheapest": null,
+   "checked": "2026-11-23T08:44:24+00:00",
+   "error": null,
+   "web_checked": "2026-11-23T08:44:24+00:00"
+  },
+  "mwt0r3c1shjg": {
+   "input": "Arctic Monkeys - Tranquility Base Hotel & Casino",
+   "artist": "Arctic Monkeys",
+   "title": "Tranquility Base Hotel + Casino",
+   "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Amazon.nl",
+     "url": "https://www.amazon.nl/-/en/Tranquility-Hotel-Casino-Arctic-Monkeys/dp/B07CBF5P54",
+     "price": 19.31,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 24.26,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Amazon.nl",
+     "url": "https://www.amazon.nl/Tranquility-Hotel-Casino-Arctic-Monkeys/dp/B07CBF5P54",
+     "price": 22.95,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 27.9,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "180 gram",
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Get Back Music",
+     "url": "https://www.getbackmusic.nl/en/collections/arctic-monkeys",
+     "price": 26.99,
+     "shipping": 4.95,
+     "shipping_estimated": true,
+     "total": 31.94,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": null,
+     "source": "web",
+     "region": "NL",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "JPC",
+     "url": "https://www.jpc.de/jpcng/poprock/detail/-/art/arctic-monkeys-tranquility-base-hotel-casino/hnum/8204888",
+     "price": 26.99,
+     "shipping": 12.5,
+     "shipping_estimated": true,
+     "total": 39.49,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "180g",
+     "source": "web",
+     "region": "EU",
+     "seen": "2026-11-23"
+    },
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "Muziker",
+     "url": "https://www.muziker.be/arctic-monkeys-tranquility-base-hotel-casino-vinyl-lp",
+     "price": 28.0,
+     "shipping": 12.5,
+     "shipping_estimated": true,
+     "total": 40.5,
+     "condition": "new",
+     "is_sale": true,
+     "original_price": 30.9,
+     "edition": null,
+     "source": "web",
+     "region": "EU",
+     "seen": "2026-11-23"
+    }
+   ],
+   "variants": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "count": 5,
+     "best": {
+      "shop": "Amazon.nl",
+      "url": "https://www.amazon.nl/-/en/Tranquility-Hotel-Casino-Arctic-Monkeys/dp/B07CBF5P54",
+      "total": 24.26,
+      "condition": "new"
+     },
+     "thumb": null
+    }
+   ],
+   "pressings": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "thumb": "https://i.discogs.com/t2p_A-cATq0yvw2i-wpu3zcU9BjoRX_4OzYkYUinpJE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MzY4/NDYzLTE2Nzg0NzY4/OTMtNjEyMS5qcGVn.jpeg",
+     "year": "2023",
+     "country": "Japan"
+    },
+    {
+     "label": "White Label",
+     "key": "solid:#EFE6D6",
+     "colors": [
+      "#EFE6D6"
+     ],
+     "pattern": "solid",
+     "thumb": "https://i.discogs.com/gGqDzY_eYtl0z3lJoopinzjkibt4B2IUMDbjB8aB7I8/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MTcx/MTI0LTE1Nzk0NzI2/NDQtMzM5OS5qcGVn.jpeg",
+     "year": "2018",
+     "country": "UK"
+    }
+   ],
+   "cover": "https://i.discogs.com/Ln3dP7FQxtM0jOffs5pj_kKPujRzToUE6U6BWOGMfhs/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExOTc3/MzUzLTE1MzUxODYy/NzgtNjg1Ni5qcGVn.jpeg",
+   "label": "Domino",
+   "barcodes": [
+    "4523132131832",
+    "887828033959",
+    "7898324315725"
+   ],
+   "discogs_url": "https://www.discogs.com/master/1360573",
+   "discogs_nl_url": "https://www.discogs.com/sell/list?master_id=1360573&ships_from=Netherlands&format=Vinyl",
+   "search_log": [
+    {
+     "url": "https://www.bol.com/nl/nl/p/tranquility-base-hotel-casino/9200000092296762",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/p/tranquility-base-hotel-casino/9200000092396177",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.bol.com/nl/nl/l/rockmuziek-op-lp-van-arctic-monkeys/54527/7560052818",
+     "shop": "bol.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.amazon.nl/-/en/Arctic-Monkeys-Tranquility-Base-Hotel/dp/B07CDZ6F9H",
+     "shop": "amazon.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.amazon.nl/-/en/Century-Presentations-MONKEYS-Platinum-TRANQUILITY/dp/B07H4MZX4X",
+     "shop": "amazon.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.getbackmusic.nl/en/products/arctic-monkeys-tranquility-base-hotel-casino-clear-vinyl",
+     "shop": "getbackmusic.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en/records/item/arctic-monkeys-tranquility-base-hotel-casino-1144975",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.muziker.nl/arctic-monkeys-tranquility-base-hotel-casino-vinyl-lp",
+     "shop": "muziker.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en-CD/records/artists/arctic-monkeys-12591",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en/records/item/arctic-monkeys-tranquility-base-hotel-and-casino-clear-vinyl-edition-583116",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en/records/item/arctic-monkeys-tranquility-base-hotel-and-casino-black-vinyl-edition-583115",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.getbackmusic.nl/en/products/arctic-monkeys-tranquility-base-hotel-casino-vinyl",
+     "shop": "getbackmusic.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.jpc.de/s/arctic+monkeys+tranquility+base+hotel+++casino",
+     "shop": "jpc.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.jpc.de/jpcng/poprock/detail/-/art/arctic-monkeys-tranquility-base-hotel-casino/hnum/8208159",
+     "shop": "jpc.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.ebay.ie/b/bn_7078975383",
+     "shop": "ebay.ie",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.arcticmonkeys.com/products/tranquility-base-hotel-and-casino-lp",
+     "shop": "arcticmonkeys.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.dominomusic.com/releases/arctic-monkeys/tranquility-base-hotel-casino-2/exclusive-silver-lp",
+     "shop": "dominomusic.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.arcticmonkeys.com",
+     "shop": "arcticmonkeys.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.amazon.com.br/Tranquility-Hotel-Casino-Disco-Vinil/dp/B07CBF5P54",
+     "shop": "amazon.com.br",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://mundovinyl.com.br/produto/arctic-monkeys-tranquility-base-hotel-casino",
+     "shop": "mundovinyl.com.br",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.ebay.ca/itm/195939077456?_trkparms=itmf%3D1%26aid%3D1110018%26rkt%3D12%26asc%3D20221018081743%26pid%3D101439%26mech%3D1%26algv%3DPromotedCompV3WithHighAdFeeAndToraFilterV1AndItemCfCoviewWithEnhancedMultimodalRecall%26pmt%3D1%26amclksrc%3DITM%26sd%3D336657868533%26sid%3DAQALAAAAECZ33rlIXxw6Iw1wXro%2Ft8o%3D%26itm%3D195939077456%26noa%3D0%26plcampt%3D0%3A12170117016%26algo%3DHOMESPLICE.COMPLISTINGS%26ao%3D1%26rk%3D12%26mehot%3Dnone%26lsid%3D0%26meid%3D703d55e49b5649919e64ded259dc5d32%26pg%3D2332490&_trksid=p2332490.c101439.m3021&itmprp=cksum%3A195939077456703d55e49b5649919e64ded259dc5d32%7Cenc%3AAQALAAABQL2vfmQBDjBCDg55SiaJ5QxlHntewcGyEUm5DcfqSukmjHIfrH54miAGJ%252FwBGuN62AxwVKRTMj2gOVLiH%252B2mnYS0ljJ3TgX8%252FdRaOmX9Mv%252B7zD3CsQzASrmZvs3HE1oskSzesT3H%252BeXqSUBBKLTYSE42lbqbd4Cdusl9dmmvkZej4xMT2O4mHXaCMaBhnxdeF5J0LCK%252BVesl6J1GroN4P2E%252FE9c2PoHcOu8qPivPOTlAXT7Y%252BVFXnIcC84FVcSewWtl5A8xMvDH3sGKrd%252BrTlGo9YMGMIAkUHSb4hc1%252BX0UU8maOMQ68pt2Q%252BcHK3Vil%252BHr9XICodWAHw%252Fu%252BupWIvh6Yys3lJ3kSMdNwCriAhDhDQ7IpoXHnQYFJAikuE1wpTMnMOMzWGeSLnVCi7zsQaOlQ3VEuUkD61pooPFwCVgXS%7Campid%3APL_CLK%7Cclp%3A2332490&itmmeta=01M40RGZJGG9C4H445421NF807",
+     "shop": "ebay.ca",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.wowfactor.sg/product/arctic-monkeys-am-japan-edition-vinyl-with-obi",
+     "shop": "wowfactor.sg",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.amazon.nl/-/en/Car-Arctic-Monkeys/dp/B0BBH3C916",
+     "shop": "amazon.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.getbackmusic.nl/en/products/arctic-monkeys-the-car",
+     "shop": "getbackmusic.nl",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.hhv.de/en/records/item/arctic-monkeys-live-at-the-royal-albert-hall-clear-vinyl-edition-775953",
+     "shop": "hhv.de",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.jpc.de/jpcng/poprock/detail/-/art/arctic-monkeys-tranquility-base-hotel-casino/hnum/11113196",
+     "shop": "jpc.de",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.jpc.de/jpcng/poprock/detail/-/art/arctic-monkeys-tranquility-base-hotel-casino/hnum/8204894",
+     "shop": "jpc.de",
+     "reason": "geen LP van dit album herkend"
+    },
+    {
+     "url": "https://www.platomania.nl/article/5992828/tranquility_base_hotel_casino_ltd_clear_vinyl/arctic_monkeys",
+     "shop": "platomania.nl",
+     "reason": "geen LP van dit album herkend"
+    }
+   ],
+   "cheapest": {
+    "variant": {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": null,
+    "shop": "Amazon.nl",
+    "url": "https://www.amazon.nl/-/en/Tranquility-Hotel-Casino-Arctic-Monkeys/dp/B07CBF5P54",
+    "price": 19.31,
+    "shipping": 4.95,
+    "shipping_estimated": true,
+    "total": 24.26,
+    "condition": "new",
+    "is_sale": false,
+    "original_price": null,
+    "edition": null,
+    "source": "web",
+    "region": "NL",
+    "seen": "2026-11-23"
+   },
+   "checked": "2026-11-23T08:45:15+00:00",
+   "error": null,
+   "web_checked": "2026-11-23T08:45:15+00:00",
+   "history": [
+    {
+     "date": "2026-11-23",
+     "total": 24.26,
+     "shop": "Amazon.nl"
+    }
+   ],
+   "lowest_ever": 24.26
   }
  }
 }
