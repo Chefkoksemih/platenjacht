@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-23T08:46:09+00:00",
+ "updated": "2026-11-24T14:31:32+00:00",
  "usage": {
   "month": "2026-11",
-  "tavily_credits": 289,
+  "tavily_credits": 298,
   "budget": 900
  },
  "albums": {
@@ -4472,6 +4472,253 @@
    "notified_sale_urls": [
     "https://recordsonvinyl.nl/en/collections/down-the-rabbit-hole-2026/verkrijgbaar-vanaf-2019"
    ]
+  },
+  "mwus749utun2": {
+   "input": "Fontaines D.C - Dopamine Chamber",
+   "artist": "Fontaines D.C.",
+   "title": "Dopamine Chamber",
+   "offers": [
+    {
+     "variant": {
+      "label": "Zwart",
+      "key": "black",
+      "colors": [
+       "#161214"
+      ],
+      "pattern": "solid"
+     },
+     "thumb": null,
+     "shop": "HHV",
+     "url": "https://www.hhv.de/en/records/item/fontaines-d-c-dopamine-chamber-deluxe-cover-2lp-poster-edition-1445666",
+     "price": 39.99,
+     "shipping": 12.5,
+     "shipping_estimated": true,
+     "total": 52.49,
+     "condition": "new",
+     "is_sale": false,
+     "original_price": null,
+     "edition": "Deluxe Cover 2LP + Poster Edition",
+     "source": "web",
+     "region": "EU",
+     "seen": "2026-11-24"
+    }
+   ],
+   "variants": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "count": 1,
+     "best": {
+      "shop": "HHV",
+      "url": "https://www.hhv.de/en/records/item/fontaines-d-c-dopamine-chamber-deluxe-cover-2lp-poster-edition-1445666",
+      "total": 52.49,
+      "condition": "new"
+     },
+     "thumb": null
+    }
+   ],
+   "pressings": [
+    {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid",
+     "thumb": "https://i.discogs.com/d3Mwe1z7DmqpO48EejZgtwo47XFUKs8H4NEldlmuvVQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NzMw/NjQ4LTE3OTIwOTA0/ODEtMjI5MC5qcGVn.jpeg",
+     "year": "2026",
+     "country": "Worldwide"
+    }
+   ],
+   "cover": "https://i.discogs.com/qmUrzX3ht5lPXR84rG4ovJnxVqQbgQ_lE9BHCgQPaHQ/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4NjYw/NzIxLTE3OTE1NDcx/MDAtODY2MS5qcGVn.jpeg",
+   "label": "XL Recordings",
+   "barcodes": [
+    "191404167304",
+    "4582616204134"
+   ],
+   "discogs_url": "https://www.discogs.com/master/4371882",
+   "discogs_nl_url": "https://www.discogs.com/sell/list?master_id=4371882&ships_from=Netherlands&format=Vinyl",
+   "search_log": [
+    {
+     "url": "https://www.sounds-venlo.nl/4925361-fontaines-d.c.-dopamine-chamber-black-vinyl",
+     "shop": "sounds-venlo.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.sounds-venlo.nl/4925364-fontaines-d.c.-dopamine-chamber--marble-blue-indie-exclusive-",
+     "shop": "sounds-venlo.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://recordsonvinyl.nl/en/collections/vinyl-lp",
+     "shop": "recordsonvinyl.nl",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://vinyleers.com/en/products/fontaines-d-c-dopamine-chamber-lp-album-1",
+     "shop": "vinyleers.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en/catalog/fontaines-d-c-dopamine-chamber-D2I1SP29662",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.hhv.de/en/records/item/fontaines-d-c-dopamine-chamber-1445667",
+     "shop": "hhv.de",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://fontainesdc.com/collections/store",
+     "shop": "fontainesdc.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://shop-us.fontainesdc.com/products/dopamine-chamber-cd",
+     "shop": "shop-us.fontainesdc.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://pitchfork.com/reviews/albums/fontaines-dc-dopamine-chamber",
+     "shop": "pitchfork.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://shopusa.xlrecordings.com/products/xl1673-dopamine-chamber",
+     "shop": "shopusa.xlrecordings.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://shop-us.fontainesdc.com",
+     "shop": "shop-us.fontainesdc.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://shop-us.fontainesdc.com/products/dopamine-chamber-deluxe-vinyl",
+     "shop": "shop-us.fontainesdc.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://recordstoreday.com/UPC/191404167304",
+     "shop": "recordstoreday.com",
+     "reason": "geen europrijs op de pagina"
+    },
+    {
+     "url": "https://www.platomania.nl/article/17013516/dopamine_chamber_marble_blue_indie_exclusive/fontaines_dc",
+     "shop": "platomania.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.sounds-venlo.nl/4925362-fontaines-d.c.-dopamine-chamber--blue-vinyl-",
+     "shop": "sounds-venlo.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.velvetmusic.nl/en/collections/fontaines-d-c",
+     "shop": "velvetmusic.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.platomania.nl/fontaines-dc-dopamine-chamber",
+     "shop": "platomania.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.velvetmusic.nl/fr/products/fontaines-d-c-dopamine-chamber-marble-blue-coloured-vinyl-strictly-limited-lp",
+     "shop": "velvetmusic.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.velvetmusic.nl/en/products/fontaines-d-c-dopamine-chamber-marble-blue-coloured-vinyl-strictly-limited-lp",
+     "shop": "velvetmusic.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.velvetmusic.nl/en/products/fontaines-d-c-dopamine-chamber-blue-coloured-vinyl-limited-lp",
+     "shop": "velvetmusic.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.platomania.nl/artiest/fontaines_dc",
+     "shop": "platomania.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.platomania.nl/article/17013514/dopamine_chamber_black_vinyl/fontaines_dc",
+     "shop": "platomania.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.platomania.nl/article/17013515/dopamine_chamber_blue_vinyl/fontaines_dc",
+     "shop": "platomania.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.platomania.nl/article/17013515/dopamine_chamber_blue_vinyl/concerto-exclusives",
+     "shop": "platomania.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.platomania.nl/article/17013513/dopamine_chamber/fontaines_dc",
+     "shop": "platomania.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.velvetmusic.nl/products/fontaines-d-c-dopamine-chamber-lp",
+     "shop": "velvetmusic.nl",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.jpc.de/jpcng/poprock/detail/-/art/fontaines-d-c-dopamine-chamber/hnum/12885810",
+     "shop": "jpc.de",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    },
+    {
+     "url": "https://www.hhv.de/en/records/item/fontaines-d-c-dopamine-chamber-black-vinyl-edition-1445664",
+     "shop": "hhv.de",
+     "reason": "kon niet worden uitgelezen (Gemini had het te druk)"
+    }
+   ],
+   "cheapest": {
+    "variant": {
+     "label": "Zwart",
+     "key": "black",
+     "colors": [
+      "#161214"
+     ],
+     "pattern": "solid"
+    },
+    "thumb": null,
+    "shop": "HHV",
+    "url": "https://www.hhv.de/en/records/item/fontaines-d-c-dopamine-chamber-deluxe-cover-2lp-poster-edition-1445666",
+    "price": 39.99,
+    "shipping": 12.5,
+    "shipping_estimated": true,
+    "total": 52.49,
+    "condition": "new",
+    "is_sale": false,
+    "original_price": null,
+    "edition": "Deluxe Cover 2LP + Poster Edition",
+    "source": "web",
+    "region": "EU",
+    "seen": "2026-11-24"
+   },
+   "checked": "2026-11-24T14:31:32+00:00",
+   "error": null,
+   "web_checked": "2026-11-24T14:31:32+00:00",
+   "history": [
+    {
+     "date": "2026-11-24",
+     "total": 52.49,
+     "shop": "HHV"
+    }
+   ],
+   "lowest_ever": 52.49
   }
  }
 }
